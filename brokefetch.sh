@@ -20,5 +20,5 @@ cat << "EOF"
 `++:.                           `-/+/
 `.`                                `
 
-💀 UNEMPLOYMENTFETCH 🥀
+BROKEFETCH 🥀
 EOF
