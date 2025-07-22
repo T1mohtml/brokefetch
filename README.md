@@ -21,3 +21,4 @@ cd brokefetch
 chmod +x brokefetch.sh
 ./brokefetch.sh
 
+or just use AUR https://aur.archlinux.org/packages/brokefetch
