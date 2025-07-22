@@ -16,8 +16,9 @@ Inspired by `neofetch`, but with:
 ## Installation
 
 ```bash
-git clone https://github.com/YOURUSERNAME/brokefetch
+git clone https://github.com/Szerwigi1410/brokefetch
 cd brokefetch
 chmod +x brokefetch.sh
 ./brokefetch.sh
 
+or just use AUR https://aur.archlinux.org/packages/brokefetch
