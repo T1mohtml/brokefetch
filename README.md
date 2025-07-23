@@ -2,7 +2,7 @@
 
 A broken `neofetch` clone for those of us who have no job, no GPU, and no hope.
 
-![screenshot](screenshot.png)
+![screenshot](version_1.2.png)
 
 ## What is this?
 
@@ -22,3 +22,7 @@ chmod +x brokefetch.sh
 ./brokefetch.sh
 
 or just use AUR https://aur.archlinux.org/packages/brokefetch
+
+Version 1.0 screenshot
+
+![screenshot](screenshot.png)
