@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.4] - 2025-07-23
+- Added the version number
+
 ## [1.3] - 2025-07-23
 - Added dynamic package count
 - Added this changelog
