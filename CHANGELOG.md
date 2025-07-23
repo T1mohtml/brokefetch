@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.5] - 2025-07-23
+- Added config file
+
 ## [1.4] - 2025-07-23
 - Added the version number
 
