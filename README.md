@@ -4,6 +4,10 @@ A broken `neofetch` clone for those of us who have no job, no GPU, and no hope.
 
 ![screenshot](version_1.2.png)
 
+Version 1.0 screenshot
+
+![screenshot](screenshot.png)
+
 ## What is this?
 
 `brokefetch` is the only system info tool that doesn't pretend your life is okay.
@@ -23,6 +27,4 @@ chmod +x brokefetch.sh
 
 or just use AUR https://aur.archlinux.org/packages/brokefetch
 
-Version 1.0 screenshot
 
-![screenshot](screenshot.png)
