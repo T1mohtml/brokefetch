@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.6] - 2025-07-23
+- Changed config file to display MB
+
+
 ## [1.5] - 2025-07-23
 - Added config file
 
