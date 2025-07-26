@@ -29,4 +29,4 @@ or just use AUR https://aur.archlinux.org/packages/brokefetch
 ```
 ---
 
-###💖 If you enjoy brokefetch, please ⭐ it here and vote on the [AUR package](https://aur.archlinux.org/packages/brokefetch) to support its survival!
+### 💖 If you enjoy brokefetch, please ⭐ it here and vote on the [AUR package](https://aur.archlinux.org/packages/brokefetch) to support its survival!
