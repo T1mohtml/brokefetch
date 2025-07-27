@@ -5,11 +5,11 @@
 - added RANDOM CPU TEXTS (Idea by reddit user known as [u/123koopa](https://www.reddit.com/user/123koopa/))
 
 ### GREEN
-![screenshot](green1_7.png)
+![screenshot](screenshots/green1_7.png)
 ### RED
-![screenshot](red1_7.png)
+![screenshot](screenshots/red1_7.png)
 ### Random cpu texts
-![screenshot](randomcpu.png)
+![screenshot](screenshots/randomcpu.png)
 
 
 ## [1.6-2] - 2025-07-27
