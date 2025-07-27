@@ -2,7 +2,7 @@
 
 ## [1.7]
 - added COLORS (for now only, BLUE(default), RED and GREEN)
-- added RANDOM CPU TEXTS
+- added RANDOM CPU TEXTS (Idea by reddit user known as [u/123koopa](https://www.reddit.com/user/123koopa/))
 
 ### GREEN
 ![screenshot](green1_7.png)
