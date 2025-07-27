@@ -1,7 +1,14 @@
 # Changelog
 
+## [1.7]
+- added COLORS (for now only, BLUE(default), RED and GREEN)
+- added RANDOM CPU TEXTS
+![screenshot](randomcpu.png)
+![screenshot](green1_7.png)
+![screenshot](red1_7.png)
 ## [1.6-2] - 2025-07-27
 - fixed the issue with uptime ignoring the config
+- package got removed from AUR by a "trusted user"
 
 ## [1.6] - 2025-07-23
 - Changed config file to display MB

@@ -2,7 +2,7 @@
 
 A broken `neofetch` clone for those of us who have no job, no GPU, and no hope.
 
-![screenshot](version_1.6.png)
+![screenshot](v1.7.png)
 
 Version 1.0 screenshot
 
