@@ -68,5 +68,5 @@ echo -e "${COLOR}\`+sso+:-\`                 \`.-/+oso:"
 echo -e "${COLOR}\`++:.                           \`-/+/"
 echo -e "${COLOR}\`.\`                                \`"
 
-echo -e "${BOLD}BROKEFETCH 🥀 1.6 ${RESET}"
+echo -e "${BOLD}BROKEFETCH 🥀 1.7 ${RESET}"
 
