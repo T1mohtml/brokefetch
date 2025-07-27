@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.6-2] - 2025-07-27
+- fixed the issue with uptime ignoring the config
+
 ## [1.6] - 2025-07-23
 - Changed config file to display MB
 
