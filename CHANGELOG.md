@@ -8,6 +8,8 @@
 ![screenshot](green1_7.png)
 ### RED
 ![screenshot](red1_7.png)
+### Random cpu texts
+![screenshot](randomcpu.png)
 
 
 ## [1.6-2] - 2025-07-27
