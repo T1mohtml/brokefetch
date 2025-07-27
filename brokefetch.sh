@@ -15,7 +15,7 @@ CONFIG_FILE="$HOME/.config/brokefetch/config"
 if [[ ! -f "$CONFIG_FILE" ]]; then
     mkdir -p "$(dirname "$CONFIG_FILE")"
     echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE"
-	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16\nCOLOR_NAME(BLUE, RED, GREEN)=BLUE" > "$CONFIG_FILE"
+	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16\nCOLOR_NAME=BLUE" > "$CONFIG_FILE"
 fi
 
 # Wczytaj wartości z configu
