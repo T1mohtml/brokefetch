@@ -1,8 +1,10 @@
 #!/bin/bash
 
+RED="\e[31m"
 BLUE="\e[34m"
 BOLD="\e[1m"
 RESET="\e[0m"
+
 PKG_COUNT=$(pacman -Q | wc -l)
 
 # CONFIG
