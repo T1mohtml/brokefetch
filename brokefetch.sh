@@ -14,7 +14,7 @@ CONFIG_FILE="$HOME/.config/brokefetch/config"
 # Jeśli nie ma configu – utwórz domyślny
 if [[ ! -f "$CONFIG_FILE" ]]; then
     mkdir -p "$(dirname "$CONFIG_FILE")"
-    echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16" > "$CONFIG_FILE"
+    echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16\nCOLOR_NAME=BLUE" > "$CONFIG_FILE"
 fi
 
 # Wczytaj wartości z configu
@@ -26,6 +26,9 @@ UPTIME=$UPTIME_OVERRIDE
 
 # RAM
 MEMORY_MB=$RAM_MB
+
+# Wartość koloru
+COLOR=${!COLOR_NAME}
 
 #CPU
 
@@ -42,25 +45,25 @@ case $rand in
 esac
 
 
-echo -e "${BLUE}                -\`                   ${RESET}$(whoami)@brokelaptop"
-echo -e "${BLUE}               .o+\`                  ${RESET} ---------------------"
-echo -e "${BLUE}              \`ooo/                  ${BOLD}OS:${RESET} Arch Linux (Unpaid Edition)"
-echo -e "${BLUE}             \`+oooo:                 ${BOLD}Host:${RESET} Bedroom Floor"
-echo -e "${BLUE}            \`+oooooo:                ${BOLD}Kernel:${RESET} 0.00/hr"
-echo -e "${BLUE}            -+oooooo+:               ${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
-echo -e "${BLUE}          \`/:-:++oooo+:              ${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
-echo -e "${BLUE}         \`/++++/+++++++:             ${BOLD}Shell:${RESET} brokeBash 0.01"
-echo -e "${BLUE}        \`/++++++++++++++:            ${BOLD}Resolution:${RESET} CRT 640x480"
-echo -e "${BLUE}       \`/+++ooooooooooooo/\`          ${BOLD}DE:${RESET} Crying"
-echo -e "${BLUE}      ./ooosssso++osssssso+\`         ${BOLD}WM:${RESET} HopiumWM"
-echo -e "${BLUE}     .oossssso-\`\`\`\`/ossssss+\`        ${BOLD}Terminal:${RESET} Terminal of Regret"
-echo -e "${BLUE}    -osssssso.      :ssssssso.       ${BOLD}CPU:${RESET} $CPU"
-echo -e "${BLUE}   :osssssss/        osssso+++.\     ${BOLD}GPU:${RESET} Integrated Depression"
-echo -e "${BLUE}  /ossssssss/        +ssssooo/-      ${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
-echo -e "${BLUE} \`/ossssso+/:-        -:/+osssso+-"
-echo -e "${BLUE}\`+sso+:-\`                 \`.-/+oso:"
-echo -e "${BLUE}\`++:.                           \`-/+/"
-echo -e "${BLUE}\`.\`                                \`"
+echo -e "${COLOR}                -\`                   ${RESET}$(whoami)@brokelaptop"
+echo -e "${COLOR}               .o+\`                  ${RESET} ---------------------"
+echo -e "${COLOR}              \`ooo/                  ${BOLD}OS:${RESET} Arch Linux (Unpaid Edition)"
+echo -e "${COLOR}             \`+oooo:                 ${BOLD}Host:${RESET} Bedroom Floor"
+echo -e "${COLOR}            \`+oooooo:                ${BOLD}Kernel:${RESET} 0.00/hr"
+echo -e "${COLOR}            -+oooooo+:               ${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
+echo -e "${COLOR}          \`/:-:++oooo+:              ${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
+echo -e "${COLOR}         \`/++++/+++++++:             ${BOLD}Shell:${RESET} brokeBash 0.01"
+echo -e "${COLOR}        \`/++++++++++++++:            ${BOLD}Resolution:${RESET} CRT 640x480"
+echo -e "${COLOR}       \`/+++ooooooooooooo/\`          ${BOLD}DE:${RESET} Crying"
+echo -e "${COLOR}      ./ooosssso++osssssso+\`         ${BOLD}WM:${RESET} HopiumWM"
+echo -e "${COLOR}     .oossssso-\`\`\`\`/ossssss+\`        ${BOLD}Terminal:${RESET} Terminal of Regret"
+echo -e "${COLOR}    -osssssso.      :ssssssso.       ${BOLD}CPU:${RESET} $CPU"
+echo -e "${COLOR}   :osssssss/        osssso+++.\     ${BOLD}GPU:${RESET} Integrated Depression"
+echo -e "${COLOR}  /ossssssss/        +ssssooo/-      ${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
+echo -e "${COLOR} \`/ossssso+/:-        -:/+osssso+-"
+echo -e "${COLOR}\`+sso+:-\`                 \`.-/+oso:"
+echo -e "${COLOR}\`++:.                           \`-/+/"
+echo -e "${COLOR}\`.\`                                \`"
 
 echo -e "${BOLD}BROKEFETCH 🥀 1.6 ${RESET}"
 
