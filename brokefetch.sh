@@ -11,7 +11,7 @@ PKG_COUNT=$(pacman -Q | wc -l)
 # CONFIG
 CONFIG_FILE="$HOME/.config/brokefetch/config"
 
-# Jeśli nie ma configu – utwórz domyślny
+# If there is no config – create a default one.
 if [[ ! -f "$CONFIG_FILE" ]]; then
     mkdir -p "$(dirname "$CONFIG_FILE")"
     echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE" > "$CONFIG_FILE"
@@ -20,7 +20,7 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
 	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16\nCOLOR_NAME=BLUE" > "$CONFIG_FILE"
 fi
 
-# Wczytaj wartości z configu
+# Load values from the config
 source "$CONFIG_FILE"
 
 # OS 
@@ -55,7 +55,7 @@ UPTIME=$UPTIME_OVERRIDE
 # RAM
 MEMORY_MB=$RAM_MB
 
-# Wartość koloru
+# Value of the color
 COLOR=${!COLOR_NAME}
 
 #CPU
