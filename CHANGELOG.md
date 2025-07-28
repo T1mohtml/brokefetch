@@ -2,6 +2,7 @@
 
 ## Added texts to match distros
 contributer [soulhotel](https://github.com/soulhotel) added that feature
+![screenshot](screenshots/os_texts.png)
 
 ## [1.7]
 - added COLORS (for now only, BLUE(default), RED and GREEN)
