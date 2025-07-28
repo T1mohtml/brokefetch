@@ -72,6 +72,21 @@ case $rand in
 	6)CPU="Corei14billon (I wish)";;
 esac
 
+#GPU
+
+rand=$(($RANDOM%7))
+
+case $rand in
+    0)GPU="Integrated Depression";;
+    1)GPU="Nvidia (but no drivers)";;
+    2)GPU="AMD (Ain't My Dollar)";;
+    3)GPU="Inetl (I can't afford a real one)";;
+    4)GPU="Voodoo 3Dfx (I wish)";;
+    5)GPU="Radeon 7000 (from 2001)";;
+    6)GPU="GeForce 256 (the first one ever made)";;
+    7)GPU="Go outside for better grapchisc";;
+esac
+
 
 echo -e "${COLOR}                -\`                   ${RESET}$(whoami)@brokelaptop"
 echo -e "${COLOR}               .o+\`                  ${RESET} ---------------------"
@@ -86,7 +101,7 @@ echo -e "${COLOR}       \`/+++ooooooooooooo/\`          ${BOLD}DE:${RESET} Cryin
 echo -e "${COLOR}      ./ooosssso++osssssso+\`         ${BOLD}WM:${RESET} HopiumWM"
 echo -e "${COLOR}     .oossssso-\`\`\`\`/ossssss+\`        ${BOLD}Terminal:${RESET} Terminal of Regret"
 echo -e "${COLOR}    -osssssso.      :ssssssso.       ${BOLD}CPU:${RESET} $CPU"
-echo -e "${COLOR}   :osssssss/        osssso+++.\     ${BOLD}GPU:${RESET} Integrated Depression"
+echo -e "${COLOR}   :osssssss/        osssso+++.\     ${BOLD}GPU:${RESET} $GPU"
 echo -e "${COLOR}  /ossssssss/        +ssssooo/-      ${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
 echo -e "${COLOR} \`/ossssso+/:-        -:/+osssso+-"
 echo -e "${COLOR}\`+sso+:-\`                 \`.-/+oso:"
