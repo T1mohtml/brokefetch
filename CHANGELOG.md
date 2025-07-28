@@ -1,6 +1,6 @@
 # Changelog
 
-## Intoduced brokefetch_EDGE.sh - a file with a preview of future updates.
+## Intoduced brokefetch_EDGE.sh - a file with a preview of future updates. - 2025-07-28
 
 ## Added random GPU texts
 
