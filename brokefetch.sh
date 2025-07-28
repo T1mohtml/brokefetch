@@ -3,6 +3,7 @@
 GREEN="\e[32m"
 RED="\e[31m"
 BLUE="\e[34m"
+WHITE="\e[37m"
 BOLD="\e[1m"
 RESET="\e[0m"
 
