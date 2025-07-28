@@ -23,6 +23,31 @@ fi
 # Wczytaj wartości z configu
 source "$CONFIG_FILE"
 
+# OS 
+OS_NAME="$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"')"
+
+case "$OS_NAME" in
+    "Arch Linux")          OS="Arch Linux (Unpaid Edition)";;
+    "Ubuntu")              OS="Ubunstu (Activate Windows Survivor)";;
+    "Linux Mint")          OS="Linux Mint (but no teeth left)";;
+    "Fedora Linux")        OS="Fedora (tips hat in poverty)";;
+    "Debian GNU/Linux")    OS="Plebian 12 (brokeworm)";;
+    "Manjaro Linux")       OS="ManjarNO (Oh Please God No)";;
+    "EndeavourOS")         OS="EndeavourOS (Arch for fetuses)";;
+    "openSUSE Tumbleweed") OS="openSUSE (tumbling into debt)";;
+    "openSUSE Leap")       OS="openSUSE Leap (into the void)";;
+    "Garuda Linux")        OS="Garuda (because RGB broke my wallet)";;
+    "elementary OS")       OS="elementaryOS (baby's first macbook)";;
+    "Pop!_OS")             OS="Pop!_OS (But cant afford System76)";;
+    "Kali Linux")          OS="Kali Linux (Dollar Store hacker addition)";;
+    "Zorin OS")            OS="Zorin (Because I cant afford Windows)";;
+    "Gentoo")              OS="Gentoo (Because I cant even afford time)";;
+    "NixOS")               OS="NixOS (broke and broken by design)";;
+    "Slackware")           OS="Slackware (no updates, no rent)";;
+    "Void Linux")          OS="Void (bank account matches the name)";;
+    *) OS="$OS_NAME (??)";;
+esac
+
 # Uptime
 
 UPTIME=$UPTIME_OVERRIDE
@@ -50,7 +75,7 @@ esac
 
 echo -e "${COLOR}                -\`                   ${RESET}$(whoami)@brokelaptop"
 echo -e "${COLOR}               .o+\`                  ${RESET} ---------------------"
-echo -e "${COLOR}              \`ooo/                  ${BOLD}OS:${RESET} Arch Linux (Unpaid Edition)"
+echo -e "${COLOR}              \`ooo/                  ${BOLD}OS:${RESET} $OS"
 echo -e "${COLOR}             \`+oooo:                 ${BOLD}Host:${RESET} Bedroom Floor"
 echo -e "${COLOR}            \`+oooooo:                ${BOLD}Kernel:${RESET} 0.00/hr"
 echo -e "${COLOR}            -+oooooo+:               ${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
