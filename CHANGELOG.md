@@ -1,5 +1,8 @@
 # Changelog
 
+## Added texts to match distros
+contributer [soulhotel](https://github.com/soulhotel) added that feature
+
 ## [1.7]
 - added COLORS (for now only, BLUE(default), RED and GREEN)
 - added RANDOM CPU TEXTS (Idea by reddit user known as [u/123koopa](https://www.reddit.com/user/123koopa/))
