@@ -26,7 +26,8 @@ chmod +x brokefetch.sh
 ./brokefetch.sh
 ```
 ---
-
+# If you have any issues with brokefetch, try to remove the config and run brokefetch again.
+---
 ~### 💖 If you enjoy brokefetch, please ⭐ it here and vote on the [AUR package](https://aur.archlinux.org/packages/brokefetch) to support its survival!~
 
-### Sadly we lost and some cocksucke- uhh I meant AUR trusted user has removed the package from AUR.
+### Sadly we lost and some cock sucke- uhh I meant AUR trusted user has removed the package from AUR.
