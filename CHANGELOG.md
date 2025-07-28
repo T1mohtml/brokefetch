@@ -1,5 +1,7 @@
 # Changelog
 
+## Intoduced brokefetch_EDGE.sh - a file with a preview of future updates.
+
 ## Added random GPU texts
 
 ## Added texts to match distros
