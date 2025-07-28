@@ -98,6 +98,7 @@ ascii15="   \`/ossssso+/:-        -:/+osssso+-     "
 ascii16="  \`+sso+:-\`                 \`.-/+oso:    "
 ascii17=" \`++:.                           \`-/+/   "
 ascii18=" .\`                                 \`/   "
+ascii19="                                        "
 fi
 
 # UBUNTU ASCII =========================================
@@ -117,10 +118,11 @@ ascii11="+ssss${WHITE}hhhyNMMNy${COLOR}ssssssssssss${WHITE}yNMMMy${WHITE}sssssss
 ascii12=".ssssssss${WHITE}dMMMNh${COLOR}ssssssssss${WHITE}hNMMMd${COLOR}ssssssss.   "
 ascii13=" /ssssssss${WHITE}hNMMM${COLOR}yh${WHITE}hyyyyhdNMMMNh${COLOR}ssssssss/    "
 ascii14="  +sssssssss${WHITE}dm${COLOR}yd${WHITE}MMMMMMMMddddy${COLOR}ssssssss+     "
-ascii15=""
-ascii16=""
-ascii17=""
-ascii18=""
+ascii15="   /sssssssssss${WHITE}hdmNNNNmyNMMMMh${COLOR}ssssss/      "
+ascii16="    .ossssssssssssssssss${WHITE}dMMMNy${COLOR}sssso.       "
+ascii17="      -+sssssssssssssssss${WHITE}yyy${COLOR}ssss+-         "
+ascii18="        \`:+ssssssssssssssssss+:\`           "
+ascii19="            .-/+oossssoo+/-.               "
 fi
 
 
@@ -145,4 +147,5 @@ echo -e "${COLOR}${ascii15}"
 echo -e "${COLOR}${ascii16}"
 echo -e "${COLOR}${ascii17}"
 echo -e "${COLOR}${ascii18}"
+echo -e "${COLOR}${ascii19}"
 echo -e "${BOLD}BROKEFETCH 🥀 1.7${RESET}"
