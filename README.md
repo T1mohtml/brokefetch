@@ -2,7 +2,7 @@
 
 A broken `neofetch` clone for those of us who have no job, no GPU, and no hope.
 
-![screenshot](screenshots/brokefetch-logo_att3)
+![screenshot](screenshots/brokefetch-logo_att3.png)
 
 ![screenshot](screenshots/v1.7.png)
 
