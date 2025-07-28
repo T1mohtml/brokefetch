@@ -1,10 +1,12 @@
 # Changelog
 
+## Added random GPU texts
+
 ## Added texts to match distros
 contributer [soulhotel](https://github.com/soulhotel) added that feature
 ![screenshot](screenshots/os_texts.png)
 
-## [1.7]
+## [1.7] 2025-07-27
 - added COLORS (for now only, BLUE(default), RED and GREEN)
 - added RANDOM CPU TEXTS (Idea by reddit user known as [u/123koopa](https://www.reddit.com/user/123koopa/))
 
