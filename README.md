@@ -24,8 +24,6 @@ git clone https://github.com/Szerwigi1410/brokefetch
 cd brokefetch
 chmod +x brokefetch.sh
 ./brokefetch.sh
-
-~or just use AUR https://aur.archlinux.org/packages/brokefetch~
 ```
 ---
 
