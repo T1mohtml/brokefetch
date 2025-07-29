@@ -116,6 +116,9 @@ case $rand in
     7)GPU="Go outside for better grapchisc";;
 esac
 
+# If you are reading this, feel free to add more OSes and their ASCII art.
+# Look beetween line 56 and 78 for OS list
+
 # ARCH ASCII =========================================
 if [[ "$OS_NAME" == "Arch Linux" ]]; then
 ascii00="                   -\`                     "
@@ -187,7 +190,10 @@ ascii17="${GREEN}⣿⣿⣿⡇⡇⣿⡇⠇⣬⣅⠻⠸⣿⣿⣿⣿⣿⣿⣿⣿⣷
 ascii18="${GREEN}⣿⣿⣿⣷⠁⣿⣧⣸⣿⣿⠉⣿⣶⣯⡉⣩⣟⣛⣛⣛⠉⡉⢍⣴⣆⠀⣿⣿⣿⣿⠀⢸⣿⣿⣿⣿"
 ascii19="${GREEN}⣿⣿⣿⣿⢼⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣾⣿⣿⣶⣿⣿⣿⣿⣤⣾⣿⣿⣿⣿"
 fi
+# Fedora ASCII =========================================
+if [[ "$OS_NAME" == "Fedora Linux" ]]; then
 
+fi
 
 # DEBIAN ASCII =========================================
 if [[ "$OS_NAME" == "Debian GNU/Linux" ]]; then
