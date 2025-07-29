@@ -295,10 +295,11 @@ fi
 
 # WINDOWS ASCII =========================================
 
-case $win_rand in
+case $win_rand((RANDOM%4)) in
     0)WIN="You are not getting the newer logo";;
     1)WIN="Switch to Linux (or FreeBSD) to get cooler logos";;
     2)WIN="Still using Windows in $(date +%Y)? Lowkey crazy";;
+    3)WIN="Check your ram usage HAHAHAHAHAHA";;
 esac
 
 if [[ "$OS_NAME" == "Windows" ]]; then
