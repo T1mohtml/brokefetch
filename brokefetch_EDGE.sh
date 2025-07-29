@@ -308,7 +308,10 @@ ascii12=" E::::::::zt33L @EEEtttt::::z3F        "
 ascii13="{3=*^\`\`\`\"*4E3) ;EEEtttt:::::tZ\`        "
 ascii14="             \` :EEEEtttt::::z7         "
 ascii15="                 \"VEzjt:;;z>*\`         "
-
+ascii16=""
+ascii17="You are not getting the newer logo"
+ascii18="Switch to Linux (or FreeBSD) to get cooler logos"
+ascii19="Still using Windows in"
 fi
 
 # === OUTPUT ===
