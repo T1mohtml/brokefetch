@@ -71,6 +71,10 @@ case "$OS_NAME" in
     "Slackware")           OS="Slackware (no updates, no rent)";;
     "Void Linux")          OS="Void (bank account matches the name)";;
     "Nobara Linux")        OS="Nobara (Has 500 viruses from torrents)";;
+    "Windows")             OS="Windows (Rebooting my patience)";;
+    "macOS")               OS="macOS (Broke but still bragging)";;
+    "WSL")                 OS="WSL (Linux for those who sold a kidney)";;
+    "FreeBSD")             OS="FreeBSD (Free software, broke user)";;
     *) OS="$OS_NAME (??)";;
 esac
 
