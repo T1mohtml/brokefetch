@@ -311,7 +311,7 @@ ascii15="                 \"VEzjt:;;z>*\`         "
 ascii16=""
 ascii17="You are not getting the newer logo"
 ascii18="Switch to Linux (or FreeBSD) to get cooler logos"
-ascii19="Still using Windows in"
+ascii19="Still using Windows in $(date +%Y)? Lowkey crazy"
 fi
 
 # === OUTPUT ===
