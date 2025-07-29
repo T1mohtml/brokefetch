@@ -53,29 +53,30 @@ fi
 
 
 case "$OS_NAME" in
-    "Arch Linux")          OS="Arch Linux (Unpaid Edition)";;
-    "Ubuntu")              OS="Ubunstu (Activate Windows Survivor)";;
-    "Linux Mint")          OS="Linux Mint (but no teeth left)";;
-    "Fedora Linux")        OS="Fedora (tips hat in poverty)";;
-    "Debian GNU/Linux")    OS="Plebian 12 (brokeworm)";;
-    "Manjaro Linux")       OS="ManjarNO (Oh Please God No)";;
-    "EndeavourOS")         OS="EndeavourOS (Arch for fetuses)";;
-    "openSUSE Tumbleweed") OS="openSUSE (tumbling into debt)";;
-    "openSUSE Leap")       OS="openSUSE Leap (into the void)";;
-    "Garuda Linux")        OS="Garuda (because RGB broke my wallet)";;
-    "elementary OS")       OS="elementaryOS (baby's first macbook)";;
-    "Pop!_OS")             OS="Pop!_OS (But cant afford System76)";;
-    "Kali Linux")          OS="Kali Linux (Dollar Store hacker addition)";;
-    "Zorin OS")            OS="Zorin (Because I cant afford Windows)";;
-    "Gentoo")              OS="Gentoo (Because I cant even afford time)";;
-    "NixOS")               OS="NixOS (broke and broken by design)";;
-    "Slackware")           OS="Slackware (no updates, no rent)";;
-    "Void Linux")          OS="Void (bank account matches the name)";;
-    "Nobara Linux")        OS="Nobara (Has 500 viruses from torrents)";;
-    "Windows")             OS="Windows (Rebooting my patience)";;
-    "macOS")               OS="macOS (Broke but still bragging)";;
-    "WSL")                 OS="WSL (Linux for those who sold a kidney)";;
-    "FreeBSD")             OS="FreeBSD (Free software, broke user)";;
+    "Arch Linux")          OS="Arch Linux (Unpaid Edition)";;           # ASCII DONE - Szerwigi1410
+    "Alpine Linux")        OS="Alpine (because I can't afford a mountain)";; # 
+    "Ubuntu")              OS="Ubunstu (Activate Windows Survivor)";;   # ASCII DONE - Szerwigi1410
+    "Linux Mint")          OS="Linux Mint (but no teeth left)";;        # ASCII DONE - Szerwigi1410
+    "Fedora Linux")        OS="Fedora (tips hat in poverty)";;          # ASCII DONE - Szerwigi1410
+    "Debian GNU/Linux")    OS="Plebian 12 (brokeworm)";;                # ASCII DONE - Szerwigi1410
+    "Manjaro Linux")       OS="ManjarNO (Oh Please God No)";;           # ASCII DONE - Szerwigi1410
+    "EndeavourOS")         OS="EndeavourOS (Arch for fetuses)";;        #
+    "openSUSE Tumbleweed") OS="openSUSE (tumbling into debt)";;         #
+    "openSUSE Leap")       OS="openSUSE Leap (into the void)";;         #
+    "Garuda Linux")        OS="Garuda (because RGB broke my wallet)";;  #
+    "elementary OS")       OS="elementaryOS (baby's first macbook)";;   #
+    "Pop!_OS")             OS="Pop!_OS (But cant afford System76)";;    #
+    "Kali Linux")          OS="Kali Linux (Dollar Store hacker addition)";; #
+    "Zorin OS")            OS="Zorin (Because I cant afford Windows)";; #
+    "Gentoo")              OS="Gentoo (Because I cant even afford time)";; #
+    "NixOS")               OS="NixOS (broke and broken by design)";;    #
+    "Slackware")           OS="Slackware (no updates, no rent)";;       #
+    "Void Linux")          OS="Void (bank account matches the name)";;  #
+    "Nobara Linux")        OS="Nobara (Has 500 viruses from torrents)";; #
+    "Windows")             OS="Windows (Rebooting my patience)";;      #
+    "macOS")               OS="macOS (Broke but still bragging)";;     #
+    "WSL")                 OS="WSL (Linux for those who sold a kidney)";; #
+    "FreeBSD")             OS="FreeBSD (Free software, broke user)";;   #
     *) OS="$OS_NAME (??)";;
 esac
 
@@ -117,7 +118,7 @@ case $rand in
 esac
 
 # If you are reading this, feel free to add more OSes and their ASCII art.
-# Look beetween line 56 and 78 for OS list
+# Look beetween line 56 and 79 for OS list
 
 # ARCH ASCII =========================================
 if [[ "$OS_NAME" == "Arch Linux" ]]; then
