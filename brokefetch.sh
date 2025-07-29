@@ -3,6 +3,7 @@
 GREEN="\e[32m"
 RED="\e[31m"
 BLUE="\e[34m"
+CYAN="\e[36m"
 WHITE="\e[37m"
 BOLD="\e[1m"
 RESET="\e[0m"
@@ -15,10 +16,10 @@ CONFIG_FILE="$HOME/.config/brokefetch/config"
 # If there is no config – create a default one.
 if [[ ! -f "$CONFIG_FILE" ]]; then
     mkdir -p "$(dirname "$CONFIG_FILE")"
-    echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE" > "$CONFIG_FILE"
+    echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE, CYAN, WHITE" > "$CONFIG_FILE"
 	echo -e "# Set RAM_MB to your desired memory size in MB" >> "$CONFIG_FILE"
 	echo -e "# If you have any issues with brokefetch, try to remove this config and run brokefetch again" >> "$CONFIG_FILE"
-	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16\nCOLOR_NAME=BLUE" >> "$CONFIG_FILE"
+	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16\nCOLOR_NAME=CYAN" >> "$CONFIG_FILE"
 fi
 
 # Load values from the config
