@@ -28,8 +28,28 @@ fi
 # Load values from the config
 source "$CONFIG_FILE"
 
-# OS 
-OS_NAME="$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"')"
+# OS
+if [ -f /etc/os-release ]; then
+    # linux
+    OS_NAME="$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"')"
+elif grep -q Microsoft /proc/version 2>/dev/null; then
+    # windows subsystem for linux
+    OS_NAME="WSL"
+else
+    # Mac, Windows, Fallback (such as freeBSD)
+    case "$(uname -s)" in
+        Darwin)
+            OS_NAME="macOS"
+            ;;
+        MINGW*|MSYS*|CYGWIN*)
+            OS_NAME="Windows"
+            ;;
+        *)
+            OS_NAME="$(uname -s)"
+            ;;
+    esac
+fi
+
 
 case "$OS_NAME" in
     "Arch Linux")          OS="Arch Linux (Unpaid Edition)";;
