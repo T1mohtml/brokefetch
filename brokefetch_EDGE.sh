@@ -332,6 +332,12 @@ ascii11="    --                      -.     "
 ascii12="     \`:\`                  \`:\`      "
 ascii13="       .--             \`--.        "
 ascii14="          .---.....----.           "
+ascii15=""
+ascii16="Just tell me why not linux?"
+ascii17="I'm not hating, just asking"
+ascii18=""
+ascii19=""
+fi
 
 # === OUTPUT ===
 echo -e "${COLOR}${ascii00} ${RESET} $(whoami)@brokelaptop"
