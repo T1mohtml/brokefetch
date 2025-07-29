@@ -295,7 +295,7 @@ fi
 
 # WINDOWS ASCII =========================================
 
-case $win_rand((RANDOM%4)) in
+case $win_rand=$((RANDOM%4)) in
     0)WIN="You are not getting the newer logo";;
     1)WIN="Switch to Linux (or FreeBSD) to get cooler logos";;
     2)WIN="Still using Windows in $(date +%Y)? Lowkey crazy";;
