@@ -1,8 +1,10 @@
 # Changelog
 
-## [gbentham06](https://github.com/gbentham06) added nobara & GPU to EDGE, cross platform OS detection and added cross platform messages.
+## 2025-07-29
+### [gbentham06](https://github.com/gbentham06) added nobara & GPU to EDGE, cross platform OS detection and added cross platform messages.
 
-## Intoduced brokefetch_EDGE.sh - a file with a preview of future updates. - 2025-07-28
+## 2025-07-28
+### Intoduced brokefetch_EDGE.sh - a file with a preview of future updates.
 
 ## Added random GPU texts
 
