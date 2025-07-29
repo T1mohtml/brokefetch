@@ -192,7 +192,26 @@ ascii19="${GREEN}⣿⣿⣿⣿⢼⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾
 fi
 # Fedora ASCII =========================================
 if [[ "$OS_NAME" == "Fedora Linux" ]]; then
-
+ascii00="          /:-------------:\          "
+ascii01="       :-------------------::        "
+ascii02=""
+ascii03=""
+ascii04=""
+ascii05=""
+ascii06=""
+ascii07=""
+ascii08=""
+ascii09=""
+ascii10=""
+ascii11=""
+ascii12=""
+ascii13=""
+ascii14=""
+ascii15=""
+ascii16=""
+ascii17=""
+ascii18=""
+ascii19=""
 fi
 
 # DEBIAN ASCII =========================================
