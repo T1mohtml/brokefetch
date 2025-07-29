@@ -314,6 +314,10 @@ ascii18="Switch to Linux (or FreeBSD) to get cooler logos"
 ascii19="Still using Windows in $(date +%Y)? Lowkey crazy"
 fi
 
+# FreeBSD ASCII =========================================
+if [[ "$OS_NAME" == "FreeBSD" ]]; then
+ascii00=""
+
 # === OUTPUT ===
 echo -e "${COLOR}${ascii00} ${RESET} $(whoami)@brokelaptop"
 echo -e "${COLOR}${ascii01}${RESET} ---------------------"
