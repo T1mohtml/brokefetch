@@ -29,7 +29,7 @@ chmod +x brokefetch.sh
 ```
 ---
 # Troubleshooting
-## If you have any issues with brokefetch, try to remove the config and run brokefetch again.
+If you have any issues with brokefetch, try to remove the config and run brokefetch again.
 ---
 ~### 💖 If you enjoy brokefetch, please ⭐ it here and vote on the [AUR package](https://aur.archlinux.org/packages/brokefetch) to support its survival!~
 
