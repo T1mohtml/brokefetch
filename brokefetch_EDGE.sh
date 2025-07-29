@@ -321,6 +321,8 @@ ascii01="  \` \`.....---.......--.\`\`\`   -/    "
 ascii02="  +o   .--\`         /y:\`      +.   "
 ascii03="   yo\`:.            :o      \`+-    "
 ascii04="    y/               -/\`   -o/     "
+ascii05="   .-                  ::/sy+:.    "
+ascii06="   /                     \`--  /    "
 
 # === OUTPUT ===
 echo -e "${COLOR}${ascii00} ${RESET} $(whoami)@brokelaptop"
