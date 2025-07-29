@@ -294,13 +294,20 @@ ascii19=""
 fi
 
 # WINDOWS ASCII =========================================
+
+case $win_rand in
+    0)WIN="You are not getting the newer logo";;
+    1)WIN="Switch to Linux (or FreeBSD) to get cooler logos";;
+    2)WIN="Still using Windows in $(date +%Y)? Lowkey crazy";;
+esac
+
 if [[ "$OS_NAME" == "Windows" ]]; then
 ascii00="        ,.=:!!t3Z3z.,                  "
 ascii01="       :tt:::tt333EE3                  "
 ascii02="       Et:::ztt33EEEL @Ee.,      ..,   "
 ascii03="      ;tt:::tt333EE7 ;EEEEEEttttt33#   "
 ascii04="     :Et:::zt333EEQ. \$EEEEEttttt33QL   "
-ascii05="     it::::tt333EEF @EEEEEEttttt33F    "
+ascii05="     it::::tt333EEF @LINUXEttttt33F    "
 ascii06="    ;3=*^\`\`\`\"*4EEV :EEEEEEttttt33@.    "
 ascii07="    ,.=::::!t=., \` @EEEEEEtttz33QF     "
 ascii08="   ;::::::::zt33)   \"4EEEtttji3P*      "
@@ -312,9 +319,9 @@ ascii13="{3=*^\`\`\`\"*4E3) ;EEEtttt:::::tZ\`        "
 ascii14="             \` :EEEEtttt::::z7         "
 ascii15="                 \"VEzjt:;;z>*\`         "
 ascii16=""
-ascii17="You are not getting the newer logo"
-ascii18="Switch to Linux (or FreeBSD) to get cooler logos"
-ascii19="Still using Windows in $(date +%Y)? Lowkey crazy"
+ascii17=""
+ascii18="${WIN}"
+ascii19=""
 fi
 
 # FreeBSD ASCII =========================================
