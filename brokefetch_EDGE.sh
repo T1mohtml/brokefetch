@@ -66,7 +66,7 @@ case "$OS_NAME" in
     "openSUSE Leap")       OS="openSUSE Leap (into the void)";;         #
     "Garuda Linux")        OS="Garuda (because RGB broke my wallet)";;  #
     "elementary OS")       OS="elementaryOS (baby's first macbook)";;   #
-    "Pop!_OS")             OS="Pop!_OS (But cant afford System76)";;    #
+    "Pop!_OS")             OS="Pop!_OS (But cant afford System76)";;    # ASCII DONE - Szerwigi1410
     "Kali Linux")          OS="Kali Linux (Dollar Store hacker addition)";; #
     "Zorin OS")            OS="Zorin (Because I cant afford Windows)";; #
     "Gentoo")              OS="Gentoo (Because I cant even afford time)";; #
@@ -74,10 +74,10 @@ case "$OS_NAME" in
     "Slackware")           OS="Slackware (no updates, no rent)";;       #
     "Void Linux")          OS="Void (bank account matches the name)";;  #
     "Nobara Linux")        OS="Nobara (Has 500 viruses from torrents)";; #
-    "Windows")             OS="Windows (Rebooting my patience)";;      #
+    "Windows")             OS="Windows (Rebooting my patience)";;      # ASCII DONE - Szerwigi1410
     "macOS")               OS="macOS (Broke but still bragging)";;     #
     "WSL")                 OS="WSL (Linux for those who sold a kidney)";; #
-    "FreeBSD")             OS="FreeBSD (Free software, broke user)";;   #
+    "FreeBSD")             OS="FreeBSD (Free software, broke user)";;   # ASCII DONE - Szerwigi1410
     *) OS="$OS_NAME (??)";;
 esac
 
@@ -326,21 +326,21 @@ fi
 
 # FreeBSD ASCII =========================================
 if [[ "$OS_NAME" == "FreeBSD" ]]; then
-ascii00="\`\`\`                        \`       "
-ascii01="  \` \`.....---.......--.\`\`\`   -/    "
-ascii02="  +o   .--\`         /y:\`      +.   "
-ascii03="   yo\`:.            :o      \`+-    "
-ascii04="    y/               -/\`   -o/     "
-ascii05="   .-                  ::/sy+:.    "
-ascii06="   /                     \`--  /    "
-ascii07="  \`:                          :\`   "
-ascii08="  \`:                          :\`   "
-ascii09="   /                          /    "
-ascii10="   .-                        -.    "
-ascii11="    --                      -.     "
-ascii12="     \`:\`                  \`:\`      "
-ascii13="       .--             \`--.        "
-ascii14="          .---.....----.           "
+ascii00="${WHITE}\`\`\`                        ${COLOR}\`       "
+ascii01="  ${WHITE}\` \`.....---...${COLOR}....--.\`\`\`   -/    "
+ascii02="  ${WHITE}+o   .--\`         ${COLOR}/y:\`      +.   "
+ascii03="   ${WHITE}yo\`:.            ${COLOR}:o      \`+-    "
+ascii04="    ${WHITE}y/               ${COLOR}-/\`   -o/     "
+ascii05="   ${WHITE}.-                  ${COLOR}::/sy+:.    "
+ascii06="   ${WHITE}/                     ${COLOR}\`--  /    "
+ascii07="  ${WHITE}\`:                          ${COLOR}:\`   "
+ascii08="  ${WHITE}\`:                          ${COLOR}:\`   "
+ascii09="   ${WHITE}/                          ${COLOR}/    "
+ascii10="   ${WHITE}.-                        ${COLOR}-.    "
+ascii11="    ${WHITE}--                      ${COLOR}-.     "
+ascii12="     ${WHITE}\`:\`                  ${COLOR}\`:\`      "
+ascii13="       ${COLOR}.--             ${COLOR}\`--.        "
+ascii14="          ${COLOR}.---.....----.           "
 ascii15=""
 ascii16="Just tell me why not linux?"
 ascii17="I'm not hating, just asking"
