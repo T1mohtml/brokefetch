@@ -316,7 +316,7 @@ fi
 
 # FreeBSD ASCII =========================================
 if [[ "$OS_NAME" == "FreeBSD" ]]; then
-ascii00=""
+ascii00="\`\`\`                        \`       "
 
 # === OUTPUT ===
 echo -e "${COLOR}${ascii00} ${RESET} $(whoami)@brokelaptop"
