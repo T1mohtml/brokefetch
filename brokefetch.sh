@@ -30,6 +30,7 @@ OS_NAME="$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"')"
 
 case "$OS_NAME" in
     "Arch Linux")          OS="Arch Linux (Unpaid Edition)";;
+    "Alpine Linux")        OS="Alpine (because I can't afford a mountain)";;    
     "Ubuntu")              OS="Ubunstu (Activate Windows Survivor)";;
     "Linux Mint")          OS="Linux Mint (but no teeth left)";;
     "Fedora Linux")        OS="Fedora (tips hat in poverty)";;
