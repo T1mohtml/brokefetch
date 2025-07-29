@@ -9,6 +9,7 @@ RED="\e[31m"
 BLUE="\e[34m"
 CYAN="\e[36m"
 WHITE="\e[37m"
+YELLOW="\e[33m"
 BOLD="\e[1m"
 RESET="\e[0m"
 
@@ -119,6 +120,7 @@ esac
 
 # If you are reading this, feel free to add more OSes and their ASCII art.
 # Look beetween line 56 and 79 for OS list
+#REMEMBER!!! If you are making an ASCII logo and you stumble upon this character: `  make sure to put \ before it, like this: \`
 
 # ARCH ASCII =========================================
 if [[ "$OS_NAME" == "Arch Linux" ]]; then
@@ -288,6 +290,26 @@ ascii18=""
 ascii19=""
 fi
 
+# WINDOWS ASCII =========================================
+if [[ "$OS_NAME" == "Windows" ]]; then
+ascii00="        ,.=:!!t3Z3z.,                  "
+ascii01="       :tt:::tt333EE3                  "
+ascii02="       Et:::ztt33EEEL @Ee.,      ..,   "
+ascii03="      ;tt:::tt333EE7 ;EEEEEEttttt33#   "
+ascii04="     :Et:::zt333EEQ. \$EEEEEttttt33QL   "
+ascii05="     it::::tt333EEF @EEEEEEttttt33F    "
+ascii06="    ;3=*^\`\`\`\"*4EEV :EEEEEEttttt33@.    "
+ascii07="    ,.=::::!t=., \` @EEEEEEtttz33QF     "
+ascii08="   ;::::::::zt33)   \"4EEEtttji3P*      "
+ascii09="  :t::::::::tt33.:Z3z..  `` ,..g.      "
+ascii10="  i::::::::zt33F AEEEtttt::::ztF       "
+ascii11=" ;:::::::::t33V ;EEEttttt::::t3        "
+ascii12=" E::::::::zt33L @EEEtttt::::z3F        "
+ascii13="{3=*^\`\`\`\"*4E3) ;EEEtttt:::::tZ\`        "
+ascii14="             \` :EEEEtttt::::z7         "
+ascii15="                 \"VEzjt:;;z>*\`         "
+
+fi
 
 # === OUTPUT ===
 echo -e "${COLOR}${ascii00} ${RESET} $(whoami)@brokelaptop"
