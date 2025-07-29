@@ -262,7 +262,6 @@ ascii18=""
 ascii19=""
 fi
 
-
 # Pop!_OS ASCII =========================================
 if [[ "$OS_NAME" == "Pop!_OS" ]]; then
 
