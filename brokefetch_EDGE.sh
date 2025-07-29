@@ -317,6 +317,10 @@ fi
 # FreeBSD ASCII =========================================
 if [[ "$OS_NAME" == "FreeBSD" ]]; then
 ascii00="\`\`\`                        \`       "
+ascii01="  \` \`.....---.......--.\`\`\`   -/    "
+ascii02="  +o   .--\`         /y:\`      +.   "
+ascii03="   yo\`:.            :o      \`+-    "
+ascii04="    y/               -/\`   -o/     "
 
 # === OUTPUT ===
 echo -e "${COLOR}${ascii00} ${RESET} $(whoami)@brokelaptop"
