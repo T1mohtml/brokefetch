@@ -28,8 +28,28 @@ fi
 # Load values from the config
 source "$CONFIG_FILE"
 
-# OS 
-OS_NAME="$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"')"
+# OS
+if [ -f /etc/os-release ]; then
+    # linux
+    OS_NAME="$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"')"
+elif grep -q Microsoft /proc/version 2>/dev/null; then
+    # windows subsystem for linux
+    OS_NAME="WSL"
+else
+    # Mac, Windows, Fallback (such as freeBSD)
+    case "$(uname -s)" in
+        Darwin)
+            OS_NAME="macOS"
+            ;;
+        MINGW*|MSYS*|CYGWIN*)
+            OS_NAME="Windows"
+            ;;
+        *)
+            OS_NAME="$(uname -s)"
+            ;;
+    esac
+fi
+
 
 case "$OS_NAME" in
     "Arch Linux")          OS="Arch Linux (Unpaid Edition)";;
@@ -50,6 +70,11 @@ case "$OS_NAME" in
     "NixOS")               OS="NixOS (broke and broken by design)";;
     "Slackware")           OS="Slackware (no updates, no rent)";;
     "Void Linux")          OS="Void (bank account matches the name)";;
+    "Nobara Linux")        OS="Nobara (Has 500 viruses from torrents)";;
+    "Windows")             OS="Windows (Rebooting my patience)";;
+    "macOS")               OS="macOS (Broke but still bragging)";;
+    "WSL")                 OS="WSL (Linux for those who sold a kidney)";;
+    "FreeBSD")             OS="FreeBSD (Free software, broke user)";;
     *) OS="$OS_NAME (??)";;
 esac
 
@@ -75,6 +100,19 @@ case $rand in
 	4)CPU="Celery Acceleron";;
 	5)CPU="Fentium";;
 	6)CPU="Corei14billon (I wish)";;
+esac
+
+#GPU
+
+case $rand in
+    0)GPU="Integrated Depression";;
+    1)GPU="Nvidia (but no drivers)";;
+    2)GPU="AMD (Ain't My Dollar)";;
+    3)GPU="Inetl (I can't afford a real one)";;
+    4)GPU="Voodoo 3Dfx (I wish)";;
+    5)GPU="Radeon 7000 (from 2001)";;
+    6)GPU="GeForce 256 (the first one ever made)";;
+    7)GPU="Go outside for better grapchisc";;
 esac
 
 # ARCH ASCII =========================================
@@ -165,7 +203,7 @@ echo -e "${COLOR}${ascii09}${BOLD}DE:${RESET} Crying"
 echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} HopiumWM"
 echo -e "${COLOR}${ascii11}${BOLD}Terminal:${RESET} Terminal of Regret"
 echo -e "${COLOR}${ascii12}${BOLD}CPU:${RESET} $CPU"
-echo -e "${COLOR}${ascii13}${BOLD}GPU:${RESET} Integrated Depression"
+echo -e "${COLOR}${ascii13}${BOLD}GPU:${RESET} $GPU"
 echo -e "${COLOR}${ascii14}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
 echo -e "${COLOR}${ascii15}"
 echo -e "${COLOR}${ascii16}"

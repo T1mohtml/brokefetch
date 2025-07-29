@@ -46,6 +46,7 @@ case "$OS_NAME" in
     "NixOS")               OS="NixOS (broke and broken by design)";;
     "Slackware")           OS="Slackware (no updates, no rent)";;
     "Void Linux")          OS="Void (bank account matches the name)";;
+    "Nobara Linux")        OS="Nobara (Has 500 viruses from torrents)";;
     *) OS="$OS_NAME (??)";;
 esac
 
