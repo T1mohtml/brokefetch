@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# IMPORTANT NOTE: This script is called "brokefetch_edge.sh" because it is not fully functional yet.
+# IMPORTANT NOTE: This script is called "brokefetch_EDGE.sh" because it is not fully functional yet.
 # It is a work in progress. When completed, it will replace "brokefetch.sh".
 # This script will display different ASCII for each OS which brokefetch.sh doesn't support yet.
 
