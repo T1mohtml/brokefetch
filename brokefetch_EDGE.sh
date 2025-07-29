@@ -93,9 +93,9 @@ COLOR=${!COLOR_NAME}
 
 #CPU
 
-rand=$(($RANDOM%6))
+cpu_rand=$(($RANDOM%6))
 
-case $rand in
+case $cpu_rand in
 	0)CPU="Imaginary (thinking hard...)";;
 	1)CPU="Hopes and dreams";;
 	2)CPU="Two sticks rubbing together";;
@@ -107,7 +107,9 @@ esac
 
 #GPU
 
-case $rand in
+gpu_rand=$(($RANDOM%7))
+
+case $gpu_rand in
     0)GPU="Integrated Depression";;
     1)GPU="Nvidia (but no drivers)";;
     2)GPU="AMD (Ain't My Dollar)";;
