@@ -120,6 +120,18 @@ case $gpu_rand in
     7)GPU="Go outside for better grapchisc";;
 esac
 
+# Get the options
+while getopts ":h" option; do
+   case $option in
+      h) # display Help
+         echo "Only the therappist can help you at this point."
+         exit;;
+     \?) # Invalid option
+         echo "We don't type that here."
+         exit;;   
+   esac
+done
+
 # If you are reading this, feel free to add more OSes and their ASCII art.
 # Look beetween line 56 and 79 for OS list
 #REMEMBER!!! If you are making an ASCII logo and you stumble upon this character: `  make sure to put \ before it, like this: \`
