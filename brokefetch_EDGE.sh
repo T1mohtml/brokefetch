@@ -268,11 +268,6 @@ ascii18=""
 ascii19=""
 fi
 
-# SLACKWARE ASCII ======================================
-if [[ "$OS_NAME" == "Slackware" ]]; then
-ascii00=""
-fi
-
 # Pop!_OS ASCII =========================================
 if [[ "$OS_NAME" == "Pop!_OS" ]]; then
 
@@ -328,6 +323,11 @@ ascii16=""
 ascii17=""
 ascii18="${WIN}"
 ascii19=""
+fi
+
+# SLACKWARE ASCII ======================================
+if [[ "$OS_NAME" == "Slackware" ]]; then
+ascii00=""
 fi
 
 # MACOS ASCII =========================================
