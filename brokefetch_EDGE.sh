@@ -24,7 +24,7 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
     echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE, CYAN, WHITE" > "$CONFIG_FILE"
 	echo -e "# Set RAM_MB to your desired memory size in MB" >> "$CONFIG_FILE"
 	echo -e "# Set UPTIME_OVERRIDE to your desired uptime in hours" >> "$CONFIG_FILE"
-	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16\nCOLOR_NAME=CYAN" > "$CONFIG_FILE"
+	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16h\nCOLOR_NAME=CYAN" > "$CONFIG_FILE"
 fi
 
 # Load values from the config
@@ -266,6 +266,11 @@ ascii16=""
 ascii17=""
 ascii18=""
 ascii19=""
+fi
+
+# SLACKWARE ASCII ======================================
+if [[ "$OS_NAME" == "Slackware" ]]; then
+ascii00=""
 fi
 
 # Pop!_OS ASCII =========================================
