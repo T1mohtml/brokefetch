@@ -327,7 +327,15 @@ fi
 
 # SLACKWARE ASCII ======================================
 if [[ "$OS_NAME" == "Slackware" ]]; then
-ascii00=""
+ascii00="                  :::::::                      "
+ascii01="            :::::::::::::::::::                "
+ascii02="         ::::::::::::::::::::::::::            "
+ascii03="       ::::::::${COLOR}cllcccccllllllll${COLOR}::::::          "
+ascii04="    :::::::::${WHITE}lc               dc${COLOR}:::::::        "
+ascii05="   ::::::::${WHITE}cl   clllccllll    oc${COLOR}:::::::::      "
+ascii06="  :::::::::o   lc::::::::co   oc::::::::::     "
+
+
 fi
 
 # MACOS ASCII =========================================
