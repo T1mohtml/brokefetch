@@ -81,7 +81,7 @@ case "$OS_NAME" in
     *) OS="$OS_NAME (??)";;
 esac
 
-# Uptime - Linux
+# Uptime - Linux & WSL
 
 
 if [ -r /proc/uptime ]; then
@@ -94,7 +94,7 @@ fi
 
 # Uptime - macOS
 
-if [ "$OS" = "darwin" ]; then
+if [ "$OS" = "macOS" ]; then
   BOOT_TIME=$(sysctl -n kern.boottime | awk -F'[ ,}]+' '{print $4}')
   NOW=$(date +%s)
   UPTIME_S=$((NOW - BOOT_TIME))
@@ -105,13 +105,13 @@ fi
 
 # Uptime - Windows
 
-if echo "$OS" | grep -qE 'mingw|msys|cygwin'; then
+if ["$OS_NAME" = "Windows"]; then
   STATS=$(net stats srv 2>/dev/null | grep -i "Statistics since")
   if [ -n "$STATS" ]; then
     BOOT_TIME=$(echo "$STATS" | sed 's/.*since //')
-    # Try GNU date (Linux-style)
     BOOT_TS=$(date -d "$BOOT_TIME" +%s 2>/dev/null)
-    # Fallback BSD/macOS date parsing
+
+    # Fallback
     if [ -z "$BOOT_TS" ]; then
       BOOT_TS=$(date -j -f "%m/%d/%Y %H:%M:%S" "$BOOT_TIME" +%s 2>/dev/null)
     fi
