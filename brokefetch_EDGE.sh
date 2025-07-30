@@ -125,6 +125,7 @@ while getopts ":hv" option; do
    case $option in
       h) # display Help
          echo "Only the therappist can help you at this point."
+         echo "Oh and btw the -v option displays the version of brokefetch EDGE."
          exit;;
       v) # display Version
          echo "brokefetch EDGE version 1.7"
