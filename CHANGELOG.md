@@ -1,5 +1,8 @@
 # Changelog
 
+## 2025-07-30 
+[gbentham06](https://github.com/gbentham06) added uptime detection 
+
 ## 2025-07-30
 I added ASCII art override!
 
