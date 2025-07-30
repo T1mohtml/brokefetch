@@ -127,7 +127,6 @@ else
     DISTRO_TO_DISPLAY=$(echo "$OS_NAME" | tr '[:upper:]' '[:lower:]')
 fi
 
-
 # Get the options
 ASCII_DISTRO=""
 
