@@ -333,7 +333,7 @@ case $win_rand=$((RANDOM%4)) in
     3)WIN="Check your ram and cpu usage HAHAHAHAHAHA";;
 esac
 
-if [[ "$OS_NAME" == "Windows" ]]; then
+if [[ "$OS_NAME" == "Windows" || "$DISTRO_TO_DISPLAY" == "windows" || "$DISTRO_TO_DISPLAY" == "Microsoft Windows" ]]; then
 ascii00="        ,.=:!!t3Z3z.,                  "
 ascii01="       :tt:::tt333EE3                  "
 ascii02="       Et:::ztt33EEEL @Ee.,      ..,   "
@@ -343,7 +343,7 @@ ascii05="     it::::tt333EEF @LINUXEttttt33F    "
 ascii06="    ;3=*^\`\`\`\"*4EEV :EEEEEEttttt33@.    "
 ascii07="    ,.=::::!t=., \` @EEEEEEtttz33QF     "
 ascii08="   ;::::::::zt33)   \"4EEEtttji3P*      "
-ascii09="  :t::::::::tt33.:Z3z..  `` ,..g.      "
+ascii09="  :t::::::::tt33.:Z3z..  `` ,..g.        "
 ascii10="  i::::::::zt33F AEEEtttt::::ztF       "
 ascii11=" ;:::::::::t33V ;EEEttttt::::t3        "
 ascii12=" E::::::::zt33L @EEEtttt::::z3F        "
@@ -357,7 +357,7 @@ ascii19=""
 fi
 
 # SLACKWARE ASCII =====someone=pls=finish=the=ascii=====
-if [[ "$OS_NAME" == "Slackware" ]]; then
+if [[ "$OS_NAME" == "Slackware" || "$DISTRO_TO_DISPLAY" == "slackware"|| "$DISTRO_TO_DISPLAY" == "old ahh linux" ]]; then
 ascii00="                  :::::::                      "
 ascii01="            :::::::::::::::::::                "
 ascii02="         ::::::::::::::::::::::::::            "
