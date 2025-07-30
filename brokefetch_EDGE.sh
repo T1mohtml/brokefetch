@@ -181,7 +181,7 @@ ascii19="                                        "
 fi
 
 # UBUNTU ASCII =========================================
-if [[ "$OS_NAME" == "Ubuntu" || "$DISTRO_TO_DISPLAY" == "ubuntu" || "$DISTRO_TO_DISPLAY" == "ubuntu linux" ]]; then
+if [[ "$OS_NAME" == "Ubuntu" || "$OS_NAME" == "Kubuntu" || "$DISTRO_TO_DISPLAY" == "ubuntu" || "$DISTRO_TO_DISPLAY" == "kubuntu" ]]; then
 ascii00="            .-/+oossssoo+/-.               "
 ascii01="        \`:+ssssssssssssssssss+:\`           "
 ascii02="      -+ssssssssssssssssssyyssss+-         "
