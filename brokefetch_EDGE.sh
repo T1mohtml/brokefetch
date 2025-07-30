@@ -325,7 +325,7 @@ ascii18="${WIN}"
 ascii19=""
 fi
 
-# SLACKWARE ASCII ======================================
+# SLACKWARE ASCII =====someone=pls=finish=the=ascii=====
 if [[ "$OS_NAME" == "Slackware" ]]; then
 ascii00="                  :::::::                      "
 ascii01="            :::::::::::::::::::                "
@@ -333,7 +333,8 @@ ascii02="         ::::::::::::::::::::::::::            "
 ascii03="       ::::::::${COLOR}cllcccccllllllll${COLOR}::::::          "
 ascii04="    :::::::::${WHITE}lc               dc${COLOR}:::::::        "
 ascii05="   ::::::::${WHITE}cl   clllccllll    oc${COLOR}:::::::::      "
-ascii06="  :::::::::o   lc::::::::co   oc::::::::::     "
+ascii06="  :::::::::${WHITE}o   lc${COLOR}::::::::${WHITE}co   oc${COLOR}::::::::::     "
+ascii07=" ::::::::::${WHITE}o    cccclc${COLOR}:::::${WHITE}clcc${COLOR}::::::::::::    "
 
 
 fi
