@@ -120,6 +120,14 @@ case $gpu_rand in
     7)GPU="Go outside for better grapchisc";;
 esac
 
+# Normalize (lowercase) the override if it's provided
+if [[ -n "$ASCII_DISTRO" ]]; then
+    DISTRO_TO_DISPLAY=$(echo "$ASCII_DISTRO" | tr '[:upper:]' '[:lower:]')
+else
+    DISTRO_TO_DISPLAY=$(echo "$OS_NAME" | tr '[:upper:]' '[:lower:]')
+fi
+
+
 # Get the options
 ASCII_DISTRO=""
 
@@ -135,7 +143,7 @@ while getopts ":hva" option; do
          echo "Make sure to star the repository on GitHub :)"
          exit;;
       a) # Set OS name to see different ASCII art
-         OS_NAME="$OPTARG"
+         ASCII_DISTRO="$OPTARG"
          ;;
      \?) # Invalid option
          echo "We don't type that here."
