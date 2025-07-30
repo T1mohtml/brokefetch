@@ -2,7 +2,7 @@
 
 # IMPORTANT NOTE: This script is called "brokefetch_EDGE.sh" because it is not fully functional yet.
 # It is a work in progress. When completed, it will replace "brokefetch.sh".
-# This script will display different ASCII for each OS which brokefetch.sh doesn't support yet.
+# This script will display different ASCII for each OS and do many other usefull stuff which brokefetch.sh doesn't support yet.
 
 GREEN="\e[32m"
 RED="\e[31m"
