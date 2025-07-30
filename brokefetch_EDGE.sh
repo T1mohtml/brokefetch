@@ -419,8 +419,8 @@ ascii19=""
 fi
 
 # === OUTPUT ===
-echo -e "${COLOR}${ascii00} ${RESET} $(whoami)@brokelaptop"
-echo -e "${COLOR}${ascii01}${RESET} ---------------------"
+echo -e "${COLOR}${ascii00}${RESET}$(whoami)@brokelaptop"
+echo -e "${COLOR}${ascii01}${RESET}-----------------------"
 echo -e "${COLOR}${ascii02}${BOLD}OS:${RESET} $OS"
 echo -e "${COLOR}${ascii03}${BOLD}Host:${RESET} Bedroom Floor"
 echo -e "${COLOR}${ascii04}${BOLD}Kernel:${RESET} 0.00/hr"
