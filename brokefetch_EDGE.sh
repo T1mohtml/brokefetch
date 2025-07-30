@@ -121,11 +121,14 @@ case $gpu_rand in
 esac
 
 # Get the options
+ASCII_DISTRO=""
+
 while getopts ":hva" option; do
    case $option in
       h) # display Help
          echo "Only the therappist can help you at this point."
          echo "Oh and btw the -v option displays the version of brokefetch EDGE."
+         echo " -a lets you override ascii art"
          exit;;
       v) # display Version
          echo "brokefetch EDGE version 1.7"
