@@ -1,5 +1,8 @@
 # Changelog
 
+## 2025-07-30
+I added ASCII art override!
+
 ## 2025-07-29
 ### [gbentham06](https://github.com/gbentham06) added nobara & GPU to EDGE, cross platform OS detection and added cross platform messages.
 
