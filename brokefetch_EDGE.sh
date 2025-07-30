@@ -395,7 +395,7 @@ ascii19="You still have both of them, right?"
 fi
 
 # FreeBSD ASCII =========================================
-if [[ "$OS_NAME" == "FreeBSD" || "$DISTRO_TO_DISPLAY" == "freebsd" || "$DISTRO_TO_DISPLAY" == "paidbsd"]]; then
+if [[ "$OS_NAME" == "FreeBSD" || "$DISTRO_TO_DISPLAY" == "freebsd" || "$DISTRO_TO_DISPLAY" == "paidbsd" ]]; then
 ascii00="${WHITE}\`\`\`                        ${COLOR}\`       "
 ascii01="  ${WHITE}\` \`.....---...${COLOR}....--.\`\`\`   -/    "
 ascii02="  ${WHITE}+o   .--\`         ${COLOR}/y:\`      +.   "
