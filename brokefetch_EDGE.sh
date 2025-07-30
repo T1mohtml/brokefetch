@@ -156,7 +156,7 @@ done
 #Arch and FreeBSD's ASCII arts are the best examples of the situation described in the line 123.
 
 # ARCH ASCII =========================================
-if [[ "$OS_NAME" == "Arch Linux" ]]; then
+if [[ "$OS_NAME" == "Arch Linux" || "$DISTRO_TO_DISPLAY" == "arch" || "$DISTRO_TO_DISPLAY" == "arch linux" ]]; then
 ascii00="                   -\`                     "
 ascii01="                  .o+\`                    "
 ascii02="                 \`ooo/                    "
