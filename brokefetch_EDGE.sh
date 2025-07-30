@@ -128,7 +128,6 @@ while getopts ":h" option; do
          exit;;
       v) # display Version
          echo "brokefetch EDGE version 1.7"
-         echo "Make sure to star the repository on GitHub :)"
          exit;;
      \?) # Invalid option
          echo "We don't type that here."
