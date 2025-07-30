@@ -121,7 +121,7 @@ case $gpu_rand in
 esac
 
 # Get the options
-while getopts ":hv" option; do
+while getopts ":hva" option; do
    case $option in
       h) # display Help
          echo "Only the therappist can help you at this point."
@@ -131,6 +131,9 @@ while getopts ":hv" option; do
          echo "brokefetch EDGE version 1.7"
          echo "Make sure to star the repository on GitHub :)"
          exit;;
+      a) # Set OS name to see different ASCII art
+         OS_NAME="$OPTARG"
+         ;;
      \?) # Invalid option
          echo "We don't type that here."
          exit;;   
