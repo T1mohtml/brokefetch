@@ -325,6 +325,21 @@ ascii18="${WIN}"
 ascii19=""
 fi
 
+# MACOS ASCII =========================================
+if [[ "$OS_NAME" == "macOS" ]]; then
+ascii00="                    'c.          "
+ascii01="                 ,xNMM.          "
+ascii02="               .OMMMMo           "
+ascii03="               OMMM0,            "
+ascii04="     .;loddo:' loolloddol;.      "
+ascii05="   cKMMMMMMMMMMNWMMMMMMMMMM0:    "
+ascii06=" .KMMMMMMMMMMMMMMMMMMMMMMMWd.    "
+ascii07=" XMMMMMMMMMMMMMMMMMMMMMMMX.      "
+ascii08=""
+ascii09=""
+ascii10=""
+fi
+
 # FreeBSD ASCII =========================================
 if [[ "$OS_NAME" == "FreeBSD" ]]; then
 ascii00="${WHITE}\`\`\`                        ${COLOR}\`       "
