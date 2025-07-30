@@ -228,7 +228,7 @@ ascii18="${GREEN}⣿⣿⣿⣷⠁⣿⣧⣸⣿⣿⠉⣿⣶⣯⡉⣩⣟⣛⣛⣛⠉
 ascii19="${GREEN}⣿⣿⣿⣿⢼⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣾⣿⣿⣶⣿⣿⣿⣿⣤⣾⣿⣿⣿⣿   "
 fi
 # Fedora ASCII =========================================
-if [[ "$OS_NAME" == "Fedora Linux" ]]; then
+if [[ "$OS_NAME" == "Fedora Linux" || "$DISTRO_TO_DISPLAY" == "fedora" || "$DISTRO_TO_DISPLAY" == "fedora linux" ]]; then
 ascii00="          /:-------------:\          "
 ascii01="       :-------------------::        "
 ascii02="     :-----------${WHITE}/shhOHbmp${COLOR}---:\      "
