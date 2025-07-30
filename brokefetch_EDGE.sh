@@ -75,7 +75,7 @@ case "$OS_NAME" in
     "Void Linux")          OS="Void (bank account matches the name)";;  #
     "Nobara Linux")        OS="Nobara (Has 500 viruses from torrents)";; #
     "Windows")             OS="Windows (Rebooting my patience)";;      # ASCII DONE - Szerwigi1410
-    "macOS")               OS="macOS (Broke but still bragging)";;     #
+    "macOS")               OS="macOS (Broke but still bragging)";;     # ASCII DONE - Szerwigi1410
     "WSL")                 OS="WSL (Linux for those who sold a kidney)";; #
     "FreeBSD")             OS="FreeBSD (Free software, broke user)";;   # ASCII DONE - Szerwigi1410
     *) OS="$OS_NAME (??)";;
