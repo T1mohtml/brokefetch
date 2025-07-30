@@ -120,28 +120,22 @@ case $gpu_rand in
     7)GPU="Go outside for better grapchisc";;
 esac
 
-# Normalize (lowercase) the override if it's provided
-if [[ -n "$ASCII_DISTRO" ]]; then
-    DISTRO_TO_DISPLAY=$(echo "$ASCII_DISTRO" | tr '[:upper:]' '[:lower:]')
-else
-    DISTRO_TO_DISPLAY=$(echo "$OS_NAME" | tr '[:upper:]' '[:lower:]')
-fi
-
-# Get the options
+# Initialize
 ASCII_DISTRO=""
 
-while getopts ":hva" option; do
+# Get options
+while getopts ":hva:" option; do
    case $option in
       h) # display Help
-         echo "Only the therappist can help you at this point."
+         echo "Only the therapist can help you at this point."
          echo "Oh and btw the -v option displays the version of brokefetch EDGE."
-         echo " -a lets you override ascii art"
+         echo " -a lets you override ASCII art distro name"
          exit;;
       v) # display Version
          echo "brokefetch EDGE version 1.7"
          echo "Make sure to star the repository on GitHub :)"
          exit;;
-      a) # Set OS name to see different ASCII art
+      a) # Set ASCII override to what the user typed
          ASCII_DISTRO="$OPTARG"
          ;;
      \?) # Invalid option
@@ -149,6 +143,13 @@ while getopts ":hva" option; do
          exit;;   
    esac
 done
+
+# Normalize override (lowercase); fallback to OS name
+if [[ -n "$ASCII_DISTRO" ]]; then
+    DISTRO_TO_DISPLAY=$(echo "$ASCII_DISTRO" | tr '[:upper:]' '[:lower:]')
+else
+    DISTRO_TO_DISPLAY=$(echo "$OS_NAME" | tr '[:upper:]' '[:lower:]')
+fi
 
 # If you are reading this, feel free to add more OSes and their ASCII art.
 # Look beetween line 56 and 79 for OS list
@@ -180,7 +181,7 @@ ascii19="                                        "
 fi
 
 # UBUNTU ASCII =========================================
-if [[ "$OS_NAME" == "Ubuntu" ]]; then
+if [[ "$OS_NAME" == "Ubuntu" || "$DISTRO_TO_DISPLAY" == "ubuntu" || "$DISTRO_TO_DISPLAY" == "ubuntu linux" ]]; then
 ascii00="            .-/+oossssoo+/-.               "
 ascii01="        \`:+ssssssssssssssssss+:\`           "
 ascii02="      -+ssssssssssssssssssyyssss+-         "
@@ -192,7 +193,7 @@ ascii07=".ssssssss${WHITE}dMMMNh${COLOR}ssssssssss${WHITE}hNMMMd${COLOR}ssssssss
 ascii08="+ssss${WHITE}hhhyNMMNy${COLOR}ssssssssssss${WHITE}yNMMMy${COLOR}sssssss+   "
 ascii09="oss${WHITE}yNMMMNyMMh${COLOR}ssssssssssssss${WHITE}hmmmh${COLOR}ssssssso   "
 ascii10="oss${WHITE}yNMMMNyMMh${COLOR}sssssssssssssshmmmhssssssso   "
-ascii11="+ssss${WHITE}hhhyNMMNy${COLOR}ssssssssssss${WHITE}yNMMMy${WHITE}sssssss+   "
+ascii11="+ssss${WHITE}hhhyNMMNy${COLOR}ssssssssssss${WHITE}yNMMMy${COLOR}sssssss+   "
 ascii12=".ssssssss${WHITE}dMMMNh${COLOR}ssssssssss${WHITE}hNMMMd${COLOR}ssssssss.   "
 ascii13=" /ssssssss${WHITE}hNMMM${COLOR}yh${WHITE}hyyyyhdNMMMNh${COLOR}ssssssss/    "
 ascii14="  +sssssssss${WHITE}dm${COLOR}yd${WHITE}MMMMMMMMddddy${COLOR}ssssssss+     "
