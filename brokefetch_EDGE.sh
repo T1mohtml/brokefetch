@@ -371,7 +371,7 @@ ascii07=" ::::::::::${WHITE}o    cccclc${COLOR}:::::${WHITE}clcc${COLOR}::::::::
 fi
 
 # MACOS ASCII =========================================
-if [[ "$OS_NAME" == "macOS" ]]; then
+if [[ "$OS_NAME" == "macOS" || "$DISTRO_TO_DISPLAY" == "macos" || "$DISTRO_TO_DISPLAU" == "MacOS" ]]; then
 ascii00="                    'c.          "
 ascii01="                 ,xNMM.          "
 ascii02="               .OMMMMo           "
@@ -395,7 +395,7 @@ ascii19="You still have both of them, right?"
 fi
 
 # FreeBSD ASCII =========================================
-if [[ "$OS_NAME" == "FreeBSD" ]]; then
+if [[ "$OS_NAME" == "FreeBSD" || "$DISTRO_TO_DISPLAY" == "freebsd" || "$DISTRO_TO_DISPLAY" == "paidbsd"]]; then
 ascii00="${WHITE}\`\`\`                        ${COLOR}\`       "
 ascii01="  ${WHITE}\` \`.....---...${COLOR}....--.\`\`\`   -/    "
 ascii02="  ${WHITE}+o   .--\`         ${COLOR}/y:\`      +.   "
