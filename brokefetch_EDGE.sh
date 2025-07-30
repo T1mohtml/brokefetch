@@ -121,7 +121,7 @@ case $gpu_rand in
 esac
 
 # Get the options
-while getopts ":h" option; do
+while getopts ":hv" option; do
    case $option in
       h) # display Help
          echo "Only the therappist can help you at this point."
