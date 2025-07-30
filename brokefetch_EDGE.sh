@@ -81,9 +81,55 @@ case "$OS_NAME" in
     *) OS="$OS_NAME (??)";;
 esac
 
-# Uptime
+# Uptime - Linux & WSL
 
-UPTIME=$UPTIME_OVERRIDE
+
+if [ -r /proc/uptime ]; then
+  UPTIME_S=$(cut -d ' ' -f1 < /proc/uptime)
+  UPTIME_S=${UPTIME_S%.*}  # drop decimal part
+  UPTIME_H=$(( UPTIME_S / 3600 ))
+  UPTIME_M=$(( (UPTIME_S % 3600) / 60 ))
+  UPTIME="${UPTIME_H} hours, ${UPTIME_M} minutes"
+fi
+
+# Uptime - macOS
+
+if [ "$OS" = "macOS" ]; then
+  BOOT_TIME=$(sysctl -n kern.boottime | awk -F'[ ,}]+' '{print $4}')
+  NOW=$(date +%s)
+  UPTIME_S=$((NOW - BOOT_TIME))
+  UPTIME_H=$(( UPTIME_S / 3600 ))
+  UPTIME_M=$(( (UPTIME_S % 3600) / 60 ))
+  UPTIME="${UPTIME_H} hours, ${UPTIME_M} minutes"
+fi
+
+# Uptime - Windows
+
+if ["$OS_NAME" = "Windows"]; then
+  STATS=$(net stats srv 2>/dev/null | grep -i "Statistics since")
+  if [ -n "$STATS" ]; then
+    BOOT_TIME=$(echo "$STATS" | sed 's/.*since //')
+    BOOT_TS=$(date -d "$BOOT_TIME" +%s 2>/dev/null)
+
+    # Fallback
+    if [ -z "$BOOT_TS" ]; then
+      BOOT_TS=$(date -j -f "%m/%d/%Y %H:%M:%S" "$BOOT_TIME" +%s 2>/dev/null)
+    fi
+
+    if [ -n "$BOOT_TS" ]; then
+      NOW=$(date +%s)
+      UPTIME_S=$((NOW - BOOT_TS))
+      UPTIME_H=$(( UPTIME_S / 3600 ))
+      UPTIME_M=$(( (UPTIME_S % 3600) / 60 ))
+      UPTIME="${UPTIME_H} hours, ${UPTIME_M} minutes"
+    else
+      UPTIME="The brokest"
+    fi
+  else
+    UPTIME="Can't afford admin privilages"
+  fi
+fi
+
 
 # RAM
 MEMORY_MB=$RAM_MB
@@ -440,3 +486,4 @@ echo -e "${COLOR}${ascii17}"
 echo -e "${COLOR}${ascii18}"
 echo -e "${COLOR}${ascii19}"
 echo -e "${BOLD}BROKEFETCH 🥀 1.7${RESET}"
+
