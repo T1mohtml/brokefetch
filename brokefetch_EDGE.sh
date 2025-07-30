@@ -276,7 +276,7 @@ ascii19="How it feels having outdated packages?"
 fi
 
 # MANJARO ASCII =========================================
-if [[ "$OS_NAME" == "Manjaro Linux" ]]; then
+if [[ "$OS_NAME" == "Manjaro Linux" || "$DISTRO_TO_DISPLAY" == "manjaro" || "$DISTRO_TO_DISPLAY" == "manjaro linux" ]]; then
 ascii00="██████████████████  ████████   "
 ascii01="██████████████████  ████████   "
 ascii02="██████████████████  ████████   "
