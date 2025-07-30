@@ -352,7 +352,7 @@ ascii14="             \` :EEEEtttt::::z7         "
 ascii15="                 \"VEzjt:;;z>*\`         "
 ascii16=""
 ascii17=""
-ascii18="${WIN}"
+ascii18="$WIN"
 ascii19=""
 fi
 
