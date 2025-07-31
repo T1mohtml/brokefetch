@@ -170,12 +170,13 @@ esac
 ASCII_DISTRO=""
 
 # Get options
-while getopts ":hva:" option; do
+while getopts ":hval:" option; do
    case $option in
       h) # display Help
          echo "Only the therapist can help you at this point."
          echo "Oh and btw the -v option displays the version of brokefetch EDGE."
          echo " -a lets you override ASCII art distro name"
+         echo " -l lists supported OSes"
          exit;;
       v) # display Version
          echo "brokefetch EDGE version 1.7"
@@ -184,6 +185,10 @@ while getopts ":hva:" option; do
       a) # Set ASCII override to what the user typed
          ASCII_DISTRO="$OPTARG"
          ;;
+      l) # List available ASCII arts
+         echo "Recognized Operating Systems:"
+         echo "Arch Linux, Alpine Linux, Ubuntu, Linux Mint, Fedora Linux, Debian GNU/Linux, Manjaro Linux, EndeavourOS, openSUSE Tumbleweed, openSUSE Leap, Garuda Linux, elementary OS, Pop!_OS, Kali Linux, Zorin OS, Gentoo, NixOS, Slackware, Void Linux, Nobara Linux, Windows, macOS, WSL and FreeBSD."
+         exit;;   
      \?) # Invalid option
          echo "We don't type that here."
          exit;;   
