@@ -371,7 +371,11 @@ ascii19=""
 fi
 
 # WINDOWS ASCII =========================================
-# pls someone fix this
+
+
+
+if [[ "$OS_NAME" == "Windows" || "$DISTRO_TO_DISPLAY" == "windows" || "$DISTRO_TO_DISPLAY" == "Microsoft Windows" ]]; then
+
 #$win_rand=$((RANDOM%4))
 
 #case $win_rand in
@@ -381,7 +385,6 @@ fi
 #    3)WIN="Check your ram and cpu usage HAHAHAHAHAHA";;
 #esac
 
-if [[ "$OS_NAME" == "Windows" || "$DISTRO_TO_DISPLAY" == "windows" || "$DISTRO_TO_DISPLAY" == "Microsoft Windows" ]]; then
 ascii00="        ,.=:!!t3Z3z.,                  "
 ascii01="       :tt:::tt333EE3                  "
 ascii02="       Et:::ztt33EEEL @Ee.,      ..,   "
