@@ -417,7 +417,7 @@ ascii04="    :::::::::${WHITE}lc               dc${COLOR}:::::::        "
 ascii05="   ::::::::${WHITE}cl   clllccllll    oc${COLOR}:::::::::      "
 ascii06="  :::::::::${WHITE}o   lc${COLOR}::::::::${WHITE}co   oc${COLOR}::::::::::     "
 ascii07=" ::::::::::${WHITE}o    cccclc${COLOR}:::::${WHITE}clcc${COLOR}::::::::::::    "
-
+ascii08=""
 
 fi
 
