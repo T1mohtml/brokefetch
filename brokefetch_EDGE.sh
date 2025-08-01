@@ -170,13 +170,13 @@ esac
 ASCII_DISTRO=""
 
 # Get options
-while getopts ":hval:" option; do
+while getopts ":hva:" option; do
    case $option in
       h) # display Help
          echo "Only the therapist can help you at this point."
          echo "Oh and btw the -v option displays the version of brokefetch EDGE."
          echo " -a lets you override ASCII art distro name"
-         echo " -l lists supported OSes"
+         
          exit;;
       v) # display Version
          echo "brokefetch EDGE version 1.7"
