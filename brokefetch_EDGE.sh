@@ -168,7 +168,7 @@ esac
 
 # Initialize
 ASCII_DISTRO=""
-
+                           
 # Get options
 while getopts ":hval:" option; do
    case $option in
