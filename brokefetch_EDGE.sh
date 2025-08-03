@@ -27,7 +27,7 @@ elif command -v apk &>/dev/null; then
 elif command -v pkg &>/dev/null; then
     PKG_COUNT=$(pkg info | wc -l)
 else
-    PKG_COUNT="?"
+    PKG_COUNT="-1" # Unknown package manager
 fi
 
 # CONFIG
