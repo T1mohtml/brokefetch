@@ -13,7 +13,22 @@ YELLOW="\e[33m"
 BOLD="\e[1m"
 RESET="\e[0m"
 
-PKG_COUNT=$(pacman -Q | wc -l)
+#PKG_COUNT=$(pacman -Q | wc -l)
+
+# Universal package count
+if command -v pacman &>/dev/null; then
+    PKG_COUNT=$(pacman -Q | wc -l)
+elif command -v dpkg &>/dev/null; then
+    PKG_COUNT=$(dpkg -l | grep '^ii' | wc -l)
+elif command -v rpm &>/dev/null; then
+    PKG_COUNT=$(rpm -qa | wc -l)
+elif command -v apk &>/dev/null; then
+    PKG_COUNT=$(apk info | wc -l)
+elif command -v pkg &>/dev/null; then
+    PKG_COUNT=$(pkg info | wc -l)
+else
+    PKG_COUNT="?"
+fi
 
 # CONFIG
 CONFIG_FILE="$HOME/.config/brokefetch/config"
