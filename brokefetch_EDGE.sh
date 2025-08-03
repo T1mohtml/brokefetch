@@ -71,7 +71,7 @@ case "$OS_NAME" in
     "Zorin OS")            OS="Zorin (Because I cant afford Windows)";; #
     "Gentoo")              OS="Gentoo (Because I cant even afford time)";; #
     "NixOS")               OS="NixOS (broke and broken by design)";;    #
-    "Slackware")           OS="Slackware (no updates, no rent)";;       #
+    "Slackware")           OS="Slackware (no updates, no rent)";;       # ASCII IN PROGRESS - Szerwigi1410
     "Void Linux")          OS="Void (bank account matches the name)";;  #
     "Nobara Linux")        OS="Nobara (Has 500 viruses from torrents)";; #
     "Windows")             OS="Windows (Rebooting my patience)";;      # ASCII DONE - Szerwigi1410
