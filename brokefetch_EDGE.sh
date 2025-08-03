@@ -381,14 +381,13 @@ fi
 
 if [[ "$OS_NAME" == "Windows" || "$DISTRO_TO_DISPLAY" == "windows" || "$DISTRO_TO_DISPLAY" == "Microsoft Windows" ]]; then
 
-#$win_rand=$((RANDOM%4))
+win_rand=$((RANDOM%3))
 
-#case $win_rand in
-#    0)WIN="You are not getting the newer logo";;
-#    1)WIN="Switch to Linux (or FreeBSD) to get cooler logos";;
-#    2)WIN="Still using Windows in $(date +%Y)? Lowkey crazy";;
-#    3)WIN="Check your ram and cpu usage HAHAHAHAHAHA";;
-#esac
+case $win_rand in
+    0)WIN="You are not getting the newer logo";;
+    1)WIN="Still using Windows in $(date +%Y)? Lowkey crazy";;
+    2)WIN="Check your ram and cpu usage HAHAHAHAHAHA";;
+esac
 
 ascii00="        ,.=:!!t3Z3z.,                  "
 ascii01="       :tt:::tt333EE3                  "
@@ -407,7 +406,7 @@ ascii13="{3=*^\`\`\`\"*4E3) ;EEEtttt:::::tZ\`        "
 ascii14="             \` :EEEEtttt::::z7         "
 ascii15="                 \"VEzjt:;;z>*\`         "
 ascii16=""
-ascii17="Still using Windows in $(date +%Y)? Lowkey crazy"
+ascii17="${WIN}"
 ascii18=""
 ascii19=""
 fi
