@@ -444,7 +444,10 @@ ascii12=" :::::${WHITE}cll${COLOR}:${WHITE}o     clcllcccll     o${COLOR}:::::::
 ascii13=" :::::${WHITE}occ${COLOR}:${WHITE}o                  clc${COLOR}:::::::::::    "
 ascii14="  ::::${WHITE}ocl${COLOR}:${WHITE}ccslclccclclccclclc${COLOR}:::::::::::::     "
 ascii15="   :::${WHITE}oclcccccccccccccllllllllllllll${COLOR}:::::      "
-ascii16=""
+ascii16="      ::::::::::::::::::::::::::::::::        "
+ascii17="         ::::::::::::::::::::::::::::  "
+ascii18="           ::::::::::::::::::::::       "
+ascii19="${BLUE}     BOOMER i bet your pc is from the 1990              "
 fi
 
 # MACOS ASCII =========================================
