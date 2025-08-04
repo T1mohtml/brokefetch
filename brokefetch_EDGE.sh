@@ -534,7 +534,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii07=" ::::::::::${WHITE}o    cccclc${COLOR}:::::${WHITE}clcc${COLOR}::::::::::::    "
         ascii08=" :::::::::::${WHITE}lc        cclccclc${COLOR}:::::::::::::    "
         ascii09="::::::::::::::${WHITE}lcclcc          lc${COLOR}::::::::::::   "
-        ascii10="${BLUE}::::::::::#2cclcc#1:::::#2lccclc     oc#1:::::::::::   "
+        ascii10="::::::::::${WHITE}cclcc${COLOR}:::::${WHITE}lccclc     oc${COLOR}:::::::::::   "
         ascii11="${BLUE}::::::::::#2o    l#1::::::::::$#2l    lc#1:::::::::::  "
         ascii12="${BLUE} :::::#2cll#1:#2o     clcllcccll     o#1:::::::::::    "
         ascii13="${BLUE} :::::#2occ#1:#2o                  clc#1:::::::::::    "
