@@ -549,7 +549,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii00="${YELLOW}                __.;=====;.__                                  "
         ascii01="${YELLOW}            _.=+==++=++=+=+===;.                               "
         ascii02="${YELLOW}             -=+++=+===+=+=+++++=_                             "
-        ascii03="${YELLOW}        .     -=:``     ##==+=++==.                            "
+        ascii03="${YELLOW}        .     -=:``     ##==+=++==.                              "
         ascii04="${YELLOW}       _vi,    #            --+=++++:                          "
         ascii05="${YELLOW}      .uvnvi.       _._       -==+==+.                         "
         ascii06="${YELLOW}     .vvnvnI%    ;==|==;.     :|=||=|.                         "
