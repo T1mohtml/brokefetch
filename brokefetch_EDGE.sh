@@ -567,7 +567,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii18="${YELLOW}                      what is that                             "
         ascii19=""
         ;;
-    "artixlinux" | "artix linux", "artix")
+    "Artix Linux" | "artix linux", "artix")
         ascii00="                   '                           "
         ascii01="                  'o'                          "
         ascii02="                 'ooo'                         "
