@@ -655,7 +655,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii15="/hs2MMNNNNNNNNMNdhs++/s1-s                     "
         ascii16="d/s2ohdmmddhys+++/:s1.s                        "
         ascii17="  s-//////:--.                                 "
-        ascii18="see your power bill HAHAHAHAHAHA"              "
+        ascii18="see your power bill HAHAHAHAHAHA              "
         ascii19=""
         ;;
     "nixos")
