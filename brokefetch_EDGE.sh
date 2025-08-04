@@ -230,7 +230,7 @@ unset ascii00 ascii01 ascii02 ascii03 ascii04 ascii05 ascii06 ascii07 ascii08 as
 # Select ASCII art based on the distro name
 case "$DISTRO_TO_DISPLAY" in
     "android")
-        ascii00="${GREEN} ⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀     "
+        ascii00="${GREEN} ⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀     "
         ascii01="${GREEN}⠀⠀⠀⠀⠀⠙⢷⣤⣤⣴⣶⣶⣦⣤⣤⡾⠋       "
         ascii02="${GREEN}⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦       "
         ascii03="${GREEN}⠀⠀⠀⠀⣼⣿⣿⣉⣹⣿⣿⣿⣿⣏⣉⣿⣿⣧      "
