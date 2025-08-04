@@ -356,7 +356,7 @@ case "$DISTRO_TO_DISPLAY" in
 	    ascii11="⠀⠀⠀⠑⢄⠀⠀⠀⠐⠒⠒⠒⠒⠂⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⡠⠊⠀⠀⠀⠀ "
 	    ascii12="⠀⠀⠀⠀⠀⠁⠠⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠄⠊⠀⠀⠀⠀⠀ ⠀"
 	    ascii13="⠀⠀⠀⠀⠀⠀⠀⠀⠉⠒⠠⠤⢀⢀⣀⡀⠀⠤⠄⠒⠈⠀⠀⠀⠀⠀⠀⠀ ⠀⠀"
- 	    ascii14="                               "
+ 	    ascii14="                           "
         ascii15="I'm all alone on this distro.    "
         ascii16=""
         ascii17=""
