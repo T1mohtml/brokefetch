@@ -438,7 +438,8 @@ ascii06="  :::::::::${WHITE}o   lc${COLOR}::::::::${WHITE}co   oc${COLOR}:::::::
 ascii07=" ::::::::::${WHITE}o    cccclc${COLOR}:::::${WHITE}clcc${COLOR}::::::::::::    "
 ascii08=" :::::::::::${WHITE}lc        cclccclc${COLOR}:::::::::::::    "
 ascii09="::::::::::::::${WHITE}lcclcc          lc${COLOR}::::::::::::   "
-ascii10=""
+ascii10="::::::::::${WHITE}cclcc${COLOR}:::::${WHITE}lccclc     oc${COLOR}:::::::::::   "
+ascii11=""
 
 fi
 
