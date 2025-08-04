@@ -441,9 +441,10 @@ ascii09="::::::::::::::${WHITE}lcclcc          lc${COLOR}::::::::::::   "
 ascii10="::::::::::${WHITE}cclcc${COLOR}:::::${WHITE}lccclc     oc${COLOR}:::::::::::   "
 ascii11="::::::::::${WHITE}o    l${COLOR}::::::::::${WHITE}l    lc${COLOR}:::::::::::   "
 ascii12=" :::::${WHITE}cll${COLOR}:${WHITE}o     clcllcccll     o${COLOR}:::::::::::    "
-ascii13=""
-ascii14=""
-
+ascii13=" :::::${WHITE}occ${COLOR}:${WHITE}o                  clc${COLOR}:::::::::::    "
+ascii14="  ::::${WHITE}ocl${COLOR}:${WHITE}ccslclccclclccclclc${COLOR}:::::::::::::     "
+ascii15="   :::${WHITE}oclcccccccccccccllllllllllllll${COLOR}:::::      "
+ascii16=""
 fi
 
 # MACOS ASCII =========================================
