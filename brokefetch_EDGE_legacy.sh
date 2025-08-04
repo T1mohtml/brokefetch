@@ -431,7 +431,7 @@ if [[ "$OS_NAME" == "Slackware" || "$DISTRO_TO_DISPLAY" == "slackware"|| "$DISTR
 ascii00="                  :::::::                      "
 ascii01="            :::::::::::::::::::                "
 ascii02="         ::::::::::::::::::::::::::            "
-ascii03="       ::::::::${COLOR}cllcccccllllllll${COLOR}::::::          "
+ascii03="       ::::::::${WHITE}cllcccccllllllll${COLOR}::::::          "
 ascii04="    :::::::::${WHITE}lc               dc${COLOR}:::::::        "
 ascii05="   ::::::::${WHITE}cl   clllccllll    oc${COLOR}:::::::::      "
 ascii06="  :::::::::${WHITE}o   lc${COLOR}::::::::${WHITE}co   oc${COLOR}::::::::::     "
@@ -439,7 +439,10 @@ ascii07=" ::::::::::${WHITE}o    cccclc${COLOR}:::::${WHITE}clcc${COLOR}::::::::
 ascii08=" :::::::::::${WHITE}lc        cclccclc${COLOR}:::::::::::::    "
 ascii09="::::::::::::::${WHITE}lcclcc          lc${COLOR}::::::::::::   "
 ascii10="::::::::::${WHITE}cclcc${COLOR}:::::${WHITE}lccclc     oc${COLOR}:::::::::::   "
-ascii11=""
+ascii11="::::::::::${WHITE}o    l${COLOR}::::::::::${WHITE}l    lc${COLOR}:::::::::::   "
+ascii12=" :::::${WHITE}cll${COLOR}:${WHITE}o     clcllcccll     o${COLOR}:::::::::::    "
+ascii13=""
+ascii14=""
 
 fi
 
