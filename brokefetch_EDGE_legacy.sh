@@ -220,7 +220,7 @@ fi
 # If you are reading this, feel free to add more OSes and their ASCII art.
 # Look beetween line 56 and 79 for OS list
 #REMEMBER!!! If you are making an ASCII logo and you stumble upon this character: `  make sure to put \ before it, like this: \`
-#Arch and FreeBSD's ASCII arts are the best examples of the situation described in the line 123.
+#Arch and FreeBSD's ASCII arts are the best examples of the situation described in the line above.
 
 # ARCH ASCII =========================================
 if [[ "$OS_NAME" == "Arch Linux" || "$DISTRO_TO_DISPLAY" == "arch" || "$DISTRO_TO_DISPLAY" == "arch linux" ]]; then
