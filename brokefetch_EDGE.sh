@@ -4,14 +4,14 @@
 # It is a work in progress. When completed, it will replace "brokefetch.sh".
 # This script will display different ASCII for each OS and do many other usefull stuff which brokefetch.sh doesn't support yet.
 
-GREEN="\e[32m"
-RED="\e[31m"
-BLUE="\e[34m"
-CYAN="\e[36m"
-WHITE="\e[37m"
-YELLOW="\e[33m"
-BOLD="\e[1m"
-RESET="\e[0m"
+GREEN="\033[32m"
+RED="\033[31m"
+BLUE="\033[34m"
+CYAN="\033[36m"
+WHITE="\033[37m"
+YELLOW="\033[33m"
+BOLD="\033[1m"
+RESET="\033[0m"
 
 #PKG_COUNT=$(pacman -Q | wc -l)
 
