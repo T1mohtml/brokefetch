@@ -543,7 +543,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii16="      ::::::::::::::::::::::::::::::::        "
         ascii17="         ::::::::::::::::::::::::::::  "
         ascii18="           ::::::::::::::::::::::       "
-        ascii19="${BLUE}     BOOMER i bet your pc is from the 1990              "
+        ascii19="${BLUE}     BOOMER i bet your pc is from the 90s              "
         ;;
     "Void Linux" | "void")
         ascii00="${YELLOW}                __.;=====;.__                                  "
