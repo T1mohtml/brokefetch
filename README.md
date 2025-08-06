@@ -27,6 +27,11 @@ cd brokefetch
 chmod +x brokefetch.sh
 ./brokefetch.sh
 ```
+## You can also now get it from homebrew
+```bash
+brew tap T1mohtml/brokefetch
+brew install brokefetch
+```
 ---
 # Troubleshooting
 If you have any issues with brokefetch, try to remove the config and run brokefetch again.
