@@ -212,6 +212,7 @@ case "$GPU_NAME" in
     else
         GPU="Integrated depression"
     fi      
+    ;;
     IDK)GPU="Voodoo 3Dfx (I wish)";;
     WSL)GPU="Emulated (Like my life)";;
     Android)GPU="Adreno (from 2010)";;
