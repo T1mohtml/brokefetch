@@ -173,18 +173,40 @@ case $cpu_rand in
 esac
 
 #GPU
-
-gpu_rand=$(($RANDOM%7))
-
-case $gpu_rand in
+if [ -f /etc/os-release ]; then
+    # linux
+    GPU_NAME="$(lspci | grep -io "nvidia|intel|amd)"
+elif grep -q Microsoft /proc/version 2>/dev/null; then
+    # windows subsystem for linux
+    GPU_NAME="WSL"
+elif [[ "$(uname -o)" == "Android" ]]; then
+    # Termux on Android
+    GPU_NAME="Android"
+else
+    # Mac, Windows, Fallback (such as freeBSD)
+    case "$(uname -s)" in
+        Darwin)
+            GPU_NAME="ARM"
+            ;;
+        MINGW*|MSYS*|CYGWIN*)
+            GPU_NAME="Windows"
+            ;;
+        *)
+            GPU_NAME="IDK"
+            ;;
+    esac
+fi
+case "$GPU_NAME" in
     0)GPU="Integrated Depression";;
-    1)GPU="Nvidia (but no drivers)";;
-    2)GPU="AMD (Ain't My Dollar)";;
-    3)GPU="Inetl (I can't afford a real one)";;
-    4)GPU="Voodoo 3Dfx (I wish)";;
-    5)GPU="Radeon 7000 (from 2001)";;
-    6)GPU="GeForce 256 (the first one ever made)";;
-    7)GPU="Go outside for better grapchisc";;
+    Nvidia)GPU="Nvidia (but no drivers)";;
+    AMD)GPU="AMD (Ain't My Dollar)";;
+    Intel)GPU="Inetl (I can't afford a real one)";;
+    IDK)GPU="Voodoo 3Dfx (I wish)";;
+    WSL)GPU="Emulated (Like my life)";;
+    Android)GPU="Adreno (from 2010)";;
+    ARM)GPU="SoC (Soldered forever)";;
+    Windows)GPU="Please purchase and activate to detect.";;
+    *)GPU="Go outside for better grapchisc";;
 esac
 
 # Initialize
