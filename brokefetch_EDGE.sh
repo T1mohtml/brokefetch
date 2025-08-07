@@ -175,7 +175,7 @@ esac
 #GPU
 if [ -f /etc/os-release ]; then
     # linux
-    GPU_NAME="$(lspci | grep -io "nvidia|intel|amd)"
+    GPU_NAME="$(lspci | grep -io "nvidia|intel|amd | head -1)"
 elif grep -q Microsoft /proc/version 2>/dev/null; then
     # windows subsystem for linux
     GPU_NAME="WSL"
