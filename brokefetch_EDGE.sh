@@ -206,7 +206,12 @@ case "$GPU_NAME" in
         GPU="Radeon 7000 (from 2001)"
     fi
     ;;
-    Intel)GPU="Inetl (I can't afford a real one)";;
+    Intel)
+    if [ $((RANDOM % 2)) -eq 0 ]; then
+        GPU="Inetl (I can't afford a real one)"
+    else
+        GPU="Integrated depression"
+    fi      
     IDK)GPU="Voodoo 3Dfx (I wish)";;
     WSL)GPU="Emulated (Like my life)";;
     Android)GPU="Adreno (from 2010)";;
