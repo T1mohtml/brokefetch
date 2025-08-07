@@ -199,7 +199,13 @@ fi
 case "$GPU_NAME" in
     0)GPU="Integrated Depression";;
     Nvidia)GPU="Nvidia (but no drivers)";;
-    AMD)GPU="AMD (Ain't My Dollar)";;
+    AMD)
+    if [ $((RANDOM % 2)) -eq 0 ]; then
+        GPU="AMD (Ain't My Dollar)"
+    else
+        GPU="Radeon 7000 (from 2001)"
+    fi
+    ;;
     Intel)GPU="Inetl (I can't afford a real one)";;
     IDK)GPU="Voodoo 3Dfx (I wish)";;
     WSL)GPU="Emulated (Like my life)";;
