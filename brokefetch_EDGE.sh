@@ -65,7 +65,8 @@ else
             OS_NAME="Windows"
             ;;
         *)
-            OS_NAME="$(uname -s)"
+            # A new fallback case for unknown OS
+            OS_NAME="Generic Linux"
             ;;
     esac
 fi
@@ -544,7 +545,7 @@ case "$DISTRO_TO_DISPLAY" in
 	    ascii05="     it::::tt333EEF @LINUXEttttt33F    "
 	    ascii06="    ;3=*^\`\`\`\"*4EEV :EEEEEEttttt33@.    "
 	    ascii07="    ,.=::::!t=., \` @EEEEEEtttz33QF     "
-	    ascii08="   ;::::::::zt33)   \"4EEEtttji3P*      "
+	    ascii08="   ;::::::::zt33)   \"4EEEtttji3P* "
 	    ascii09="  :t::::::::tt33.:Z3z..  `` ,..g.        "
 	    ascii10="  i::::::::zt33F AEEEtttt::::ztF       "
 	    ascii11=" ;:::::::::t33V ;EEEttttt::::t3        "
@@ -590,7 +591,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii07="${YELLOW}32+QmQQm31pvvnv;32 _yYsyQQWUUQQQm #QmQ#31:32QQQWUV3QQm.        "
         ascii08="${YELLOW} 32-QQWQW31pvvo32wZ?.wQQQE31==<32QWWQ/QWQW.QQWW31(:32 jQWQE    "
         ascii09="${YELLOW}  32-3QQQQmmU'  jQQQ31@+=<32QWQQ)mQQQ.mQQQC31+;32jWQQ@'        "
-        ascii10="${YELLOW}   32-3WQ8Y31nI:32   QWQQwgQQWV#1#32mWQQ.jQWQQgyyWW#m          "
+        ascii10="${YELLOW}   32-3WQ8Y31nI:32   QWQQwgQQWV#1#32mWQQ.jWQQQgyyWW#m          "
         ascii11="${YELLOW}     31-1vvnvv.     #~+++##        ++|+++                      "
         ascii12="${YELLOW}      +vnvnnv,                 332==                           "
         ascii13="${YELLOW}       +vnvnvns.           .      :=-                          "
@@ -699,7 +700,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii02="$2   ▟▛    ▜$1▃▟🬕          "
         ascii03="$2🬋🬋🬫█      $1█🬛🬋🬋         "
         ascii04="$2 🬷▛🮃$1▙    ▟▛            "
-        ascii05="$2 🬷▛🮃$1▙    ▟▛            "
+        ascii05="$2 🬷▛�$1▙    ▟▛            "
         ascii06="$2 🮃 $1▟█🬴$2▀▀▀█🬴▀▀        "
         ascii07="$1  ▝▀ ▀▘   $2▀▘%          "
         ascii08="                           "
@@ -759,6 +760,29 @@ case "$DISTRO_TO_DISPLAY" in
     	ascii18=""
     	ascii19=""
         ;;
+    *)
+        # Default ASCII art for unknown distros
+        ascii00=""
+        ascii01=""
+        ascii02=""
+        ascii03=""
+        ascii04=""
+        ascii05=""
+        ascii06=""
+        ascii07=""
+        ascii08=""
+        ascii09=""
+        ascii10=""
+        ascii11=""
+        ascii12=""
+        ascii13=""
+        ascii14=""
+        ascii15=""
+        ascii16=""
+        ascii17=""
+        ascii18=""
+        ascii19=""
+        ;;
 esac
 
 # === OUTPUT ===
@@ -783,3 +807,4 @@ echo -e "${COLOR}${ascii17}"
 echo -e "${COLOR}${ascii18}"
 echo -e "${COLOR}${ascii19}"
 echo -e "${BOLD}BROKEFETCH 🥀 1.7${RESET}"
+�
