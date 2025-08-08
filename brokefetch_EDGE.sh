@@ -73,6 +73,8 @@ fi
 
 
 case "$OS_NAME" in
+    "Adelie Linux")        OS="Adelie Linux (Are you a Action Retro?)";;
+    "Aeon")                OS="Aeon (Bro wth is that, just use something normal)";;
     "AlmaLinux")           OS="AlmaLinux (I can't believe it's not CentOS)";;
     "Alpine Linux")        OS="Alpine (because I can't afford a mountain)";;
     "Amazon Linux")        OS="Amazon (sold my data to afford this)";;
@@ -267,6 +269,28 @@ unset ascii00 ascii01 ascii02 ascii03 ascii04 ascii05 ascii06 ascii07 ascii08 as
 
 # Select ASCII art based on the distro name
 case "$DISTRO_TO_DISPLAY" in
+    "aeon")
+        ascii00="⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷"
+        ascii01="⣿⡇              ⢸⣿"
+        ascii02="⣿⡇   ⢀⣀    ⣀⡀   ⢸⣿"
+        asci03="⣿⣇   ⠸⣿⣄  ⣠⣿⠇   ⣸⣿"
+        ascii04="⢹⣿⡄   ⠙⠻⠿⠿⠟⠋   ⢠⣿⡏"
+        ascii05="⠹⣿⣦⡀        ⢀⣴⣿⠏"
+        ascii06="  ⠈⠛⢿⣶⣤⣄  ⣠⣤⣶⡿⠛⠁"
+        ascii07="     ⣠⣴⡿⠿⠛  ⠛⠿⢿⣦⣄"
+        ascii08="    ⣠⣾⠟⠉        ⠉⠻⣷⣄"
+        ascii09="    ⢰⣿⠏   ⢀⣤⣶⣶⣤⡀   ⠹⣿⡆"
+        ascii10="    ⣿⡟   ⢰⣿⠏⠁⠈⠹⣿⡆   ⢿⣿"
+        ascii11="    ⣿⡇   ⠈⠋    ⠙⠁   ⢸⣿"
+        ascii12="    ⣿⡇              ⢸⣿"
+        ascii13="    ⣿⣷⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣾⣿"
+        ascii14=""
+        ascii15=""
+        ascii16=""
+        ascii17=""
+        ascii18=""
+        ascii19=""
+        ;;
     "almalinux")
         ascii00="           ${RED}ooooooooooooooooooooooooooooo                 "
         ascii01="         ${RED}oo${WHITE}...........................${RED}oo   "
