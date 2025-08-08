@@ -1,6 +1,6 @@
 # brokefetch
 
-A broken `neofetch` clone for those of us who have no job, no GPU, and no hope.
+A broken `neofetch` clone for those of us who have no job, no GPU, no money, and no hope.
 
 ![screenshot](screenshots/brokefetch-logo_att4.png)
 
@@ -27,6 +27,13 @@ cd brokefetch
 chmod +x brokefetch.sh
 ./brokefetch.sh
 ```
+## or use the installer "OS-wide"(experemental)
+
+```bash
+curl -sSL https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/install.sh | bash
+
+```
+
 ## You can also now get it from homebrew
 ```bash
 brew tap T1mohtml/brokefetch
