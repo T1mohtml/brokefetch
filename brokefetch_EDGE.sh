@@ -251,7 +251,7 @@ while getopts ":hva:l" option; do
          ;;
       l) # List available ASCII arts
          echo "Recognized Operating Systems:"
-         echo "amazon, zorin, elementary, Arch Linux, Alpine Linux, Ubuntu, Linux Mint, Fedora Linux, Debian GNU/Linux, Manjaro Linux, EndeavourOS, openSUSE Tumbleweed, openSUSE Leap, Garuda Linux, elementary OS, Pop!_OS, Kali Linux, Zorin OS, Gentoo, NixOS, Slackware, Void Linux, Artix Linux, Aserdev, Nobara Linux, Windows, macOS, WSL, Android and FreeBSD."
+         echo "amazon, zorin, elementary, Arch Linux, Alpine Linux, Ubuntu, Linux Mint, Linexin, Fedora Linux, Debian GNU/Linux, Manjaro Linux, EndeavourOS, openSUSE Tumbleweed, openSUSE Leap, Garuda Linux, elementary OS, Pop!_OS, Kali Linux, Zorin OS, Gentoo, NixOS, Slackware, Void Linux, Artix Linux, Aserdev, Nobara Linux, Windows, macOS, WSL, Android and FreeBSD."
          exit;;
      \?) # Invalid option
          echo "We don't type that here."
