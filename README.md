@@ -33,6 +33,10 @@ brew tap T1mohtml/brokefetch
 brew install brokefetch
 ```
 ---
+## Important note!
+brokefetch.sh - Stable, "just works"
+brokefetch_EDGE.sh - Might contain bugs, has the newest features
+---
 # Troubleshooting
 If you have any issues with brokefetch, try to remove the config and run brokefetch again.
 ---
