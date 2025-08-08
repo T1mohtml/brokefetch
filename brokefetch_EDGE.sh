@@ -89,7 +89,7 @@ case "$OS_NAME" in
     "Fedora Linux")        OS="Fedora (tips hat in poverty)";;
     "Garuda Linux")        OS="Garuda (because RGB broke my wallet)";;
     "Gentoo")              OS="Gentoo (Because I can't even afford time)";;
-    "Linexin")              OS="Linexy (You watch Linexy too?)";;
+    "Linexin")             OS="Linexin (You watch Linexy too?)";;
     "Linux Mint")          OS="Linux Mint (but no teeth left)";;
     "Linux Lite")          OS="Linux Lite (my distro is as light as my wallet)";;
     "Manjaro Linux")       OS="ManjarNO (Oh Please God No)";;
