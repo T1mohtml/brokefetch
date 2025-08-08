@@ -30,7 +30,8 @@ chmod +x brokefetch.sh
 ## or use the installer "OS-wide"(experemental)
 
 ```bash
-https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/install.sh
+curl -sSL https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/install.sh | bash
+
 ```
 
 ## You can also now get it from homebrew
