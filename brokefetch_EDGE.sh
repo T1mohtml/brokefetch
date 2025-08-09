@@ -229,6 +229,8 @@ case "$GPU_NAME" in
 	;;
 esac
 
+#HOSTNAME
+
 host_rand=$(($RANDOM%6))
 
 case $host_rand in
