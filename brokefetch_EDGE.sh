@@ -261,6 +261,34 @@ case "$DESKTOP_ENV" in
     *) DESKTOP_ENV="Unknown DE (probably broke like me)";;
 esac
 
+# Window Managers
+
+if [ -n "$XDG_CURRENT_WM" ]; then
+    WINDOW_MANAGER="$XDG_CURRENT_WM"
+else
+    WINDOW_MANAGER="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
+fi
+
+# --- Funny WM names ---
+case "$WINDOW_MANAGER" in
+    "KWin"|"kwin"|"kwin_wayland") WINDOW_MANAGER="KWin (the KDE janitor)";;
+    "Mutter"|"mutter") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
+    "Sway"|"sway") WINDOW_MANAGER="Sway (i3 but woke)";;
+    "i3") WINDOW_MANAGER="i3 (tiled like my bathroom)";;
+    "Openbox"|"openbox") WINDOW_MANAGER="Openbox (because closed boxes cost money)";;
+    "Fluxbox"|"fluxbox") WINDOW_MANAGER="Fluxbox (because stability is overrated)";;
+    "XFWM4"|"xfwm4") WINDOW_MANAGER="XFWM4 (four times more broke)";;
+    "Metacity"|"metacity") WINDOW_MANAGER="Metacity (meta broke)";;
+    "IceWM"|"icewm") WINDOW_MANAGER="IceWM (cold and minimal, like my bank account)";;
+    "FVWM"|"fvwm") WINDOW_MANAGER="FVWM (Feels Very Wallet Miserable)";;
+    "awesome") WINDOW_MANAGER="awesome (self-proclaimed)";;
+    "herbstluftwm") WINDOW_MANAGER="herbstluftwm (gesundheit)";;
+    "wayfire") WINDOW_MANAGER="Wayfire (burning your GPU for fun)";;
+    "Hyprland"|"hyprland") WINDOW_MANAGER="Hyprland (hyper broke)";;
+    "Quartz Compositor") WINDOW_MANAGER="Quartz Compositor (shiny but overpriced)";;
+    "Desktop Window Manager (DWM)") WINDOW_MANAGER="Desktop Window Manager (Windows’ least exciting acronym)";;
+    *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like me)";;
+esac
 
 # Initialize
 ASCII_DISTRO=""
@@ -986,7 +1014,7 @@ echo -e "${COLOR}${ascii06}${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
 echo -e "${COLOR}${ascii07}${BOLD}Shell:${RESET} brokeBash 0.01"
 echo -e "${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
 echo -e "${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
-echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} HopiumWM"
+echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} HopiumWM" #$WINDOW_MANAGER
 echo -e "${COLOR}${ascii11}${BOLD}Terminal:${RESET} Terminal of Regret"
 echo -e "${COLOR}${ascii12}${BOLD}CPU:${RESET} $CPU"
 echo -e "${COLOR}${ascii13}${BOLD}GPU:${RESET} $GPU"
