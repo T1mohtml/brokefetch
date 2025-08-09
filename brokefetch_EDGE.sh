@@ -245,7 +245,9 @@ case $host_rand in
 esac
 
 #Desktop Environment
-if [ -n "$XDG_CURRENT_DESKTOP" ]; then
+if [ -z "$DISPLAY" ] && [ -z "$WAYLAND_DISPLAY" ]; then
+    DESKTOP_ENV="TTY"
+elif [ -n "$XDG_CURRENT_DESKTOP" ]; then
     DESKTOP_ENV="$XDG_CURRENT_DESKTOP"
 else
     DESKTOP_ENV="$(echo "$DESKTOP_SESSION" | tr '[:upper:]' '[:lower:]')"
@@ -271,19 +273,33 @@ case "$DESKTOP_ENV" in
     "mate") DESKTOP_ENV="MATE (because I can't afford Cinnamon)";;
     "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
     "Hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
+    "TTY") DESKTOP_ENV="TTY (go touch grass bro)";;
     *) DESKTOP_ENV="Unknown DE (probably broke like me)";;
 esac
 
 # Window Managers
 
+# WM DETECION IN PROGRESS
 if [ -n "$XDG_CURRENT_WM" ]; then
     WINDOW_MANAGER="$XDG_CURRENT_WM"
 else
     WINDOW_MANAGER="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
 fi
 
+case "$OS_NAME" in
+    "macOS")
+        WINDOW_MANAGER="Quartz Compositor";;
+    "Windows")
+        WINDOW_MANAGER="Desktop Window Manager (DWM)";;
+    "WSL")
+        WINDOW_MANAGER="WSL Window Manager";;
+    "Android")
+        WINDOW_MANAGER="Android Window Manager";;
+esac
+
 # --- Funny WM names ---
 case "$WINDOW_MANAGER" in
+    "Andoir Window Manager") WINDOW_MANAGER="Andoir Window Manager (Termux ig)";;
     "KWin"|"kwin"|"kwin_wayland") WINDOW_MANAGER="KWin (the KDE janitor)";;
     "Mutter"|"mutter") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
     "Sway"|"sway") WINDOW_MANAGER="Sway (i3 but woke)";;
@@ -300,6 +316,7 @@ case "$WINDOW_MANAGER" in
     "Hyprland"|"hyprland") WINDOW_MANAGER="Hyprland (hyper broke)";;
     "Quartz Compositor") WINDOW_MANAGER="Quartz Compositor (shiny but overpriced)";;
     "Desktop Window Manager (DWM)") WINDOW_MANAGER="Desktop Window Manager (Windows’ least exciting acronym)";;
+    "tty") WINDOW_MANAGER="tty (Idk what to say here tbh)";;
     *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like me)";;
 esac
 
@@ -1027,7 +1044,7 @@ echo -e "${COLOR}${ascii06}${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
 echo -e "${COLOR}${ascii07}${BOLD}Shell:${RESET} brokeBash 0.01"
 echo -e "${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
 echo -e "${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
-echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} HopiumWM" #$WINDOW_MANAGER
+echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} $WINDOW_MANAGER"
 echo -e "${COLOR}${ascii11}${BOLD}Terminal:${RESET} Terminal of Regret"
 echo -e "${COLOR}${ascii12}${BOLD}CPU:${RESET} $CPU"
 echo -e "${COLOR}${ascii13}${BOLD}GPU:${RESET} $GPU"
