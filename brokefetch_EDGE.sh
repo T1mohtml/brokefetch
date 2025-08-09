@@ -250,6 +250,19 @@ if [ -n "$XDG_CURRENT_DESKTOP" ]; then
 else
     DESKTOP_ENV="$(echo "$DESKTOP_SESSION" | tr '[:upper:]' '[:lower:]')"
 fi
+
+#Macos and windows and phone
+case "$OS_NAME" in
+    "macOS")
+        DESKTOP_ENV="Aqua (because I can't afford a real desktop)";;
+    "Windows")
+        DESKTOP_ENV="Windows Desktop (but no money for a real OS)";;
+    "WSL")
+        DESKTOP_ENV="WSL Desktop (because I can't afford a real Linux)";;
+    "Android")
+        DESKTOP_ENV="Android Desktop (because I can't afford a real phone)";;
+esac        
+
 case "$DESKTOP_ENV" in
     "gnome") DESKTOP_ENV="Gnome (but no extensions)";;
     "kde") DESKTOP_ENV="KDE (but no Plasma)";;
