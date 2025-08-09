@@ -4,7 +4,7 @@ A broken `neofetch` clone for those of us who have no job, no GPU, no money, and
 
 ![screenshot](screenshots/brokefetch-logo_att4.png)
 
-![screenshot](screenshots/v1.7resomething.png)
+![screenshot](screenshots/v1.7resomothing.png)
 
 Version 1.0 screenshot
 
