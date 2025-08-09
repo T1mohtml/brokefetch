@@ -317,6 +317,7 @@ case "$WINDOW_MANAGER" in
     "Quartz Compositor") WINDOW_MANAGER="Quartz Compositor (shiny but overpriced)";;
     "Desktop Window Manager (DWM)") WINDOW_MANAGER="Desktop Window Manager (Windows’ least exciting acronym)";;
     "tty") WINDOW_MANAGER="tty (Idk what to say here tbh)";;
+    "Wayland"|"wayland") WINDOW_MANAGER="Wayland (X11 is old and scary)";;
     *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like me)";;
 esac
 
