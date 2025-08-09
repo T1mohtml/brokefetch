@@ -2,7 +2,7 @@
 
 # IMPORTANT NOTE: This script is called "brokefetch_EDGE.sh" because it is not fully functional yet.
 # It is a work in progress. When completed, it will replace "brokefetch.sh".
-# This script will display different ASCII for each OS and do many other usefull stuff which brokefetch.sh doesn't support yet.
+# This script will display different ASCII for each OS and do many other useful stuff which brokefetch.sh doesn't support yet.
 
 GREEN="\033[32m"
 RED="\033[31m"
@@ -214,19 +214,32 @@ case "$GPU_NAME" in
         GPU="Radeon 7000 (from 2001)"
     fi
     ;;
-    Intel)
-    if [ $((RANDOM % 2)) -eq 0 ]; then
-        GPU="Inetl (I can't afford a real one)"
-    else
-        GPU="Integrated depression"
-    fi      
-    ;;
+    Intel)GPU="Inetl (I can't afford a real one)";;
     IDK)GPU="Voodoo 3Dfx (I wish)";;
     WSL)GPU="Emulated (Like my life)";;
     Android)GPU="Adreno (from 2010)";;
     ARM)GPU="SoC (Soldered forever)";;
     Windows)GPU="Please purchase and activate to detect.";;
-    *)GPU="Go outside for better grapchisc";;
+    *)
+	if [ $((RANDOM % 2)) -eq 0 ]; then
+        GPU="Go outside for better grapchisc"
+    else
+	    GPU="Integrated depression"
+    fi
+	;;
+esac
+
+host_rand=$(($RANDOM%6))
+
+case $host_rand in
+    0)HOST="Bedroom Floor (Carpet extra)";;
+    1)HOST="Creaky Desk (Chair not included)";;
+    2)HOST="Atari 2600 (with 128MB RAM)";;
+    3)HOST="IBM 5100 (55 pounds and counting)";;
+    4)HOST="iPhone -10";;
+    5)HOST="Side Closet";;
+    6)HOST="Thinkpad 700T (From 1992)";;
+
 esac
 
 # Initialize
@@ -946,7 +959,7 @@ esac
 echo -e "${COLOR}${ascii00}${RESET}$(whoami)@brokelaptop"
 echo -e "${COLOR}${ascii01}${RESET}-----------------------"
 echo -e "${COLOR}${ascii02}${BOLD}OS:${RESET} $OS"
-echo -e "${COLOR}${ascii03}${BOLD}Host:${RESET} Bedroom Floor"
+echo -e "${COLOR}${ascii03}${BOLD}Host:${RESET} $HOST"
 echo -e "${COLOR}${ascii04}${BOLD}Kernel:${RESET} 0.00/hr"
 echo -e "${COLOR}${ascii05}${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
 echo -e "${COLOR}${ascii06}${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
