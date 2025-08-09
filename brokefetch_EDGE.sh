@@ -244,6 +244,26 @@ case $host_rand in
 
 esac
 
+#Desktop Environment
+if [ -n "$XDG_CURRENT_DESKTOP" ]; then
+    DESKTOP_ENV="$XDG_CURRENT_DESKTOP"
+else
+    DESKTOP_ENV="$(echo "$DESKTOP_SESSION" | tr '[:upper:]' '[:lower:]')"
+fi
+case "$DESKTOP_ENV" in
+    "gnome") DESKTOP_ENV="Gnome (but no extensions)";;
+    "kde") DESKTOP_ENV="KDE (but no Plasma)";;
+    "xfce") DESKTOP_ENV="XFCE (because I can't afford KDE)";;
+    "lxde") DESKTOP_ENV="LXDE (Lightweight, like my wallet)";;
+    "mate") DESKTOP_ENV="MATE (because I can't afford Cinnamon)";;
+    "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
+    "i3" | "i3wm") DESKTOP_ENV="i3 (I can't even afford a window manager)";;
+    "sway") DESKTOP_ENV="Sway (I wish I could afford a real DE)";;
+    "Hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
+    *) DESKTOP_ENV="Unknown DE (probably broke like me)";;
+esac
+
+
 # Initialize
 ASCII_DISTRO=""
 
@@ -967,7 +987,7 @@ echo -e "${COLOR}${ascii05}${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
 echo -e "${COLOR}${ascii06}${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
 echo -e "${COLOR}${ascii07}${BOLD}Shell:${RESET} brokeBash 0.01"
 echo -e "${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
-echo -e "${COLOR}${ascii09}${BOLD}DE:${RESET} Crying"
+echo -e "${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
 echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} HopiumWM"
 echo -e "${COLOR}${ascii11}${BOLD}Terminal:${RESET} Terminal of Regret"
 echo -e "${COLOR}${ascii12}${BOLD}CPU:${RESET} $CPU"
