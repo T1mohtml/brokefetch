@@ -257,8 +257,6 @@ case "$DESKTOP_ENV" in
     "lxde") DESKTOP_ENV="LXDE (Lightweight, like my wallet)";;
     "mate") DESKTOP_ENV="MATE (because I can't afford Cinnamon)";;
     "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
-    "i3" | "i3wm") DESKTOP_ENV="i3 (I can't even afford a window manager)";;
-    "sway") DESKTOP_ENV="Sway (I wish I could afford a real DE)";;
     "Hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
     *) DESKTOP_ENV="Unknown DE (probably broke like me)";;
 esac
