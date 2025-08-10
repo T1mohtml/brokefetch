@@ -114,6 +114,38 @@ case "$OS_NAME" in
     *) OS="$OS_NAME (??)";;
 esac
 
+# Kernel
+if [ -f /etc/os-release ]; then
+    # linux
+    KERNEL_NAME="$(uname -r | grep -Eio 'zen|lts|rt|realtime' | head -1)"
+    case $KERNEL_NAME in
+        zen)KERNEL="Zen (But no peace in life)";;
+        lts)KERNEL="LTS (But no stability in life)";;
+        rt)KERNEL="Realtime (But lagging in life)";;
+        realtime)KERNEL="Realtime (But lagging in life)";;
+        *)KERNEL="$0.00/hour"
+    esac
+elif grep -q Microsoft /proc/version 2>/dev/null; then
+    # windows subsystem for linux
+    KERNEL_NAME="Costs 129 dollars plus electricity."
+elif [[ "$(uname -o)" == "Android" ]]; then
+    # Termux on Android
+    KERNEL_NAME="Android (Fake Linux ripoff)"
+else
+    # Mac, Windows, Fallback (such as freeBSD)
+    case "$(uname -s)" in
+        Darwin)
+            KERNEL_NAME="Darwin (Ate my wallet)"
+            ;;
+        MINGW*|MSYS*|CYGWIN*)
+            KERNEL_NAME="NT (Like a tricycle the price of a Porsche)"
+            ;;
+        *)
+            KERNEL_NAME="Generic (Synonym: My life)"
+            ;;
+    esac
+fi
+
 # Uptime - Linux, WSL & Android
 if [ -r /proc/uptime ]; then
   UPTIME_S=$(cut -d ' ' -f1 < /proc/uptime)
@@ -244,6 +276,45 @@ case $host_rand in
 
 esac
 
+#Shell
+if [ -f /etc/os-release ]; then
+    # linux
+    SHELL_NAME="$(echo $SHELL | grep -Ei "/bin" | awk -F "bin/" '{print $2}')"
+elif grep -q Microsoft /proc/version 2>/dev/null; then
+    # windows subsystem for linux
+    SHELL_NAME="WSL"
+elif [[ "$(uname -o)" == "Android" ]]; then
+    # Termux on Android
+    SHELL_NAME="Termux"
+else
+    # Mac, Windows, Fallback (such as freeBSD)
+    case "$(uname -s)" in
+        Darwin)
+            SHELL_NAME="$(echo $SHELL | grep -Ei "/bin" | awk -F "bin/" '{print $2}')"
+            ;;
+        MINGW*|MSYS*|CYGWIN*)
+            SHELL_NAME="pwsh"
+            ;;
+        *)
+            SHELL_NAME="idksh"
+            ;;
+    esac
+fi
+
+case $SHELL_NAME in
+    bash)SHELLOUT="$SHELL_NAME - The standard (for failure)";;
+    zsh)SHELLOUT="$SHELL_NAME - Powerful (Unlike me)";;
+    fish)SHELLOUT="$SHELL_NAME - Tab key ASMR";;
+#    tcsh)SHELLOUT="";;
+#    csh)SHELLOUT="";;
+    pwsh)SHELLOUT="$SHELL_NAME - Commands for noobs (on Windoze)";;
+    sh)SHELLOUT="$SHELL_NAME - Old is gold (which I need)";;
+    dash)SHELLOUT="$SHELL_NAME - Speeeeed (for debian only)";;
+#    ksh)SHELLOUT="";;
+    idksh)SHELLOUT="idksh - What is this? (My future)";;
+    *)SHELLOUT="Your shell is so unpopular that we don't care about it.";;
+esac
+
 #Desktop Environment
 if [ -z "$DISPLAY" ] && [ -z "$WAYLAND_DISPLAY" ]; then
     DESKTOP_ENV="TTY"
@@ -313,7 +384,7 @@ case "$WINDOW_MANAGER" in
     "awesome") WINDOW_MANAGER="awesome (self-proclaimed)";;
     "herbstluftwm") WINDOW_MANAGER="herbstluftwm (gesundheit)";;
     "wayfire") WINDOW_MANAGER="Wayfire (burning your GPU for fun)";;
-    "Hyprland"|"hyprland") WINDOW_MANAGER="Hyprland (hyper broke)";;
+    "Hyprland"|"hyprland") WINDOW_MANAGER="Aquamarine (To drown myself in)";;
     "Quartz Compositor") WINDOW_MANAGER="Quartz Compositor (shiny but overpriced)";;
     "Desktop Window Manager (DWM)") WINDOW_MANAGER="Desktop Window Manager (Windows’ least exciting acronym)";;
     "tty") WINDOW_MANAGER="tty (Idk what to say here tbh)";;
@@ -1040,10 +1111,10 @@ echo -e "${COLOR}${ascii00}${RESET}$(whoami)@brokelaptop"
 echo -e "${COLOR}${ascii01}${RESET}-----------------------"
 echo -e "${COLOR}${ascii02}${BOLD}OS:${RESET} $OS"
 echo -e "${COLOR}${ascii03}${BOLD}Host:${RESET} $HOST"
-echo -e "${COLOR}${ascii04}${BOLD}Kernel:${RESET} 0.00/hr"
+echo -e "${COLOR}${ascii04}${BOLD}Kernel:${RESET} $KERNEL"
 echo -e "${COLOR}${ascii05}${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
 echo -e "${COLOR}${ascii06}${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
-echo -e "${COLOR}${ascii07}${BOLD}Shell:${RESET} brokeBash 0.01"
+echo -e "${COLOR}${ascii07}${BOLD}Shell:${RESET} $SHELLOUT"
 echo -e "${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
 echo -e "${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
 echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} $WINDOW_MANAGER"
