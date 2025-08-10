@@ -307,9 +307,9 @@ case $SHELL_NAME in
     fish)SHELLOUT="$SHELL_NAME - Tab key ASMR";;
 #    tcsh)SHELLOUT="";;
 #    csh)SHELLOUT="";;
-    pwsh)SHELLOUT="Commands for noobs (on Windoze)";;
-    sh)SHELLOUT="Old is gold (which I need)";;
-    dash)SHELLOUT="Speeeeed (for debian only)";;
+    pwsh)SHELLOUT="$SHELL_NAME - Commands for noobs (on Windoze)";;
+    sh)SHELLOUT="$SHELL_NAME - Old is gold (which I need)";;
+    dash)SHELLOUT="$SHELL_NAME - Speeeeed (for debian only)";;
 #    ksh)SHELLOUT="";;
     idksh)SHELLOUT="idksh - What is this? (My future)";;
     *)SHELLOUT="Your shell is so unpopular that we don't care about it.";;
