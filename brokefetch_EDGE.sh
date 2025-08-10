@@ -27,6 +27,8 @@ elif command -v apk &>/dev/null; then
     PKG_COUNT=$(apk info | wc -l)
 elif command -v pkg &>/dev/null; then
     PKG_COUNT=$(pkg info | wc -l)
+elif command -v brew &>/dev/null; then
+    PKG_COUNT=$(brew list |)
 else
     PKG_COUNT="-1" # Unknown package manager
 fi
