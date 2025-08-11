@@ -826,19 +826,19 @@ COLOR=${!COLOR_NAME}
 
 # Combine the ASCII art with the system info using printf for alignment
 info=(
-    "${BOLD}OS:${RESET} ${OS}"
-    "${BOLD}Host:${RESET} ${HOST}"
-    "${BOLD}Kernel:${RESET} 0.00/hr"
-    "${BOLD}Uptime:${RESET} ${UPTIME_OVERRIDE}"
-    "${BOLD}Packages:${RESET} ${PKG_COUNT} (none legal)"
-    "${BOLD}Shell:${RESET} brokeBash 0.01"
-    "${BOLD}Resolution:${RESET} CRT 640x480"
-    "${BOLD}DE:${RESET} ${DESKTOP_ENV}"
-    "${BOLD}WM:${RESET} ${WINDOW_MANAGER}"
-    "${BOLD}Terminal:${RESET} Terminal of Regret"
-    "${BOLD}CPU:${RESET} ${CPU}"
-    "${BOLD}GPU:${RESET} ${GPU}"
-    "${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
+    "${COLOR}${BOLD}OS:${RESET} ${OS}"
+    "${COLOR}${BOLD}Host:${RESET} ${HOST}"
+    "${COLOR}${BOLD}Kernel:${RESET} 0.00/hr"
+    "${COLOR}${BOLD}Uptime:${RESET} ${UPTIME_OVERRIDE}"
+    "${COLOR}${BOLD}Packages:${RESET} ${PKG_COUNT} (none legal)"
+    "${COLOR}${BOLD}Shell:${RESET} brokeBash 0.01"
+    "${COLOR}${BOLD}Resolution:${RESET} CRT 640x480"
+    "${COLOR}${BOLD}DE:${RESET} ${DESKTOP_ENV}"
+    "${COLOR}${BOLD}WM:${RESET} ${WINDOW_MANAGER}"
+    "${COLOR}${BOLD}Terminal:${RESET} Terminal of Regret"
+    "${COLOR}${BOLD}CPU:${RESET} ${CPU}"
+    "${COLOR}${BOLD}GPU:${RESET} ${GPU}"
+    "${COLOR}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
 )
 
 # --- OUTPUT ---
