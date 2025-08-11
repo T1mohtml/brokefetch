@@ -80,7 +80,7 @@ case "$OS_NAME" in
     "Aeon")                OS="Aeon (Bro wth is that, just use something normal)";; #
     "AlmaLinux")           OS="AlmaLinux (I can't believe it's not CentOS)";; #
     "Alpine Linux")        OS="Alpine (because I can't afford a mountain)";;
-    "Amazon Linux")        OS="Amazon (sold my data to afford this)";;
+    "Amazon Linux")        OS="Amazon (sold my data to afford this)";; #
     "Arch Linux")          OS="Arch Linux (Unpaid Edition)";; #
     "Artix Linux")         OS="Artix (SystemD-broke-my-wallet-too)";; #
     "Aserdev")             OS="Aserdev (because I can't type properly)";; #
@@ -107,7 +107,7 @@ case "$OS_NAME" in
     "Solus")               OS="Solus (solo, broke and alone)";; #
     "Ubuntu")              OS="Ubunstu (Activate Windows Survivor)";; #
     "Void Linux")          OS="Void (bank account matches the name)";; #
-    "Zorin OS")            OS="Zorin (Because I cant afford Windows)";;
+    "Zorin OS")            OS="Zorin (Because I cant afford Windows)";; #
     "Windows")             OS="Windows (Rebooting my patience)";; #
     "macOS")               OS="macOS (Broke but still bragging)";; #
     "WSL")                 OS="WSL (Linux for those who sold a kidney)";;
