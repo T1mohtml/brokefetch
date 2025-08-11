@@ -825,6 +825,8 @@ COLOR=${!COLOR_NAME}
 
 # Combine the ASCII art with the system info using printf for alignment
 info=(
+    "${COLOR}${BOLD}${RESET}$(whoami)@brokelaptop"
+    "${COLOR}${RESET}-----------------------"
     "${COLOR}${BOLD}OS:${RESET} ${OS}"
     "${COLOR}${BOLD}Host:${RESET} ${HOST}"
     "${COLOR}${BOLD}Kernel:${RESET} 0.00/hr"
