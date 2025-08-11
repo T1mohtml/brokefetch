@@ -30,7 +30,7 @@ elif command -v pkg &>/dev/null; then
 elif command -v brew &>/dev/null; then
     PKG_COUNT=$(brew list)
 else
-    PKG_COUNT="-1" # Unknown package manager
+    PKG_COUNT="1 000 000" # Unknown package manager
 fi
 
 # CONFIG
