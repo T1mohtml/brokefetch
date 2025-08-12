@@ -122,3 +122,5 @@ printf "${COLOR}\`+sso+:-\`                 \`.-/+oso:\n"
 printf "${COLOR}\`++:.                           \`-/+/\n"
 printf "${COLOR}\`.\`                                \`\n"
 printf "${BOLD}BROKEFETCH 🥀 1.7 ${RESET}\n"
+
+echo -e "yoooo"
