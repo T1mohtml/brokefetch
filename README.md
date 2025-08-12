@@ -30,7 +30,7 @@ chmod +x brokefetch.sh
 ## or use the installer "OS-wide"(experemental)
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/install.sh > install.sh ; chmod +x install.sh ; bash -c "./install.sh" ; rm install.sh
+curl -sSL https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/install.sh > install.sh ; chmod +x install.sh ; bash -c "./install.sh" ; rm -f install.sh
 ```
 
 ## You can also now get it from homebrew
@@ -44,6 +44,7 @@ brew install brokefetch
 - `brokefetch.sh` - Stable, "just works"
 - `brokefetch_EDGE.sh` - Might contain bugs, has the newest features
 - `brokefetch_EDGE_legacy.sh` - just a backup of the old edge version
+- `brokefetch_EDGE_AC.sh` - a version of EDGE that loads the logos from ~/.config/brokefetch/logos
 
 ---
 # Troubleshooting
