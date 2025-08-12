@@ -125,7 +125,7 @@ if [ -f /etc/os-release ]; then
         lts)KERNEL="LTS (But no stability in life)";;
         rt)KERNEL="Realtime (But lagging in life)";;
         realtime)KERNEL="Realtime (But lagging in life)";;
-        *)KERNEL="$0.00/hour"
+        *)KERNEL="$ 0.00/hour"
     esac
 elif grep -q Microsoft /proc/version 2>/dev/null; then
     # windows subsystem for linux
