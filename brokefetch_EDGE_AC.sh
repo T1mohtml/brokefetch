@@ -635,7 +635,7 @@ host_rand=$(($RANDOM%6))
 case $host_rand in
     0)HOST="Bedroom Floor (Carpet extra)";;
     1)HOST="Creaky Desk (Chair not included)";;
-    2)HOST="Atari 2600 (with 128MB RAM)";;
+    2)HOST="Atari 2600 (with ${MEMORY_MB} MB RAM)";;
     3)HOST="IBM 5100 (55 pounds and counting)";;
     4)HOST="iPhone -10";;
     5)HOST="Side Closet";;
