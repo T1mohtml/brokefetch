@@ -459,6 +459,28 @@ case "$DISTRO_TO_DISPLAY" in
         ascii18=""
         ascii19=""
         ;;
+    "alpine linux" | "alpine")
+        ascii00="       .hddddddddddddddddddddddh.          "
+        ascii01="      :dddddddddddddddddddddddddd:         "
+        ascii02="     /dddddddddddddddddddddddddddd/        "
+        ascii03="    +dddddddddddddddddddddddddddddd+       "
+        ascii04="  \`sdddddddddddddddddddddddddddddddds\`     "
+        ascii05=" \`ydddddddddddd++hdddddddddddddddddddy\`    "
+        ascii06=".hddddddddddd+\`  \`+ddddh:-sdddddddddddh.   "
+        ascii07="hdddddddddd+\`      \`+y:    .sddddddddddh   "
+        ascii08="ddddddddh+\`   \`//\`   \`.\`     -sddddddddd   "
+        ascii09="ddddddh+\`   \`/hddh/\`   \`:s-    -sddddddd   "
+        ascii10="ddddh+\`   \`/+/dddddh/\`   \`+s-    -sddddd   "
+        ascii11="ddd+\`   \`/o\` :dddddddh/\`   \`oy-    .yddd   "
+        ascii12="hdddyo+ohddyosdddddddddho+oydddy++ohdddh   "
+        ascii13=".hddddddddddddddddddddddddddddddddddddh.   "
+        ascii14=" \`yddddddddddddddddddddddddddddddddddy\`    "
+        ascii15="  \`sdddddddddddddddddddddddddddddddds\`     "
+        ascii16="    +dddddddddddddddddddddddddddddd+       "
+        ascii17="     /dddddddddddddddddddddddddddd/        "
+        ascii18="      :dddddddddddddddddddddddddd:         "
+        ascii19="       .hddddddddddddddddddddddh.          "
+        ;;    
     "almalinux")
         ascii00="           ${RED}ooooooooooooooooooooooooooooo                 "
         ascii01="         ${RED}oo${WHITE}...........................${RED}oo   "
