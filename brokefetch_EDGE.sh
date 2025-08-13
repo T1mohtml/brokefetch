@@ -1033,7 +1033,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii18="${YELLOW}                      what is that                             "
         ascii19=""
         ;;
-    "windows")
+    "windows" | wsl)
         win_rand=$(($RANDOM%3))
         case $win_rand in
             0)WIN="You are not getting the newer logo";;
@@ -1048,7 +1048,7 @@ case "$DISTRO_TO_DISPLAY" in
 	    ascii05="     it::::tt333EEF @LINUXEttttt33F    "
 	    ascii06="    ;3=*^\`\`\`\"*4EEV :EEEEEEttttt33@.    "
 	    ascii07="    ,.=::::!t=., \` @EEEEEEtttz33QF     "
-	    ascii08="   ;::::::::zt33)   \"4EEEtttji3P* "
+	    ascii08="   ;::::::::zt33)   \"4EEEtttji3P*      "
 	    ascii09="  :t::::::::tt33.:Z3z..  `` ,..g.        "
 	    ascii10="  i::::::::zt33F AEEEtttt::::ztF       "
 	    ascii11=" ;:::::::::t33V ;EEEttttt::::t3        "
