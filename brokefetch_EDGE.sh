@@ -13,6 +13,8 @@ YELLOW="\033[33m"
 PURPLE="\033[35m"
 BOLD="\033[1m"
 RESET="\033[0m"
+BLACK="\033[30m"
+GRAY="\033[90m"
 
 #PKG_COUNT=$(pacman -Q | wc -l)
 
@@ -1011,6 +1013,26 @@ case "$DISTRO_TO_DISPLAY" in
 	    ascii19=""
         ;;
     "kali linux" | "kali")
+        ascii00="..............                                  "
+        ascii01="            ..,;:ccc,.                          "
+        ascii02="          ......''';lxO.                        "
+        ascii03=".....''''..........,:ld;                        "
+        ascii04="           .';;;:::;,,.x,                       "
+        ascii05="      ..'''.            0Xxoc:,.  ...           "
+        ascii06="  ....                ,ONkc;,;cokOdc',.         "
+        ascii07=" .                   OMo           ':${GRAY}dd${COLOR}o.       "
+        ascii08="                    dMc               :OO;      "
+        ascii09="                    0M.                 .:o.    "
+        ascii10="                    ;Wd                         "
+        ascii11="                     ;XO,                       "
+        ascii12="                       ,d0Odlc;,..              "
+        ascii13="                           ..',;:cdOOd::,.      "
+        ascii14="                                    .:d;.':;.   "
+        ascii15="                                       'd,  .'  "
+        ascii16="                                         ;l   .."
+        ascii17="                                          .o    "
+        ascii18="                                            c   "
+        ascii19="                                            .'  " 
         ;;    
     "rhel")
         ascii00="           .MMM..:MMMMMMM                  "
