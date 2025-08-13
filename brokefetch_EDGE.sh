@@ -79,7 +79,7 @@ case "$OS_NAME" in
     "Adelie Linux")        OS="Adelie Linux (Are you a Action Retro?)";;
     "Aeon")                OS="Aeon (Bro wth is that, just use something normal)";; #
     "AlmaLinux")           OS="AlmaLinux (I can't believe it's not CentOS)";; #
-    "Alpine Linux")        OS="Alpine (because I can't afford a mountain)";;
+    "Alpine Linux")        OS="Alpine (because I can't afford a mountain)";; #
     "Amazon Linux")        OS="Amazon (sold my data to afford this)";; #
     "Arch Linux")          OS="Arch Linux (Unpaid Edition)";; #
     "Artix Linux")         OS="Artix (SystemD-broke-my-wallet-too)";; #
@@ -745,6 +745,28 @@ case "$DISTRO_TO_DISPLAY" in
     	ascii18=""
     	ascii19=""
         ;;
+    "garuda linux" | "garuda")
+        ascii00="                   .%;888:8898898:            "
+        ascii01="                 x;XxXB%89b8:b8%b88:           "
+        ascii02="              .8Xxd                8X:.        "
+        ascii03="            .8Xx;                    8x:.      "
+        ascii04="          .tt8x          .d            x88;    "
+        ascii05="       .@8x8;          .db:              xx@;  "
+        ascii06="     ,tSXX°          .bbbbbbbbbbbbbbbbbbbB8x@; "
+        ascii07="   .SXxx            bBBBBBBBBBBBBBBBBBBBbSBX8; "
+        ascii08=" ,888S                                     pd! "
+        ascii09="8X88/                                       q  "
+        ascii10="8X88/                                          "
+        ascii11="GBB.                                           "  
+        ascii12=" x%88        d888@8@X@X@X88X@@XX@@X@8@X.       "
+        ascii13="   dxXd    dB8b8b8B8B08bB88b998888b88x.        "
+        ascii14="    dxx8o                      .@@;.           "
+        ascii15="      dx88                   .t@x.             "
+        ascii16="        d:SS@8ba89aa67a853Sxxad.               "
+        ascii17="          .d988999889889899dd.                 "
+        ascii18="Indian scammer who uses an arch-based disrto?"
+        ascii19="damn"
+        ;; 
     "gentoo")
         ascii00="         ${PURPLE}-/oyddmdhs+:.                         "
         ascii01="     ${PURPLE}-oo2dN${COLOR}MMMMMMMMN${PURPLE}Nmhy+h1-s                  "
