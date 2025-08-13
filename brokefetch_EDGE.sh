@@ -97,8 +97,8 @@ case "$OS_NAME" in
     "Manjaro Linux")       OS="ManjarNO (Oh Please God No)";; #
     "NixOS")               OS="NixOS (broke and broken by design)";; #
     "Nobara Linux")        OS="Nobara (Has 500 viruses from torrents)";; #
-    "openSUSE Tumbleweed") OS="openSUSE (tumbling into debt)";;
-    "openSUSE Leap")       OS="openSUSE Leap (into the void)";;
+    "openSUSE Tumbleweed") OS="openSUSE (tumbling into debt)";; #
+    "openSUSE Leap")       OS="openSUSE Leap (into the void)";; #
     "Pop!_OS")             OS="Pop!_OS (But cant afford System76)";; #
     "Kali Linux")          OS="Kali Linux (Dollar Store hacker addition)";;
     "Red Hat Enterprise Linux") OS="RHEL (Red Hat Enterprise Loans)";; #
@@ -943,7 +943,51 @@ case "$DISTRO_TO_DISPLAY" in
         ascii17=""
         ascii18="So ur a gamer huh?"
         ascii19=""
-        ;;    
+        ;;
+    "opensuse tumbleweed" | "tumbleweed")
+        ascii00="           ${WHITE}.;ldkO0000Okdl;.${COLOR}"
+        ascii01="       ${WHITE}.;d00xl:^''''''^:ok00d;.${COLOR}"
+        ascii02="     ${WHITE}.d00l'                'o00d.${COLOR}"
+        ascii03="   ${WHITE}.d0Kd'  ${COLOR}Okxol:;,${CYAN}.${COLOR}          ${WHITE}:O0d${COLOR}"
+        ascii04="  ${WHITE}.OK${COLOR}KKK0kOKKKKKKKKKKOxo:,      ${WHITE}lKO.${COLOR}"
+        ascii05=" ${WHITE},0K${COLOR}KKKKKKKKKKKKKKK0P^${WHITE},,,${COLOR}^dx:    ;00,${COLOR}"
+        ascii06="${WHITE}.OK${COLOR}KKKKKKKKKKKKKKKk'${WHITE}.oOPPb.${COLOR}'0k.   ${COLOR}cKO.${COLOR}"
+        ascii07="${WHITE}:KK${COLOR}KKKKKKKKKKKKKKK: ${WHITE}kKx..dd${COLOR} lKd   ${WHITE}'OK:${COLOR}"
+        ascii08="${WHITE}dKK${COLOR}KKKKKKKKKOx0KKKd ${WHITE}^0KKKO'${COLOR} kKKc   ${WHITE}dKd${COLOR}"
+        ascii09="${WHITE}dKK${COLOR}KKKKKKKKKK;.;oOKx,..${WHITE}^${COLOR}..;kKKK0.  ${WHITE}dKd${COLOR}"
+        ascii10="${WHITE}:KK${COLOR}KKKKKKKKKK0o;...^cdxxOK0O/^^'  ${WHITE}.0K:${COLOR}"
+        ascii11="${WHITE}kKK${COLOR}KKKKKKKKKKKKK0x;,,......,;od  ${WHITE}lKk${COLOR}"
+        ascii12="${WHITE}'0K${COLOR}KKKKKKKKKKKKKKKKKKKK00KKOo^  ${WHITE}c00'${COLOR}"
+        ascii13="  ${WHITE}'kK${COLOR}KKOxddxkOO00000Okxoc;''   ${WHITE}.dKk'${COLOR}"
+        ascii14="    ${WHITE}l0Ko.                    .c00l'${COLOR}"
+        ascii15="     ${WHITE}'l0Kk:.              .;xK0l'"
+        ascii16="        ${WHITE}'lkK0xl:;,,,,;:ldO0kl'"
+        ascii17="            ${WHITE}'^:ldxkkkkxdl:^'    "
+        ascii18=""
+        ascii19=""
+        ;;
+    "opensuse leap" | "leap")
+        ascii00="          ====             "
+        ascii01="         ======            "
+        ascii02="       ==== ====+          "
+        ascii03="     +====    +====        "
+        ascii04="   +===+        ====       "
+        ascii05="  ====            ====     "
+        ascii06="+===               +====   "
+        ascii07="====               +====   "
+        ascii08=" =====            ====     "
+        ascii09="   +===+        =====      "
+        ascii10="==+  =====    +===+  ===   "
+        ascii11="====   ==== =====  =====   "
+        ascii12="  ====  =======   ====     "
+        ascii13="    ====  ===   ====       "
+        ascii14="     ====+    ====         "
+        ascii15="       ==== =====          "
+        ascii16="         ======            "
+        ascii17="           ==              "
+        ascii18=""
+        ascii19=""
+        ;;            
     "pop!_os" | "popos")
         ascii00="⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ "
 	    ascii01="⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿ "
