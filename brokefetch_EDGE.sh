@@ -78,7 +78,7 @@ fi
 
 
 case "$OS_NAME" in
-    "Adelie Linux")        OS="Adelie Linux (Are you a Action Retro?)";;
+    "Adelie Linux")        OS="Adelie Linux (Are you a Action Retro?)";; #
     "Aeon")                OS="Aeon (Bro wth is that, just use something normal)";; #
     "AlmaLinux")           OS="AlmaLinux (I can't believe it's not CentOS)";; #
     "Alpine Linux")        OS="Alpine (because I can't afford a mountain)";; #
@@ -112,7 +112,7 @@ case "$OS_NAME" in
     "Zorin OS")            OS="Zorin (Because I cant afford Windows)";; #
     "Windows")             OS="Windows (Rebooting my patience)";; #
     "macOS")               OS="macOS (Broke but still bragging)";; #
-    "WSL")                 OS="WSL (Linux for those who sold a kidney)";;
+    "WSL")                 OS="WSL (Linux for those who sold a kidney)";; #
     "Android")             OS="Android (my phone is smarter than me)";; #
     "FreeBSD")             OS="FreeBSD (Free software, broke user)";; #
     *) OS="$OS_NAME (??)";;
@@ -439,6 +439,28 @@ unset ascii00 ascii01 ascii02 ascii03 ascii04 ascii05 ascii06 ascii07 ascii08 as
 
 # Select ASCII art based on the distro name
 case "$DISTRO_TO_DISPLAY" in
+    "adelie linux" | "adelie")
+ascii00="                                   "
+ascii01="                                   "
+ascii02="                                   " 
+ascii03="                                   "
+ascii04="                                   "
+ascii05="${BOLD}I had issues with the adelie ascii "
+ascii06="                                   "
+ascii07="                                   "
+ascii08="                                   "
+ascii09="                                   "
+ascii10="                                   "
+ascii11="                                   "
+ascii12="                                   "
+ascii13="                                   "
+ascii14="                                   "
+ascii15=""
+ascii16="that's it"
+ascii17=""
+ascii18=""
+ascii19=""
+    ;;
     "aeon")
         ascii00="⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷   "
         ascii01="⣿⡇              ⢸⣿      "
