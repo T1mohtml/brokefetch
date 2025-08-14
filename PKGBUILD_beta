@@ -7,39 +7,42 @@ arch=('any')
 url="https://github.com/Szerwigi1410/brokefetch"
 license=('MIT')
 depends=('bash')
-source=()
-sha256sums=()
-
-# Nuke old built packages right away
-rm -f "$PWD"/*.pkg.tar.*
+source=("$pkgname::git+$url")
+sha256sums=('SKIP')
 
 pkgver() {
-    # Get latest commit hash
-    local hash
-    hash=$(git ls-remote "$url" HEAD | cut -f1 | cut -c1-7)
-
-    # Get latest commit date in YYYY.MM.DD format
-    local date
-    date=$(curl -s "https://api.github.com/repos/Szerwigi1410/brokefetch/commits" \
-        | grep '"date"' \
-        | head -n 1 \
-        | cut -d'"' -f4 \
-        | cut -d'T' -f1 \
-        | tr - .)
-
+    cd "$srcdir/$pkgname"
+    local hash date
+    hash=$(git rev-parse --short HEAD)
+    date=$(git log -1 --format=%cd --date=format:'%Y.%m.%d')
     echo "${date}.r${hash}"
 }
 
 prepare() {
-    echo "🧹 Removing old beta script..."
-    rm -f "$srcdir/brokefetch_beta.sh"
-
-    echo "⬇️ Fetching latest brokefetch_beta.sh..."
-    curl -L "https://raw.githubusercontent.com/Szerwigi1410/brokefetch/main/brokefetch_beta.sh" \
-        -o "$srcdir/brokefetch_beta.sh"
+    echo "🧹 Preparing beta script..."
+    cp "$srcdir/$pkgname/brokefetch_beta.sh" "$srcdir/"
 }
 
 package() {
+    echo "📦 Installing beta script..."
     install -Dm755 "$srcdir/brokefetch_beta.sh" "$pkgdir/usr/bin/brokefetch-beta"
 }
 
+clean() {
+    echo "💣 Nuking old build artifacts..."
+    rm -f "$PWD"/*.pkg.tar.* "$PWD"/*.log
+}
+
+post_install() {
+    echo "♻️ Cleaning old system binary (if any)..."
+    if [[ -f /usr/bin/brokefetch-beta ]]; then
+        rm -f /usr/bin/brokefetch-beta
+    fi
+}
+
+post_upgrade() {
+    echo "🔄 Updating... removing outdated beta script..."
+    if [[ -f /usr/bin/brokefetch-beta ]]; then
+        rm -f /usr/bin/brokefetch-beta
+    fi
+}
