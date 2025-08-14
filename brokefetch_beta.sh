@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# IMPORTANT NOTE: This script is called "brokefetch_EDGE.sh" because it is not fully functional yet.
+# IMPORTANT NOTE: This script is called "brokefetch_beta.sh" because it is not fully functional yet.
 # It is a work in progress. When completed, it will replace "brokefetch.sh".
-# This script will display different ASCII for each OS and do many other useful stuff which brokefetch.sh doesn't support yet.
+# This script will  many other useful stuff which brokefetch.sh doesn't support yet.
 
 GREEN="\033[32m"
 RED="\033[31m"
