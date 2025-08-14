@@ -51,6 +51,15 @@ brew install brokefetch
 # Troubleshooting
 If you have any issues with brokefetch, try to remove the config and run brokefetch again.
 ---
-~### 💖 If you enjoy brokefetch, please ⭐ it here and vote on the [AUR package](https://aur.archlinux.org/packages/brokefetch) to support its survival!~
 
-### Sadly we lost and some cock sucke- uhh I meant AUR trusted user has removed the package from AUR.
+### 💖 If you enjoy brokefetch, please ⭐ it here and vote on the [AUR package](https://aur.archlinux.org/packages/brokefetch-git) to support its survival!
+
+### ~Sadly we lost and some cock sucke- uhh I meant AUR trusted user has removed the package from AUR.~
+
+### yay `brokefetch is back on the aur 🥳` ###
+
+### give it a try
+
+```bash
+yay -S brokefetch-git
+```
