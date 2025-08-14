@@ -394,12 +394,30 @@ case "$WINDOW_MANAGER" in
     "tty") WINDOW_MANAGER="tty (Idk what to say here tbh)";;
     "Wayland"|"wayland") WINDOW_MANAGER="Wayland (X11 is old and scary)";;
     "X11"|"x11") WINDOW_MANAGER="X11 (Wayland is good for toddlers)";;
-    *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like me)";;
+    *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like you)";;
 esac
 
 # Initialize
 ASCII_DISTRO=""
 
+# Terminal
+
+if [ -n "$TERM "]; then
+    $TERMINAL="$TERM"
+else
+    $TERMINAL="$(echo "$TERM" | tr '[:upper:]' '[:lower:]')"
+fi
+
+case "$TERMINAL" in
+    "xterm") TERMINAL="XTerm (the original terminal, but no money for a real one)";;
+    "gnome-terminal") TERMINAL="Gnome Terminal (because I dislike gnome console)";;
+    "konsole") TERMINAL="Konsole (KDE's terminal, but no money for a real one)";;
+    "terminator") TERMINAL="Terminator (you are NOT Arnold Schwarzenegger)";;
+    "alacritty") TERMINAL="Alacritty (because I can't afford a real terminal)";;
+    "kitty") TERMINAL="Kitty (good terminal tbh)";;
+    "rxvt-unicode") TERMINAL="Rxvt-Unicode (because I can't afford a real terminal)";;
+    *) TERMINAL="$TERMINAL (probably broke like you)";;
+esac
 # Get options
 while getopts ":hva:l" option; do
    case $option in
