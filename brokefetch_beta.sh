@@ -416,7 +416,7 @@ case "$TERM" in
     "alacritty") TERMINAL="Alacritty (because I can't afford a real terminal)";;
     "kitty") TERMINAL="Kitty (good terminal tbh)";;
     "rxvt-unicode") TERMINAL="Rxvt-Unicode (because I can't afford a real terminal)";;
-    *) TERMINAL="$TERMINAL (probably broke like you)";;
+    *) TERMINAL="Terminal of regret";;
 esac
 
 # Get options
