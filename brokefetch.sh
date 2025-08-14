@@ -1295,7 +1295,7 @@ echo -e "${COLOR}${ascii07}${BOLD}Shell:${RESET} $SHELLOUT"
 echo -e "${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
 echo -e "${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
 echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} $WINDOW_MANAGER"
-echo -e "${COLOR}${ascii11}${BOLD}Terminal:${RESET} $TERMINAL" #Terminal of Regret
+echo -e "${COLOR}${ascii11}${BOLD}Terminal:${RESET} $TERMINAL"
 echo -e "${COLOR}${ascii12}${BOLD}CPU:${RESET} $CPU"
 echo -e "${COLOR}${ascii13}${BOLD}GPU:${RESET} $GPU"
 echo -e "${COLOR}${ascii14}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
