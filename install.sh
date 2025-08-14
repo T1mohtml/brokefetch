@@ -67,8 +67,8 @@ if [ ${#available_scripts[@]} -eq 0 ]; then
     echo "Please choose a version to download and install:"
     
     select choice in "Normal" "beta" "modular" "Quit"; do
-        case $choice in
-            "Normal" )
+        case $REPLY in
+            1 )
                 echo "Downloading the normal version..."
                 if curl -sSL "$NORMAL_URL" -o "$temp_dir/brokefetch.sh"; then
                     source_file="$temp_dir/brokefetch.sh"
@@ -81,7 +81,7 @@ if [ ${#available_scripts[@]} -eq 0 ]; then
                     exit 1
                 fi
                 ;;
-            "Edge" )
+            2 )
                 echo "Downloading the beta version..."
                 if curl -sSL "$EDGE_URL" -o "$temp_dir/brokefetch_beta.sh"; then
                     source_file="$temp_dir/brokefetch_beta.sh"
@@ -94,7 +94,7 @@ if [ ${#available_scripts[@]} -eq 0 ]; then
                     exit 1
                 fi
                 ;;
-            "Edge (AC)" )
+            3 )
                 echo "Downloading the modular version..."
                 if curl -sSL "$EDGE_AC_URL" -o "$temp_dir/brokefetch_mod.sh"; then
                     source_file="$temp_dir/brokefetch_mod.sh"
@@ -107,9 +107,9 @@ if [ ${#available_scripts[@]} -eq 0 ]; then
                     exit 1
                 fi
                 ;;
-            "Quit" )
+            4 )
                 echo "Exiting installation."
-                rm -r "$temp_dir"
+                rm -rf "$temp_dir"
                 exit 0
                 ;;
             * )
@@ -138,7 +138,7 @@ fi
 # Exit if no source file was determined (e.g., download failed or user quit)
 if [ -z "$source_file" ]; then
     echo "Error: Could not determine a source file for installation."
-    rm -r "$temp_dir"
+    rm -rf "$temp_dir"
     exit 1
 fi
 
@@ -163,7 +163,7 @@ select install_choice in "/usr/bin" "$HOME/.local/bin" "Quit"; do
             ;;
         "Quit" )
             echo "Installation canceled."
-            if [ $downloaded -eq 1 ]; then rm -r "$temp_dir"; fi
+            if [ $downloaded -eq 1 ]; then rm -rf "$temp_dir"; fi
             exit 0
             ;;
         * )
@@ -181,7 +181,7 @@ if [ -f "$install_path" ]; then
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
         echo "Installation canceled by user."
-        if [ $downloaded -eq 1 ]; then rm -r "$temp_dir"; fi
+        if [ $downloaded -eq 1 ]; then rm -rf "$temp_dir"; fi
         exit 0
     fi
 fi
@@ -244,7 +244,7 @@ fi
 # Clean up temporary downloaded file and cloned repository
 if [ $downloaded -eq 1 ]; then
     echo "Cleaning up temporary files..."
-    rm -r "$temp_dir"
+    rm -rf "$temp_dir"
 fi
 
 exit 0
