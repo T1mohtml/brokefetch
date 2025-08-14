@@ -402,10 +402,10 @@ ASCII_DISTRO=""
 
 # Terminal
 
-if [ -n "$TERM "]; then
-    $TERMINAL="$TERM"
+if [ -n "$TERM" ]; then
+    TERMINAL="$TERM"
 else
-    $TERMINAL="$(echo "$TERM" | tr '[:upper:]' '[:lower:]')"
+    TERMINAL="$(echo "$TERM" | tr '[:upper:]' '[:lower:]')"
 fi
 
 case "$TERM" in
@@ -414,7 +414,7 @@ case "$TERM" in
     "konsole") TERMINAL="Konsole (KDE's terminal, but no money for a real one)";;
     "terminator") TERMINAL="Terminator (you are NOT Arnold Schwarzenegger)";;
     "alacritty") TERMINAL="Alacritty (because I can't afford a real terminal)";;
-    "kitty") TERMINAL="Kitty (good terminal tbh)";;
+    "xterm-kitty" | "kitty") TERMINAL="Kitty (good terminal tbh)";;
     "rxvt-unicode") TERMINAL="Rxvt-Unicode (because I can't afford a real terminal)";;
     *) TERMINAL="Terminal of regret";;
 esac
