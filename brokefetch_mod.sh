@@ -1,12 +1,9 @@
 #!/bin/bash
 
-# This script automatically formats the ASCII art and system information
-# to ensure there is a consistent space between them, no matter the length
-# of the ASCII art lines.
 
-# IMPORTANT NOTE: This script is called "brokefetch_EDGE.sh" because it is not fully functional yet.
-# It is a work in progress. When completed, it will replace "brokefetch.sh".
-# This script will display different ASCII for each OS and do many other useful stuff which brokefetch.sh doesn't support yet.
+# IMPORTANT NOTE: This script is called "brokefetch_mod.sh" because it is modular which means it uses external sources to work.
+# It is a work in progress.
+# This script will display different ASCII for each OS from an external logos folders.
 
 # --- CONFIGURATION ---
 CONFIG_FILE="$HOME/.config/brokefetch/config"
