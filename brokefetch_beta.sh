@@ -316,7 +316,7 @@ case $SHELL_NAME in
     dash)SHELLOUT="$SHELL_NAME - Speeeeed (for debian only)";;
 #    ksh)SHELLOUT="";;
     idksh)SHELLOUT="idksh - What is this? (My future)";;
-    *)SHELLOUT="Your shell is so unpopular that we don't care about it.";;
+    *)SHELLOUT="Your shell is so niche that we don't care about it.";;
 esac
 
 #Desktop Environment
@@ -349,7 +349,7 @@ case "$DESKTOP_ENV" in
     "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
     "Hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
     "TTY") DESKTOP_ENV="TTY (go touch grass bro)";;
-    *) DESKTOP_ENV="Unknown DE (probably broke like me)";;
+    *) DESKTOP_ENV="Unknown DE (probably broke like you)";;
 esac
 
 # Window Managers
@@ -394,11 +394,30 @@ case "$WINDOW_MANAGER" in
     "tty") WINDOW_MANAGER="tty (Idk what to say here tbh)";;
     "Wayland"|"wayland") WINDOW_MANAGER="Wayland (X11 is old and scary)";;
     "X11"|"x11") WINDOW_MANAGER="X11 (Wayland is good for toddlers)";;
-    *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like me)";;
+    *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like you)";;
 esac
 
 # Initialize
 ASCII_DISTRO=""
+
+# Terminal
+
+if [ -n "$TERM "]; then
+    $TERMINAL="$TERM"
+else
+    $TERMINAL="$(echo "$TERM" | tr '[:upper:]' '[:lower:]')"
+fi
+
+case "$TERM" in
+    "xterm") TERMINAL="XTerm (the original terminal, but no money for a newer one)";;
+    "gnome-terminal") TERMINAL="Gnome Terminal (because I dislike gnome console)";;
+    "konsole") TERMINAL="Konsole (KDE's terminal, but no money for a real one)";;
+    "terminator") TERMINAL="Terminator (you are NOT Arnold Schwarzenegger)";;
+    "alacritty") TERMINAL="Alacritty (because I can't afford a real terminal)";;
+    "kitty") TERMINAL="Kitty (good terminal tbh)";;
+    "rxvt-unicode") TERMINAL="Rxvt-Unicode (because I can't afford a real terminal)";;
+    *) TERMINAL="$TERMINAL (probably broke like you)";;
+esac
 
 # Get options
 while getopts ":hva:l" option; do
@@ -1276,7 +1295,7 @@ echo -e "${COLOR}${ascii07}${BOLD}Shell:${RESET} $SHELLOUT"
 echo -e "${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
 echo -e "${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
 echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} $WINDOW_MANAGER"
-echo -e "${COLOR}${ascii11}${BOLD}Terminal:${RESET} Terminal of Regret"
+echo -e "${COLOR}${ascii11}${BOLD}Terminal:${RESET} $TERMINAL"
 echo -e "${COLOR}${ascii12}${BOLD}CPU:${RESET} $CPU"
 echo -e "${COLOR}${ascii13}${BOLD}GPU:${RESET} $GPU"
 echo -e "${COLOR}${ascii14}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
