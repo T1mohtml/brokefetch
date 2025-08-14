@@ -1145,7 +1145,7 @@ case "$DISTRO_TO_DISPLAY" in
     	ascii18=""
      	ascii19=""
         ;;
-    "ubuntu" | "kubuntu")
+    "ubuntu" | "kubuntu" | "lubuntu" | "xubuntu" | "ubuntustudio" | "ubuntu mate" | "ubuntu budgie")
         ascii00="            .-/+oossssoo+/-.               "
         ascii01="        \`:+ssssssssssssssssss+:\`           "
         ascii02="      -+ssssssssssssssssssyyssss+-         "
