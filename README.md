@@ -42,10 +42,11 @@ brew install brokefetch
 ## Important note!
 
 - `brokefetch.sh` - Stable, "just works"
-- `brokefetch_EDGE.sh` - Might contain bugs, has the newest features
+- `brokefetch_beta.sh` - Might contain bugs, has the newest features
 - `brokefetch_EDGE_legacy.sh` - just a backup of the old edge version (currently not present)
-- `brokefetch_EDGE_AC.sh` - a version of EDGE that loads the logos from ~/.config/brokefetch/logos
+- `brokefetch_mod.sh` - a version of EDGE that loads the logos from ~/.config/brokefetch/logos (mod stands for **mod**ular)
 
+(brokefetch_EDGE got renamed to brokefetch_beta)
 ---
 # Troubleshooting
 If you have any issues with brokefetch, try to remove the config and run brokefetch again.
