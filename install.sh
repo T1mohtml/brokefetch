@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# This script interactively installs either 'brokefetch.sh', 'brokefetch_EDGE.sh',
-# or 'brokefetch_EDGE_AC.sh' from the current directory, or downloads it if not found.
+# This script interactively installs either 'brokefetch.sh', 'brokefetch_beta.sh'.
+# or 'brokefetch_mod.sh' from the current directory, or downloads it if not found.
 # It gives the user a choice to install to /usr/bin (system-wide) or ~/.local/bin
-# (user-specific). If brokefetch_EDGE_AC.sh is selected, it will also clone the
+# (user-specific). If brokefetch_mod.sh is selected, it will also clone the
 # repository to get the 'logos' directory.
 
 # --- Best practice for robust scripts: Exit immediately on errors ---
@@ -34,8 +34,8 @@ check_git() {
 # --- Define download URLs ---
 # These URLs should point to the raw files in your GitHub repository.
 NORMAL_URL="https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/brokefetch.sh"
-EDGE_URL="https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/brokefetch_EDGE.sh"
-EDGE_AC_URL="https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/brokefetch_EDGE_AC.sh"
+EDGE_URL="https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/brokefetch_beta.sh"
+EDGE_AC_URL="https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/brokefetch_mod.sh"
 REPO_URL="https://github.com/Szerwigi1410/brokefetch.git"
 
 # --- Main script execution starts here ---
@@ -54,11 +54,11 @@ available_scripts=()
 if [ -f "brokefetch.sh" ]; then
     available_scripts+=("brokefetch.sh")
 fi
-if [ -f "brokefetch_EDGE.sh" ]; then
-    available_scripts+=("brokefetch_EDGE.sh")
+if [ -f "brokefetch_beta.sh" ]; then
+    available_scripts+=("brokefetch_beta.sh")
 fi
-if [ -f "brokefetch_EDGE_AC.sh" ]; then
-    available_scripts+=("brokefetch_EDGE_AC.sh")
+if [ -f "brokefetch_mod.sh" ]; then
+    available_scripts+=("brokefetch_mod.sh")
 fi
 
 # If no local files found, prompt to download
@@ -66,9 +66,9 @@ if [ ${#available_scripts[@]} -eq 0 ]; then
     echo "No brokefetch scripts found in the current directory."
     echo "Please choose a version to download and install:"
     
-    select choice in "Normal" "Edge" "Edge (AC)" "Quit"; do
-        case $choice in
-            "Normal" )
+    select choice in "Normal" "beta" "modular" "Quit"; do
+        case $REPLY in
+            1 )
                 echo "Downloading the normal version..."
                 if curl -sSL "$NORMAL_URL" -o "$temp_dir/brokefetch.sh"; then
                     source_file="$temp_dir/brokefetch.sh"
@@ -81,35 +81,35 @@ if [ ${#available_scripts[@]} -eq 0 ]; then
                     exit 1
                 fi
                 ;;
-            "Edge" )
-                echo "Downloading the EDGE version..."
-                if curl -sSL "$EDGE_URL" -o "$temp_dir/brokefetch_EDGE.sh"; then
-                    source_file="$temp_dir/brokefetch_EDGE.sh"
-                    script_to_install="brokefetch_EDGE.sh"
+            2 )
+                echo "Downloading the beta version..."
+                if curl -sSL "$EDGE_URL" -o "$temp_dir/brokefetch_beta.sh"; then
+                    source_file="$temp_dir/brokefetch_beta.sh"
+                    script_to_install="brokefetch_beta.sh"
                     downloaded=1
                     break
                 else
-                    echo "Error: Failed to download the EDGE version. Exiting."
+                    echo "Error: Failed to download the beta version. Exiting."
                     rm -r "$temp_dir"
                     exit 1
                 fi
                 ;;
-            "Edge (AC)" )
-                echo "Downloading the EDGE_AC version..."
-                if curl -sSL "$EDGE_AC_URL" -o "$temp_dir/brokefetch_EDGE_AC.sh"; then
-                    source_file="$temp_dir/brokefetch_EDGE_AC.sh"
-                    script_to_install="brokefetch_EDGE_AC.sh"
+            3 )
+                echo "Downloading the modular version..."
+                if curl -sSL "$EDGE_AC_URL" -o "$temp_dir/brokefetch_mod.sh"; then
+                    source_file="$temp_dir/brokefetch_mod.sh"
+                    script_to_install="brokefetch_mod.sh"
                     downloaded=1
                     break
                 else
-                    echo "Error: Failed to download the EDGE (AC) version. Exiting."
+                    echo "Error: Failed to download the modular version. Exiting."
                     rm -r "$temp_dir"
                     exit 1
                 fi
                 ;;
-            "Quit" )
+            4 )
                 echo "Exiting installation."
-                rm -r "$temp_dir"
+                rm -rf "$temp_dir"
                 exit 0
                 ;;
             * )
@@ -138,7 +138,7 @@ fi
 # Exit if no source file was determined (e.g., download failed or user quit)
 if [ -z "$source_file" ]; then
     echo "Error: Could not determine a source file for installation."
-    rm -r "$temp_dir"
+    rm -rf "$temp_dir"
     exit 1
 fi
 
@@ -163,7 +163,7 @@ select install_choice in "/usr/bin" "$HOME/.local/bin" "Quit"; do
             ;;
         "Quit" )
             echo "Installation canceled."
-            if [ $downloaded -eq 1 ]; then rm -r "$temp_dir"; fi
+            if [ $downloaded -eq 1 ]; then rm -rf "$temp_dir"; fi
             exit 0
             ;;
         * )
@@ -181,7 +181,7 @@ if [ -f "$install_path" ]; then
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
         echo "Installation canceled by user."
-        if [ $downloaded -eq 1 ]; then rm -r "$temp_dir"; fi
+        if [ $downloaded -eq 1 ]; then rm -rf "$temp_dir"; fi
         exit 0
     fi
 fi
@@ -211,8 +211,8 @@ else
 fi
 
 # --- Step 5: Conditional post-installation steps for the AC version ---
-if [ "$script_to_install" = "brokefetch_EDGE_AC.sh" ]; then
-    echo "Processing post-installation steps for brokefetch_EDGE_AC.sh..."
+if [ "$script_to_install" = "brokefetch_mod.sh" ]; then
+    echo "Processing post-installation steps for brokefetch_mod.sh..."
     
     # Check if git is available
     check_git
@@ -244,7 +244,7 @@ fi
 # Clean up temporary downloaded file and cloned repository
 if [ $downloaded -eq 1 ]; then
     echo "Cleaning up temporary files..."
-    rm -r "$temp_dir"
+    rm -rf "$temp_dir"
 fi
 
 exit 0
