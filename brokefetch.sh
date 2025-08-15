@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # IMPORTANT NOTE: This script is called "brokefetch.sh" because it is ther most stable/recomended.
-# and brokefetch_beta.sh will replcae this script 
+# and brokefetch_beta.sh will replace this script 
 
 GREEN="\033[32m"
 RED="\033[31m"
