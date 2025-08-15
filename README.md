@@ -47,6 +47,7 @@ brew install brokefetch
 - `brokefetch_mod.sh` - a version of EDGE that loads the logos from ~/.config/brokefetch/logos (mod stands for **mod**ular)
 
 (brokefetch_EDGE got renamed to brokefetch_beta)
+
 ---
 # Troubleshooting
 If you have any issues with brokefetch, try to remove the config and run brokefetch again.
