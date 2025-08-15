@@ -1,0 +1,48 @@
+# Maintainer: Oliwier <szerwigi14@gmail.com>
+pkgname=brokefetch-beta
+pkgver=2025.08.14.ra126135
+pkgrel=1
+pkgdesc="A broken neofetch clone script 💀 (beta version)"
+arch=('any')
+url="https://github.com/Szerwigi1410/brokefetch"
+license=('MIT')
+depends=('bash')
+source=("$pkgname::git+$url")
+sha256sums=('SKIP')
+
+pkgver() {
+    cd "$srcdir/$pkgname"
+    local hash date
+    hash=$(git rev-parse --short HEAD)
+    date=$(git log -1 --format=%cd --date=format:'%Y.%m.%d')
+    echo "${date}.r${hash}"
+}
+
+prepare() {
+    echo "🧹 Preparing beta script..."
+    cp "$srcdir/$pkgname/brokefetch_beta.sh" "$srcdir/"
+}
+
+package() {
+    echo "📦 Installing beta script..."
+    install -Dm755 "$srcdir/brokefetch_beta.sh" "$pkgdir/usr/bin/brokefetch-beta"
+}
+
+clean() {
+    echo "💣 Nuking old build artifacts..."
+    rm -f "$PWD"/*.pkg.tar.* "$PWD"/*.log
+}
+
+post_install() {
+    echo "♻️ Cleaning old system binary (if any)..."
+    if [[ -f /usr/bin/brokefetch-beta ]]; then
+        rm -f /usr/bin/brokefetch-beta
+    fi
+}
+
+post_upgrade() {
+    echo "🔄 Updating... removing outdated beta script..."
+    if [[ -f /usr/bin/brokefetch-beta ]]; then
+        rm -f /usr/bin/brokefetch-beta
+    fi
+}
