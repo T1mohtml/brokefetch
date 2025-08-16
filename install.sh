@@ -218,19 +218,20 @@ if [ "$script_to_install" = "brokefetch_mod.sh" ]; then
     check_git
 
     repo_clone_path="$temp_dir/brokefetch_repo"
-    target_logos_dir="$HOME/.config/brokefetch/logos"
-
+    
+    # IMPORTANT: The logos directory is now installed to a system-wide location.
+    target_logos_dir="/usr/share/brokefetch/logos"
+    
     echo "Cloning repository to get the logos folder..."
     git clone --depth 1 "$REPO_URL" "$repo_clone_path"
 
     echo "Copying 'logos' directory to '$target_logos_dir'..."
-    if [ "$use_sudo" = "true" ]; then
-        sudo mkdir -p "$HOME/.config/brokefetch/"
-        sudo cp -r "$repo_clone_path/logos" "$HOME/.config/brokefetch/"
-    else
-        mkdir -p "$HOME/.config/brokefetch/"
-        cp -r "$repo_clone_path/logos" "$HOME/.config/brokefetch/"
-    fi
+    # Use sudo to create the system directory and copy the files
+    sudo mkdir -p "$target_logos_dir"
+    sudo cp -r "$repo_clone_path/logos" "$target_logos_dir"
+
+    # Set ownership for the user to manage their own logos.
+    sudo chown -R "$(whoami):$(whoami)" "$target_logos_dir"
     echo "Successfully copied the 'logos' directory."
 fi
 
@@ -248,4 +249,3 @@ if [ $downloaded -eq 1 ]; then
 fi
 
 exit 0
-
