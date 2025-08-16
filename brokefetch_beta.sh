@@ -342,7 +342,7 @@ esac
 
 case "$DESKTOP_ENV" in
     "Aqua") DESKTOP_ENV="Aqua (because I can't afford a real desktop)";;
-    "Aero"  DESKTOP_ENV="Aero (but no money for a real DE)";;
+    "Aero") DESKTOP_ENV="Aero (but no money for a real DE)";;
     "gnome") DESKTOP_ENV="Gnome (but no extensions)";;
     "kde") DESKTOP_ENV="KDE (but no Plasma)";;
     "xfce") DESKTOP_ENV="XFCE (because I can't afford KDE)";;
