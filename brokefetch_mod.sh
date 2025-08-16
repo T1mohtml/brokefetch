@@ -519,6 +519,38 @@ case "$OS_NAME" in
     *) OS="$OS_NAME (??)";;
 esac
 
+# Kernel
+if [ -f /etc/os-release ]; then
+    # linux
+    KERNEL_NAME="$(uname -r | grep -Eio 'zen|lts|rt|realtime' | head -1)"
+    case $KERNEL_NAME in
+        zen)KERNEL="Zen (But no peace in life)";;
+        lts)KERNEL="LTS (But no stability in life)";;
+        rt)KERNEL="Realtime (But lagging in life)";;
+        realtime)KERNEL="Realtime (But lagging in life)";;
+        *)KERNEL="$ 0.00/hour"
+    esac
+elif grep -q Microsoft /proc/version 2>/dev/null; then
+    # windows subsystem for linux
+    KERNEL_NAME="Costs 129 dollars plus electricity."
+elif [[ "$(uname -o)" == "Android" ]]; then
+    # Termux on Android
+    KERNEL_NAME="Android (Fake Linux ripoff)"
+else
+    # Mac, Windows, Fallback (such as freeBSD)
+    case "$(uname -s)" in
+        "Darwin")
+            KERNEL="Darwin (Ate my wallet)"
+            ;;
+        MINGW*|MSYS*|CYGWIN*)
+            KERNEL="NT (Like a tricycle the price of a Porsche)"
+            ;;
+        *)
+            KERNEL="Generic (Synonym: Your life)"
+            ;;
+    esac
+fi
+
 
 # Uptime - Linux, WSL & Android
 if [ -r /proc/uptime ]; then
@@ -852,7 +884,7 @@ info=(
     "${COLOR}${RESET}-----------------------"
     "${COLOR}${BOLD}OS:${RESET} ${OS}"
     "${COLOR}${BOLD}Host:${RESET} ${HOST}"
-    "${COLOR}${BOLD}Kernel:${RESET} 0.00/hr"
+    "${COLOR}${BOLD}Kernel:${RESET} ${KERNEL}"
     "${COLOR}${BOLD}Uptime:${RESET} ${UPTIME_OVERRIDE}"
     "${COLOR}${BOLD}Packages:${RESET} ${PKG_COUNT} (none legal)"
     "${COLOR}${BOLD}Shell:${RESET} brokeBash 0.01"
