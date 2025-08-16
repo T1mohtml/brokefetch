@@ -687,7 +687,7 @@ case "$OS_NAME" in
     "macOS")
         DESKTOP_ENV="Aqua";;
     "Windows")
-        DESKTOP_ENV="Windows Desktop (but no money for a real OS)";;
+        DESKTOP_ENV="Aero";;
     "WSL")
         DESKTOP_ENV="WSL Desktop (because I can't afford a real Linux)";;
     "Android")
@@ -696,6 +696,7 @@ esac
 
 case "$DESKTOP_ENV" in
     "Aqua") DESKTOP_ENV="Aqua (because I can't afford a real desktop)";;
+    "Aero"  DESKTOP_ENV="Aero (but no money for a real DE)";;
     "gnome") DESKTOP_ENV="Gnome (but no extensions)";;
     "kde") DESKTOP_ENV="KDE (but no Plasma)";;
     "xfce") DESKTOP_ENV="XFCE (because I can't afford KDE)";;
