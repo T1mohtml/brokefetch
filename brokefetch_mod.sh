@@ -719,6 +719,27 @@ case "$WINDOW_MANAGER" in
     *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like me)";;
 esac
 
+# Terminal
+
+if [ -n "$TERM" ]; then
+    TERMINAL="$TERM"
+else
+    TERMINAL="$(echo "$TERM" | tr '[:upper:]' '[:lower:]')"
+fi
+
+case "$TERM" in
+    "xterm") TERMINAL="XTerm (the original terminal, but no money for a newer one)";;
+    "xterm-256color") TERMINAL="XTerm (But with whole 256 colos!)";;
+    "gnome-terminal") TERMINAL="Gnome Terminal (because I dislike gnome console)";;
+    "konsole") TERMINAL="Konsole (KDE's terminal, but no money for a real one)";;
+    "terminator") TERMINAL="Terminator (you are NOT Arnold Schwarzenegger)";;
+    "alacritty") TERMINAL="Alacritty (because I can't afford a real terminal)";;
+    "xterm-kitty" | "kitty") TERMINAL="Kitty (good terminal tbh)";;
+    "rxvt-unicode") TERMINAL="Rxvt-Unicode (because I can't afford a real terminal)";;
+    *) TERMINAL="Terminal of regret";;
+esac
+
+
 # --- COMMAND LINE OPTIONS ---
 # Get options
 while getopts ":hva:lc" option; do
@@ -838,7 +859,7 @@ info=(
     "${COLOR}${BOLD}Resolution:${RESET} CRT 640x480"
     "${COLOR}${BOLD}DE:${RESET} ${DESKTOP_ENV}"
     "${COLOR}${BOLD}WM:${RESET} ${WINDOW_MANAGER}"
-    "${COLOR}${BOLD}Terminal:${RESET} Terminal of Regret"
+    "${COLOR}${BOLD}Terminal:${RESET} ${TERMINAL}"
     "${COLOR}${BOLD}CPU:${RESET} ${CPU}"
     "${COLOR}${BOLD}GPU:${RESET} ${GPU}"
     "${COLOR}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"

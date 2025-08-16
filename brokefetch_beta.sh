@@ -411,6 +411,7 @@ fi
 
 case "$TERM" in
     "xterm") TERMINAL="XTerm (the original terminal, but no money for a newer one)";;
+    "xterm-256color") TERMINAL="XTerm (But with whole 256 colos!)";;
     "gnome-terminal") TERMINAL="Gnome Terminal (because I dislike gnome console)";;
     "konsole") TERMINAL="Konsole (KDE's terminal, but no money for a real one)";;
     "terminator") TERMINAL="Terminator (you are NOT Arnold Schwarzenegger)";;
