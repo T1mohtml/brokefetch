@@ -426,7 +426,8 @@ while getopts ":hva:l" option; do
          echo "Oh and btw the -v option displays the version of brokefetch EDGE."
          echo " -a lets you override ASCII art distro name"
          echo " -l lists all available ASCII arts"
-         
+         echo ""
+         echo -e "The config file is located at ${BOLD}~/.config/brokefetch/${RESET}"
          exit;;
       v) # display Version
          echo "brokefetch EDGE version 1.7"

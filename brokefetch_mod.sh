@@ -726,6 +726,8 @@ while getopts ":hva:lc" option; do
          echo " -a lets you override ASCII art distro name"
          echo " -l lists all available ASCII arts"
          echo " -c enables colors in the output"
+         echo ""
+         echo -e "The config file is currently located at ${BOLD}~/.config/brokefetch/${RESET}"
          exit;;
       v) # display Version
          echo "brokefetch EDGE version 1.8"
