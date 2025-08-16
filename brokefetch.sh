@@ -306,7 +306,7 @@ fi
 
 case $SHELL_NAME in
     bash)SHELLOUT="$SHELL_NAME - The standard (for failure)";;
-    zsh)SHELLOUT="$SHELL_NAME - Powerful (Unlike me)";;
+    zsh)SHELLOUT="$SHELL_NAME - Powerful (Unlike you)";;
     fish)SHELLOUT="$SHELL_NAME - Tab key ASMR";;
 #    tcsh)SHELLOUT="";;
 #    csh)SHELLOUT="";;
