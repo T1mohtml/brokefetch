@@ -138,14 +138,14 @@ elif [[ "$(uname -o)" == "Android" ]]; then
 else
     # Mac, Windows, Fallback (such as freeBSD)
     case "$(uname -s)" in
-        Darwin)
-            KERNEL_NAME="Darwin (Ate my wallet)"
+        "Darwin")
+            KERNEL="Darwin (Ate my wallet)"
             ;;
         MINGW*|MSYS*|CYGWIN*)
-            KERNEL_NAME="NT (Like a tricycle the price of a Porsche)"
+            KERNEL="NT (Like a tricycle the price of a Porsche)"
             ;;
         *)
-            KERNEL_NAME="Generic (Synonym: My life)"
+            KERNEL="Generic (Synonym: Your life)"
             ;;
     esac
 fi
