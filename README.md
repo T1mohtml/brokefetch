@@ -27,13 +27,20 @@ cd brokefetch
 chmod +x brokefetch.sh
 ./brokefetch.sh
 ```
-## or use the installer "OS-wide"(experemental)
+### using install.sh
+```bash
+git clone https://github.com/Szerwigi1410/brokefetch
+cd brokefetch
+chmod +x install.sh
+./install.sh
+```
+### or use the installer "OS-wide"(experemental)
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/install.sh > install.sh ; chmod +x install.sh ; bash -c "./install.sh" ; rm -f install.sh
 ```
 
-## You can also now get it from homebrew
+### You can also now get it from homebrew
 ```bash
 brew tap T1mohtml/brokefetch
 brew install brokefetch
