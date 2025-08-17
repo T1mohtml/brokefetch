@@ -46,7 +46,7 @@ brew tap T1mohtml/brokefetch
 brew install brokefetch
 ```
 ---
-## Important note!
+# Important note!
 
 - `brokefetch.sh` - Stable, "just works"
 - `brokefetch_beta.sh` - Might contain bugs, has the newest features
