@@ -1,5 +1,7 @@
 # brokefetch
 
+[![AUR package](https://repology.org/badge/version-for-repo/aur/brokefetch.svg)](https://repology.org/project/brokefetch/versions)
+
 A broken `neofetch` clone for those of us who have no job, no GPU, no money, and no hope.
 
 ![screenshot](screenshots/brokefetch-logo_att4.png)
