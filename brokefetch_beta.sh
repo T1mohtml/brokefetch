@@ -343,9 +343,9 @@ esac
 case "$DESKTOP_ENV" in
     "Aqua") DESKTOP_ENV="Aqua (because I can't afford a real desktop)";;
     "Aero") DESKTOP_ENV="Aero (but no money for a real DE)";;
-    "gnome") DESKTOP_ENV="Gnome (but no extensions)";;
+    "gnome") DESKTOP_ENV="Gnome (but outdated extensions)";;
     "kde") DESKTOP_ENV="KDE (but no Plasma)";;
-    "XFCE") DESKTOP_ENV="XFCE (because I can't afford KDE)";;
+    "XFCE") DESKTOP_ENV="XFCE (Gnome ugly edition)";;
     "lxde") DESKTOP_ENV="LXDE (Lightweight, like my wallet)";;
     "mate") DESKTOP_ENV="MATE (because I can't afford Cinnamon)";;
     "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
