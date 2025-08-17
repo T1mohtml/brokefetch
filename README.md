@@ -40,7 +40,7 @@ chmod +x install.sh
 curl -sSL https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/main/install.sh > install.sh ; chmod +x install.sh ; bash -c "./install.sh" ; rm -f install.sh
 ```
 
-### You can also now get it from homebrew
+### Homebrew
 ```bash
 brew tap T1mohtml/brokefetch
 brew install brokefetch
