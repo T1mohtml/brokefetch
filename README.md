@@ -1,5 +1,6 @@
 # brokefetch
 
+![AUR License](https://img.shields.io/aur/license/brokefetch-git)
 [![AUR package](https://repology.org/badge/version-for-repo/aur/brokefetch.svg)](https://repology.org/project/brokefetch/versions)
 
 A broken `neofetch` clone for those of us who have no job, no GPU, no money, and no hope.
