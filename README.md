@@ -72,3 +72,5 @@ If you have any issues with brokefetch, try to remove the config and run brokefe
 ```bash
 yay -S brokefetch-git
 ```
+[![Packaging status](https://repology.org/badge/vertical-allrepos/brokefetch.svg)](https://repology.org/project/brokefetch/versions)
+
