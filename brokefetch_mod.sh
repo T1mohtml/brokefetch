@@ -7,7 +7,8 @@
 
 # --- CONFIGURATION ---
 CONFIG_FILE="$HOME/.config/brokefetch/config"
-ASCII_DIR="$HOME/.config/brokefetch/logos"
+#i did this so they think twice before thet get flashbanged :> 
+ASCII_DIR="/usr/share/brokefetch/logos/logos"
 
 # Create default config if it doesn't exist
 if [[ ! -f "$CONFIG_FILE" ]]; then
