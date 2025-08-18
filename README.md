@@ -1,4 +1,4 @@
-# broke*fetch*
+# BROKE*fetch*
 
 ![AUR License](https://img.shields.io/aur/license/brokefetch-git)
 ![GitHub top language](https://img.shields.io/github/languages/top/Szerwigi1410/brokefetch)
