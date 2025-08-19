@@ -219,7 +219,7 @@ esac
 #GPU
 if [ -f /etc/os-release ]; then
     # linux
-    GPU_NAME="$(lspci | grep -Eio 'nvidia|intel|amd' | head -1)"
+    GPU_NAME="$(lspci | grep -iE 'VGA' | awk -F ': ' '{print $2}' | awk '{print $1}' | tr '[:upper:]' '[:lower:]')"
 elif grep -q Microsoft /proc/version 2>/dev/null; then
     # windows subsystem for linux
     GPU_NAME="WSL"
@@ -242,7 +242,7 @@ else
 fi
 case "$GPU_NAME" in
     0)GPU="Integrated Depression";;
-    Nvidia)GPU="Nvidia (but no drivers)";;
+    Nvidia | nvidia)GPU="Nvidia (but no drivers)";;
     AMD)
     if [ $((RANDOM % 2)) -eq 0 ]; then
         GPU="AMD (Ain't My Dollar)"
@@ -250,7 +250,7 @@ case "$GPU_NAME" in
         GPU="Radeon 7000 (from 2001)"
     fi
     ;;
-    Intel)GPU="Inetl (I can't afford a real one)";;
+    Intel | intel)GPU="Inetl (I can't afford a real one)";;
     IDK)GPU="Voodoo 3Dfx (I wish)";;
     WSL)GPU="Emulated (Like my life)";;
     Android)GPU="Adreno (from 2010)";;
