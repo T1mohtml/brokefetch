@@ -62,3 +62,6 @@ so..
 
 </details>
 
+# also don't forget
+this projet uses da [MIT](https://github.com/aserdevyt/brokefetch/blob/moded/LICENSE) license which is kinda stupid in my opinion 
+but anyways , what MIT license means is you can do EVERYTHING you want with this project with "0" restictions, so yea 😔 do whatever you want.
