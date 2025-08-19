@@ -4,7 +4,7 @@ If spot a bug, I suggest fixing it in all three (`brokefetch.sh`, `brokefetch_be
 
 ---
 
-# The opensource rule
+# The golden opensource rule
 If your broke something, you fix it.
 
 ## That's it have fun!
