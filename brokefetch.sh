@@ -343,7 +343,7 @@ case "$DESKTOP_ENV" in
     "Aqua") DESKTOP_ENV="Aqua (because I can't afford a real desktop)";;
     "Aero") DESKTOP_ENV="Aero (but no money for a real DE)";;
     "Gnome" | "gnome") DESKTOP_ENV="Gnome (but no extensions)";;
-    "kde" | "KDE" ) DESKTOP_ENV="KDE (but no Plasma)";;
+    "kde" | "KDE" | "plasma") DESKTOP_ENV="KDE (but no Plasma)";;
     "XFCE" | "xfce") DESKTOP_ENV="XFCE (Gnome ugly edition)";;
     "LXDE" | "lxde") DESKTOP_ENV="LXDE (Lightweight, like your wallet)";;
     "LXQT" | "lxqt") DESKTOP_ENV="LXQt (XFCE better)";;
