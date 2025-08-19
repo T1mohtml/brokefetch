@@ -349,7 +349,7 @@ case "$DESKTOP_ENV" in
     "LXDE" | "lxde") DESKTOP_ENV="LXDE (What's stopping you from LXqt?)";;
     "LXqt" | "LXQT" | "lxqt") DESKTOP_ENV="LXQt (Lightweight, like your wallet)";;
     "MATE" | "mate") DESKTOP_ENV="MATE (Gnome classic? What's that?)";;
-    "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
+    "X-Cinnamon" | "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
     "Hyprland" | "hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
     "TTY") DESKTOP_ENV="TTY (go touch grass bro)";;
     *) DESKTOP_ENV="Unknown DE (probably broke like you)";;
