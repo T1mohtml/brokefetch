@@ -348,7 +348,7 @@ case "$DESKTOP_ENV" in
     "XFCE" | "xfce") DESKTOP_ENV="XFCE (Gnome ugly edition)";;
     "LXDE" | "lxde") DESKTOP_ENV="LXDE (Lightweight, like your wallet)";;
     "LXQT" | "lxqt") DESKTOP_ENV="LXQt (XFCE better)";;
-    "mate") DESKTOP_ENV="MATE (because I can't afford Cinnamon)";;
+    "MATE" | "mate") DESKTOP_ENV="MATE (because I can't afford Cinnamon)";;
     "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
     "Hyprland" | "hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
     "TTY") DESKTOP_ENV="TTY (go touch grass bro)";;
