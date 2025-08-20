@@ -798,7 +798,7 @@ case "$DISTRO_TO_DISPLAY" in
 	    ascii12="     ${WHITE}\`:\`                  ${COLOR}\`:\`      "
     	ascii13="       ${COLOR}.--             ${COLOR}\`--.        "
     	ascii14="          ${COLOR}.---.....----.           "
-    	ascii15="               "
+    	ascii15="                                   "
     	ascii16="Just tell me why not linux?"
     	ascii17="I'm not hating, just asking"
     	ascii18=""
