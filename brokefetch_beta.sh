@@ -383,7 +383,7 @@ case "$OS_NAME" in
 esac
 
 # --- Funny WM names ---
-case "$DESKTOP_SESSION" in
+case "$WINDOW_MANAGER" in
     "Andoir Window Manager") WINDOW_MANAGER="Andoir Window Manager (Termux ig)";;
     "KWin"|"kwin"|"kwin_wayland" | "plasma") WINDOW_MANAGER="KWin (the KDE janitor)";;
     "Mutter"|"mutter" | "gnome") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
