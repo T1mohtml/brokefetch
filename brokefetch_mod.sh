@@ -602,7 +602,7 @@ fi
 MEMORY_MB=$RAM_MB
 
 #CPU
-cpu_rand=$(($RANDOM%6))
+cpu_rand=$(($RANDOM%8))
 case $cpu_rand in
 	0)CPU="Imaginary (thinking hard...)";;
 	1)CPU="Hopes and dreams";;
@@ -611,6 +611,8 @@ case $cpu_rand in
 	4)CPU="Celery Acceleron";;
 	5)CPU="Fentium";;
 	6)CPU="Corei14billon (I wish)";;
+ 	7)CPU="Open it and look";;
+  	8)CPU="Could be Intel, maybe AMD";;
 esac
 
 #GPU
