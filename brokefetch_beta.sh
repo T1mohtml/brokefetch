@@ -83,16 +83,16 @@ case "$OS_NAME" in
     "AlmaLinux")           OS="AlmaLinux (I can't believe it's not CentOS)";; #
     "Alpine Linux")        OS="Alpine (because I can't afford a mountain)";; #
     "Amazon Linux")        OS="Amazon (sold my data to afford this)";; #
-    "Arch Linux")          OS="Arch Linux (Unpaid Edition)";; #
+    "Arch Linux")          OS="Arch Linux (we get it bro)";; #
     "Artix Linux")         OS="Artix (SystemD-broke-my-wallet-too)";; #
     "Aserdev")             OS="Aserdev (because I can't type properly)";; #
     "CentOS Linux")        OS="CentOS (no support, no money)";; #
     "Debian GNU/Linux")    OS="Plebian 12 (brokeworm)";; #
-    "EndeavourOS")         OS="EndeavourOS (Arch for fetuses)";; #
-    "elementary OS")       OS="elementaryOS (baby's first macbook)";; #
+    "EndeavourOS")         OS="EndavoorOS (Arch for fetuses)";; #
+    "elementary OS")       OS="TelementaryOS (Mac for the broke)";; #
     "Fedora Linux")        OS="Fedora (tips hat in poverty)";; #
     "Garuda Linux")        OS="Garuda (because RGB broke my wallet)";; #
-    "Gentoo")              OS="Gentoo (Because I can't even afford time)";; #
+    "Gentoo")              OS="Gen2 (Because I can't even afford time)";; #
     "Linexin")             OS="Linexin (You watch Linexy too?)";; #
     "Linux Mint")          OS="Linux Mint (but no teeth left)";; #
     "Linux Lite")          OS="Linux Lite (my distro is as light as my wallet)";; #
@@ -101,8 +101,8 @@ case "$OS_NAME" in
     "Nobara Linux")        OS="Nobara (Has 500 viruses from torrents)";; #
     "openSUSE Tumbleweed") OS="openSUSE (tumbling into debt)";; #
     "openSUSE Leap")       OS="openSUSE Leap (into the void)";; #
-    "Pop!_OS")             OS="Pop!_OS (But cant afford System76)";; #
-    "Kali Linux")          OS="Kali Linux (Dollar Store hacker addition)";; #
+    "Pop!_OS")             OS="Pop!_OS (For cracked games)";; #
+    "Kali Linux")          OS="Kali Linux (Dollar Store haxxor addition)";; #
     "Red Hat Enterprise Linux") OS="RHEL (Red Hat Enterprise Loans)";; #
     "Rocky Linux")         OS="Rocky Linux (bouncing checks)";; #
     "Slackware")           OS="Slackware (no updates, no rent)";; #
@@ -112,7 +112,7 @@ case "$OS_NAME" in
     "Zorin OS")            OS="Zorin (Because I cant afford Windows)";; #
     "Windows")             OS="Windows (Rebooting my patience)";; #
     "macOS")               OS="macOS (Broke but still bragging)";; #
-    "WSL")                 OS="WSL (Linux for those who sold a kidney)";; #
+    "WSL")                 OS="WSL (Linux for the scared)";; #
     "Android")             OS="Android (my phone is smarter than me)";; #
     "FreeBSD")             OS="FreeBSD (Free software, broke user)";; #
     *) OS="$OS_NAME (??)";;
@@ -156,7 +156,7 @@ if [ -r /proc/uptime ]; then
   UPTIME_S=${UPTIME_S%.*}  # drop decimal part
   UPTIME_H=$(( UPTIME_S / 3600 ))
   UPTIME_M=$(( (UPTIME_S % 3600) / 60 ))
-  UPTIME="${UPTIME_H} hours, ${UPTIME_M} minutes"
+  UPTIME="${UPTIME_H} hours, ${UPTIME_M} minutes, maybe more idk"
 fi
 
 # Uptime - macOS
@@ -186,7 +186,7 @@ if [ "$OS_NAME" = "Windows" ]; then
       UPTIME_S=$((NOW - BOOT_TS))
       UPTIME_H=$(( UPTIME_S / 3600 ))
       UPTIME_M=$(( (UPTIME_S % 3600) / 60 ))
-      UPTIME="${UPTIME_H} hours, ${UPTIME_M} minutes"
+      UPTIME="${UPTIME_H} hours, ${UPTIME_M} minutes, I guess..."
     else
       UPTIME="The brokest"
     fi
@@ -204,7 +204,7 @@ COLOR=${!COLOR_NAME}
 
 #CPU
 
-cpu_rand=$(($RANDOM%6))
+cpu_rand=$(($RANDOM%8))
 
 case $cpu_rand in
 	0)CPU="Imaginary (thinking hard...)";;
@@ -214,6 +214,8 @@ case $cpu_rand in
 	4)CPU="Celery Acceleron";;
 	5)CPU="Fentium";;
 	6)CPU="Corei14billon (I wish)";;
+ 	7)CPU="Open it and look";;
+  	8)CPU="Could be Intel, maybe AMD";;
 esac
 
 #GPU
@@ -267,7 +269,7 @@ esac
 
 #HOSTNAME
 
-host_rand=$(($RANDOM%6))
+host_rand=$(($RANDOM%8))
 
 case $host_rand in
     0)HOST="Bedroom Floor (Carpet extra)";;
@@ -277,6 +279,8 @@ case $host_rand in
     4)HOST="iPhone -10";;
     5)HOST="Side Closet";;
     6)HOST="Thinkpad 700T (From 1992)";;
+	7)HOST="Library computer";;
+ 	8)HOST="Stolen laptop";;
 
 esac
 
@@ -308,7 +312,7 @@ fi
 case $SHELL_NAME in
     bash)SHELLOUT="$SHELL_NAME - The standard (for failure)";;
     zsh)SHELLOUT="$SHELL_NAME - Powerful (Unlike you)";;
-    fish)SHELLOUT="$SHELL_NAME - Tab key ASMR";;
+    fish)SHELLOUT="$SHELL_NAME - Can't \"TAB to complete\" your life";;
 #    tcsh)SHELLOUT="";;
 #    csh)SHELLOUT="";;
     pwsh)SHELLOUT="$SHELL_NAME - Commands for noobs (on Windoze)";;
@@ -316,7 +320,7 @@ case $SHELL_NAME in
     dash)SHELLOUT="$SHELL_NAME - Speeeeed (for debian only)";;
 #    ksh)SHELLOUT="";;
     idksh)SHELLOUT="idksh - What is this? (My future)";;
-    *)SHELLOUT="Your shell is so niche that we don't care about it.";;
+    *)SHELLOUT="Your shell is so niche that we don't care about it. We can't afford more code...";;
 esac
 
 #Desktop Environment
@@ -416,10 +420,10 @@ case "$TERM" in
     "xterm-color") TERMINAL="XTerm (but with a color)";;
     "xterm-256color") TERMINAL="XTerm (But with whole 256 colors!)";;
     "gnome-terminal") TERMINAL="Gnome Terminal (because I dislike gnome console)";;
-    "konsole") TERMINAL="Konsole (KDE's terminal, but no money for a real one)";;
+    "konsole") TERMINAL="Konsole (KDE's terminal, can't spell I guess)";;
     "terminator") TERMINAL="Terminator (you are NOT Arnold Schwarzenegger)";;
     "alacritty") TERMINAL="Alacritty (because I can't afford a real terminal)";;
-    "xterm-kitty" | "kitty") TERMINAL="Kitty (good terminal tbh)";;
+    "xterm-kitty" | "kitty") TERMINAL="Kitty (your daddy's terminal)";;
     "rxvt-unicode") TERMINAL="Rxvt-Unicode (because I can't afford a real terminal)";;
     *) TERMINAL="Terminal of regret";;
 esac
