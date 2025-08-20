@@ -389,6 +389,7 @@ case "$DESKTOP_SESSION" in
     "Fluxbox"|"fluxbox") WINDOW_MANAGER="Fluxbox (because stability is overrated)";;
     "XFCE"|"xfce") WINDOW_MANAGER="XFWM4 (four times more broke)";;
     "Metacity"|"metacity") WINDOW_MANAGER="Metacity (meta broke)";;
+    "LXQt"|"lxqt") WINDOW_MANAGER="I don't know leave me alone";;
     "IceWM"|"icewm") WINDOW_MANAGER="IceWM (cold and minimal, like my bank account)";;
     "FVWM"|"fvwm") WINDOW_MANAGER="FVWM (Feels Very Wallet Miserable)";;
     "awesome") WINDOW_MANAGER="awesome (self-proclaimed)";;
