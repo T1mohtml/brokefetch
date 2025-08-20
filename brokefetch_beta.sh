@@ -378,7 +378,7 @@ esac
 # --- Funny WM names ---
 case "$DESKTOP_SESSION" in
     "Andoir Window Manager") WINDOW_MANAGER="Andoir Window Manager (Termux ig)";;
-    "KWin"|"kwin"|"kwin_wayland" | "kde") WINDOW_MANAGER="KWin (the KDE janitor)";;
+    "KWin"|"kwin"|"kwin_wayland" | "plasma") WINDOW_MANAGER="KWin (the KDE janitor)";;
     "Mutter"|"mutter" | "gnome") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
     "Sway"|"sway") WINDOW_MANAGER="Sway (i3 but woke)";;
     "i3") WINDOW_MANAGER="i3 (tiled like my bathroom)";;
