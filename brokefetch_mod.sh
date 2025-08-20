@@ -665,15 +665,17 @@ case "$GPU_NAME" in
 esac
 
 #HOSTNAME
-host_rand=$(($RANDOM%6))
+host_rand=$(($RANDOM%8))
 case $host_rand in
     0)HOST="Bedroom Floor (Carpet extra)";;
     1)HOST="Creaky Desk (Chair not included)";;
-    2)HOST="Atari 2600 (with ${MEMORY_MB} MB RAM)";;
+    2)HOST="Atari 2600 (with 128MB RAM)";;
     3)HOST="IBM 5100 (55 pounds and counting)";;
     4)HOST="iPhone -10";;
     5)HOST="Side Closet";;
     6)HOST="Thinkpad 700T (From 1992)";;
+	7)HOST="Library computer";;
+ 	8)HOST="Stolen laptop";;
 esac
 
 #Desktop Environment
@@ -769,10 +771,10 @@ case "$TERM" in
     "xterm-color") TERMINAL="XTerm (but with a color)";;
     "xterm-256color") TERMINAL="XTerm (But with whole 256 colors!)";;
     "gnome-terminal") TERMINAL="Gnome Terminal (because I dislike gnome console)";;
-    "konsole") TERMINAL="Konsole (KDE's terminal, but no money for a real one)";;
+    "konsole") TERMINAL="Konsole (Can't spell ig)";;
     "terminator") TERMINAL="Terminator (you are NOT Arnold Schwarzenegger)";;
     "alacritty") TERMINAL="Alacritty (because I can't afford a real terminal)";;
-    "xterm-kitty" | "kitty") TERMINAL="Kitty (good terminal tbh)";;
+    "xterm-kitty" | "kitty") TERMINAL="Kitty (Ur daddy's terminal)";;
     "rxvt-unicode") TERMINAL="Rxvt-Unicode (because I can't afford a real terminal)";;
     *) TERMINAL="Terminal of regret";;
 esac
