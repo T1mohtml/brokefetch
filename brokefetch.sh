@@ -358,6 +358,7 @@ case "$DESKTOP_ENV" in
     "x-cinnamon" | "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
     "hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
     "tty") DESKTOP_ENV="TTY (go touch grass bro)";;
+    "i3") WINDOW_MANAGER="i3 (tiled like my bathroom)";;
     *) DESKTOP_ENV="${XDG_CURRENT_DESKTOP} (No funny name for you)";;
 esac
 
