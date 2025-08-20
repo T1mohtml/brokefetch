@@ -359,18 +359,11 @@ case "$DESKTOP_ENV" in
     "x-cinnamon" | "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
     "hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
     "tty") DESKTOP_ENV="TTY (go touch grass bro)";;
-    "i3") WINDOW_MANAGER="i3 (tiled like my bathroom)";;
+    
     *) DESKTOP_ENV="${XDG_CURRENT_DESKTOP} (No funny name for you)";;
 esac
 
 # Window Managers
-
-# WM DETECION IN PROGRESS
-#if [ -n "$XDG_CURRENT_WM" ]; then
-#    WINDOW_MANAGER="$XDG_CURRENT_WM"
-#else
-#    WINDOW_MANAGER="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
-#fi
 
 WINDOW_SYSTEM="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
 
@@ -386,12 +379,12 @@ case "$OS_NAME" in
 esac
 
 # --- Funny WM names ---
-case "$WINDOW_MANAGER" in
+case "$DESKTOP_SESSION" in
     "Andoir Window Manager") WINDOW_MANAGER="Andoir Window Manager (Termux ig)";;
-    "KWin"|"kwin"|"kwin_wayland" | "plasma") WINDOW_MANAGER="KWin (the KDE janitor)";;
+    "kde" | "plasma") WINDOW_MANAGER="KWin (the KDE janitor)";;
     "Mutter"|"mutter" | "gnome") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
     "Sway"|"sway") WINDOW_MANAGER="Sway (i3 but woke)";;
-    
+    "i3") WINDOW_MANAGER="i3 (tiled like my bathroom)";;
     "Openbox"|"openbox") WINDOW_MANAGER="Openbox (because closed boxes cost money)";;
     "Fluxbox"|"fluxbox") WINDOW_MANAGER="Fluxbox (because stability is overrated)";;
     "XFWM4"|"xfwm4" | "xfce") WINDOW_MANAGER="XFWM4 (four times more broke)";;
