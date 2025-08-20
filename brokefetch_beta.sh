@@ -342,14 +342,15 @@ case "$OS_NAME" in
     "Windows")
         DESKTOP_ENV="Aero";;
     "WSL")
-        DESKTOP_ENV="WSL Desktop (because I can't afford a real Linux)";;
+        DESKTOP_ENV="WSL";;
     "Android")
-        DESKTOP_ENV="Android Desktop (because I can't afford a real phone)";;
+        DESKTOP_ENV="Android";;
 esac
  
 case "$DESKTOP_ENV" in
     "aqua") DESKTOP_ENV="Aqua (because I can't afford a real desktop)";;
     "aero") DESKTOP_ENV="Aero (but no money for a real DE)";;
+    "Android") DESKTOP_ENV="Android Desktop (because I can't afford a real phone)";;
     "gnome") DESKTOP_ENV="Gnome (but no extensions)";;
     "kde" | "plasma") DESKTOP_ENV="KDE (but no Plasma)";;
     "xfce") DESKTOP_ENV="XFCE (Gnome ugly edition)";;
@@ -358,6 +359,7 @@ case "$DESKTOP_ENV" in
     "mate") DESKTOP_ENV="MATE (Gnome classic? What's that?)";;
     "x-cinnamon" | "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
     "hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
+    "WSL") DESKTOP_ENV="WSL Desktop (because I can't afford a real Linux)";;
     "tty") DESKTOP_ENV="TTY (go touch grass bro)";;
     
     *) DESKTOP_ENV="${XDG_CURRENT_DESKTOP} (No funny name for you)";;
