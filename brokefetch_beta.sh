@@ -359,17 +359,20 @@ case "$DESKTOP_ENV" in
     "x-cinnamon" | "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
     "hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
     "tty") DESKTOP_ENV="TTY (go touch grass bro)";;
+    "i3") WINDOW_MANAGER="i3 (tiled like my bathroom)";;
     *) DESKTOP_ENV="${XDG_CURRENT_DESKTOP} (No funny name for you)";;
 esac
 
 # Window Managers
 
 # WM DETECION IN PROGRESS
-if [ -n "$XDG_CURRENT_WM" ]; then
-    WINDOW_MANAGER="$XDG_CURRENT_WM"
-else
-    WINDOW_MANAGER="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
-fi
+#if [ -n "$XDG_CURRENT_WM" ]; then
+#    WINDOW_MANAGER="$XDG_CURRENT_WM"
+#else
+#    WINDOW_MANAGER="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
+#fi
+
+WINDOW_SYSTEM="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
 
 case "$OS_NAME" in
     "macOS")
@@ -388,7 +391,7 @@ case "$WINDOW_MANAGER" in
     "KWin"|"kwin"|"kwin_wayland" | "plasma") WINDOW_MANAGER="KWin (the KDE janitor)";;
     "Mutter"|"mutter" | "gnome") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
     "Sway"|"sway") WINDOW_MANAGER="Sway (i3 but woke)";;
-    "i3") WINDOW_MANAGER="i3 (tiled like my bathroom)";;
+    
     "Openbox"|"openbox") WINDOW_MANAGER="Openbox (because closed boxes cost money)";;
     "Fluxbox"|"fluxbox") WINDOW_MANAGER="Fluxbox (because stability is overrated)";;
     "XFWM4"|"xfwm4" | "xfce") WINDOW_MANAGER="XFWM4 (four times more broke)";;
@@ -406,6 +409,12 @@ case "$WINDOW_MANAGER" in
     "X11"|"x11") WINDOW_MANAGER="X11 (Wayland is good for toddlers)";;
     *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like you)";;
 esac
+
+case "$WINDOW_SYSTEM" in
+    "Wayland"|"wayland") WINDOW_SYSTEM="Wayland (X11 is old and scary)";;
+    "X11"|"x11") WINDOW_SYSTEM="X11 (Wayland is good for toddlers)";;
+    *) WINDOW_SYSTEM="${XDG_SESSION_TYPE} (probably broke like you)";;
+esac 
 
 # Initialize
 ASCII_DISTRO=""
@@ -619,7 +628,7 @@ case "$DISTRO_TO_DISPLAY" in
 	    ascii12="       -osssssso.      :ssssssso.         "
 	    ascii13="      :osssssss/        osssso+++.        "
 	    ascii14="     /ossssssss/        +ssssooo/-        "
-	    ascii15="   \`/ossssso+/:-        -:/+osssso+-     "
+	    ascii15="   \`/ossssso+/:-        -:/+osssso+-      "
 	    ascii16="  \`+sso+:-\`                 \`.-/+oso:    "
     	ascii17=" \`++:.                           \`-/+/   "
     	ascii18=" .\`                                 \`/   "
@@ -1308,11 +1317,11 @@ echo -e "${COLOR}${ascii07}${BOLD}Shell:${RESET} $SHELLOUT"
 echo -e "${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
 echo -e "${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
 echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} $WINDOW_MANAGER"
-echo -e "${COLOR}${ascii11}${BOLD}Terminal:${RESET} $TERMINAL"
-echo -e "${COLOR}${ascii12}${BOLD}CPU:${RESET} $CPU"
-echo -e "${COLOR}${ascii13}${BOLD}GPU:${RESET} $GPU"
-echo -e "${COLOR}${ascii14}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
-echo -e "${COLOR}${ascii15}"
+echo -e "${COLOR}${ascii11}${BOLD}Window system:${RESET} $WINDOW_SYSTEM"
+echo -e "${COLOR}${ascii12}${BOLD}Terminal:${RESET} $TERMINAL"
+echo -e "${COLOR}${ascii13}${BOLD}CPU:${RESET} $CPU"
+echo -e "${COLOR}${ascii14}${BOLD}GPU:${RESET} $GPU"
+echo -e "${COLOR}${ascii15}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
 echo -e "${COLOR}${ascii16}"
 echo -e "${COLOR}${ascii17}"
 echo -e "${COLOR}${ascii18}"
