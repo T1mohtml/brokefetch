@@ -359,7 +359,7 @@ case "$DESKTOP_ENV" in
     "x-cinnamon" | "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
     "hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
     "tty") DESKTOP_ENV="TTY (go touch grass bro)";;
-    *) DESKTOP_ENV="${DESKTOP_SESSION} (No funny name for you)";;
+    *) DESKTOP_ENV="${XDG_CURRENT_DESKTOP} (No funny name for you)";;
 esac
 
 # Window Managers
