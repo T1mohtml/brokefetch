@@ -376,15 +376,15 @@ case "$OS_NAME" in
 esac
 
 # --- Funny WM names ---
-case "$WINDOW_MANAGER" in
+case "$DESKTOP_SESSION" in
     "Andoir Window Manager") WINDOW_MANAGER="Andoir Window Manager (Termux ig)";;
-    "KWin"|"kwin"|"kwin_wayland") WINDOW_MANAGER="KWin (the KDE janitor)";;
-    "Mutter"|"mutter") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
+    "KWin"|"kwin"|"kwin_wayland" | "kde") WINDOW_MANAGER="KWin (the KDE janitor)";;
+    "Mutter"|"mutter" | "gnome") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
     "Sway"|"sway") WINDOW_MANAGER="Sway (i3 but woke)";;
     "i3") WINDOW_MANAGER="i3 (tiled like my bathroom)";;
     "Openbox"|"openbox") WINDOW_MANAGER="Openbox (because closed boxes cost money)";;
     "Fluxbox"|"fluxbox") WINDOW_MANAGER="Fluxbox (because stability is overrated)";;
-    "XFWM4"|"xfwm4") WINDOW_MANAGER="XFWM4 (four times more broke)";;
+    "XFWM4"|"xfwm4" | "xfce") WINDOW_MANAGER="XFWM4 (four times more broke)";;
     "Metacity"|"metacity") WINDOW_MANAGER="Metacity (meta broke)";;
     "IceWM"|"icewm") WINDOW_MANAGER="IceWM (cold and minimal, like my bank account)";;
     "FVWM"|"fvwm") WINDOW_MANAGER="FVWM (Feels Very Wallet Miserable)";;
