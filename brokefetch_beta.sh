@@ -716,7 +716,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii12="⣿⣿⣿⣿⣿⣿⠇⠀⠐⠈⡃⠷⡶⠀⠘⣤⣷⣶⢹⣿⣿⣿ "
         ascii13="⣿⣿⣿⣿⡟⠋⣾⠿⠧⠠⣸⣷⣶⠀⠀⠙⢿⡿⡸⣿⣿⣿ "
         ascii14="⣿⣿⣿⣿⣷⢠⠅⡌⢎⡓⡼⢫⠣⠁⠀⣐⡀⢤⣁⣿⣿⣿ "
-        ascii15=""
+        ascii15="                       "
         ascii16="How it feels having outdated packages?"
         ascii17=""
         ascii18=""
