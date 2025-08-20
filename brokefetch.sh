@@ -203,7 +203,7 @@ COLOR=${!COLOR_NAME}
 
 #CPU
 
-cpu_rand=$(($RANDOM%6))
+cpu_rand=$(($RANDOM%8))
 
 case $cpu_rand in
 	0)CPU="Imaginary (thinking hard...)";;
@@ -268,7 +268,7 @@ esac
 
 #HOSTNAME
 
-host_rand=$(($RANDOM%6))
+host_rand=$(($RANDOM%8))
 
 case $host_rand in
     0)HOST="Bedroom Floor (Carpet extra)";;
