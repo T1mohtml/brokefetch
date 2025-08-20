@@ -399,8 +399,6 @@ case "$DESKTOP_SESSION" in
     "Quartz Compositor") WINDOW_MANAGER="Quartz Compositor (shiny but overpriced)";;
     "Desktop Window Manager (DWM)") WINDOW_MANAGER="Desktop Window Manager (Windows’ least exciting acronym)";;
     "tty") WINDOW_MANAGER="tty (Idk what to say here tbh)";;
-    "Wayland"|"wayland") WINDOW_MANAGER="Wayland (X11 is old and scary)";;
-    "X11"|"x11") WINDOW_MANAGER="X11 (Wayland is good for toddlers)";;
     *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like you)";;
 esac
 
