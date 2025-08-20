@@ -54,6 +54,48 @@ yay -S brokefetch-git
 brew tap T1mohtml/brokefetch
 brew install brokefetch
 ```
+
+### Nix Flake
+```flake.nix```
+```
+{
+  ...
+  inputs = {
+    # rest of the inputs
+
+    brokefetch.url = "github:Szerwigi1410/brokefetch";    
+  };
+
+  outputs =
+    {
+      # other outputs
+      ...
+    }@inputs:
+    {
+      # implement modules here
+    }
+}
+```
+
+```configuration.nix```
+```
+{
+  # rest of inputs (eg: pkgs, config, lib)
+  inputs,
+  ...
+}
+
+{
+  # your configuration
+
+  environment.systemPackages = with pkgs; [
+    # rest of the packages
+    inputs.brokefetch.packages.x86_64-linux.brokefetch
+  ];
+
+  # rest of configuration
+}
+```
 ---
 # Important note!
 
