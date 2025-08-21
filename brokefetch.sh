@@ -337,9 +337,9 @@ DESKTOP_ENV="$(echo "$DESKTOP_ENV" | tr '[:upper:]' '[:lower:]')"
 #Macos and windows and phone
 case "$OS_NAME" in
     "macOS")
-        DESKTOP_ENV="Aqua";;
+        DESKTOP_ENV="aqua";;
     "Windows")
-        DESKTOP_ENV="Aero";;
+        DESKTOP_ENV="aero";;
     "WSL")
         DESKTOP_ENV="WSL";;
     "Android")
