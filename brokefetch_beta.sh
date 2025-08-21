@@ -376,12 +376,12 @@ case "$OS_NAME" in
     "WSL")
         WINDOW_MANAGER="WSL Window Manager";;
     "Android")
-        WINDOW_MANAGER="Android Window Manager";;
+        WINDOW_MANAGER="Android Window Manager (Termux ig)";;
 esac
 
 # --- Funny WM names ---
 case "$DESKTOP_SESSION" in
-    "Android Window Manager") WINDOW_MANAGER="Android Window Manager (Termux ig)";;
+    #"Android Window Manager") WINDOW_MANAGER="Android Window Manager (Termux ig)";;
     "kde" | "plasma") WINDOW_MANAGER="KWin (the KDE janitor)";;
     "Mutter"|"mutter" | "gnome") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
     "Sway"|"sway") WINDOW_MANAGER="Sway (i3 but woke)";;
