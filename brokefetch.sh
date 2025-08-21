@@ -341,14 +341,15 @@ case "$OS_NAME" in
     "Windows")
         DESKTOP_ENV="Aero";;
     "WSL")
-        DESKTOP_ENV="WSL Desktop (because I can't afford a real Linux)";;
+        DESKTOP_ENV="WSL";;
     "Android")
-        DESKTOP_ENV="Android Desktop (because I can't afford a real phone)";;
+        DESKTOP_ENV="Android";;
 esac
  
 case "$DESKTOP_ENV" in
     "aqua") DESKTOP_ENV="Aqua (because I can't afford a real desktop)";;
     "aero") DESKTOP_ENV="Aero (but no money for a real DE)";;
+    "Android") DESKTOP_ENV="Android Desktop (because I can't afford a real phone)";;
     "gnome") DESKTOP_ENV="Gnome (but no extensions)";;
     "kde" | "plasma") DESKTOP_ENV="KDE (but no Plasma)";;
     "xfce") DESKTOP_ENV="XFCE (Gnome ugly edition)";;
@@ -357,18 +358,14 @@ case "$DESKTOP_ENV" in
     "mate") DESKTOP_ENV="MATE (Gnome classic? What's that?)";;
     "x-cinnamon" | "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
     "hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
+    "WSL") DESKTOP_ENV="WSL Desktop (because I can't afford a real Linux)";;
     "tty") DESKTOP_ENV="TTY (go touch grass bro)";;
     *) DESKTOP_ENV="${XDG_CURRENT_DESKTOP} (No funny name for you)";;
 esac
 
 # Window Managers
 
-# WM DETECION IN PROGRESS
-if [ -n "$XDG_CURRENT_WM" ]; then
-    WINDOW_MANAGER="$XDG_CURRENT_WM"
-else
-    WINDOW_MANAGER="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
-fi
+WINDOW_SYSTEM="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
 
 case "$OS_NAME" in
     "macOS")
@@ -378,20 +375,20 @@ case "$OS_NAME" in
     "WSL")
         WINDOW_MANAGER="WSL Window Manager";;
     "Android")
-        WINDOW_MANAGER="Android Window Manager";;
+        WINDOW_MANAGER="Android Window Manager (Termux ig)";;
 esac
 
 # --- Funny WM names ---
-case "$WINDOW_MANAGER" in
-    "Android Window Manager") WINDOW_MANAGER="Android Window Manager (Termux ig)";;
-    "KWin"|"kwin"|"kwin_wayland" | "kde") WINDOW_MANAGER="KWin (the KDE janitor)";;
+case "$DESKTOP_SESSION" in
+    "kde" | "plasma") WINDOW_MANAGER="KWin (the KDE janitor)";;
     "Mutter"|"mutter" | "gnome") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
     "Sway"|"sway") WINDOW_MANAGER="Sway (i3 but woke)";;
     "i3") WINDOW_MANAGER="i3 (tiled like my bathroom)";;
     "Openbox"|"openbox") WINDOW_MANAGER="Openbox (because closed boxes cost money)";;
     "Fluxbox"|"fluxbox") WINDOW_MANAGER="Fluxbox (because stability is overrated)";;
-    "XFWM4"|"xfwm4" | "xfce") WINDOW_MANAGER="XFWM4 (four times more broke)";;
+    "XFCE"|"xfce") WINDOW_MANAGER="XFWM4 (four times more broke)";;
     "Metacity"|"metacity") WINDOW_MANAGER="Metacity (meta broke)";;
+    "LXQt"|"lxqt") WINDOW_MANAGER="I don't know leave me alone";;
     "IceWM"|"icewm") WINDOW_MANAGER="IceWM (cold and minimal, like my bank account)";;
     "FVWM"|"fvwm") WINDOW_MANAGER="FVWM (Feels Very Wallet Miserable)";;
     "awesome") WINDOW_MANAGER="awesome (self-proclaimed)";;
@@ -401,9 +398,13 @@ case "$WINDOW_MANAGER" in
     "Quartz Compositor") WINDOW_MANAGER="Quartz Compositor (shiny but overpriced)";;
     "Desktop Window Manager (DWM)") WINDOW_MANAGER="Desktop Window Manager (Windows’ least exciting acronym)";;
     "tty") WINDOW_MANAGER="tty (Idk what to say here tbh)";;
-    "Wayland"|"wayland") WINDOW_MANAGER="Wayland (X11 is old and scary)";;
-    "X11"|"x11") WINDOW_MANAGER="X11 (Wayland is good for toddlers)";;
     *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like you)";;
+esac
+
+case "$WINDOW_SYSTEM" in
+    "Wayland"|"wayland") WINDOW_SYSTEM="Wayland (X11 is old and scary)";;
+    "X11"|"x11") WINDOW_SYSTEM="X11 (Wayland is good for toddlers)";;
+    *) WINDOW_SYSTEM="${XDG_SESSION_TYPE} (probably broke like you)";;
 esac
 
 # Initialize
