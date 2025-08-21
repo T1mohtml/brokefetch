@@ -367,17 +367,6 @@ esac
 
 WINDOW_SYSTEM="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
 
-case "$OS_NAME" in
-    "macOS")
-        WINDOW_MANAGER="Quartz Compositor";;
-    "Windows")
-        WINDOW_MANAGER="Desktop Window Manager (DWM)";;
-    "WSL")
-        WINDOW_MANAGER="WSL Window Manager";;
-    "Android")
-        WINDOW_MANAGER="Android Window Manager (Termux ig)";;
-esac
-
 # --- Funny WM names ---
 case "$DESKTOP_SESSION" in
     "kde" | "plasma") WINDOW_MANAGER="KWin (the KDE janitor)";;
@@ -401,12 +390,35 @@ case "$DESKTOP_SESSION" in
     *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like you)";;
 esac
 
+case "$OS_NAME" in
+    "macOS")
+        WINDOW_MANAGER="Quartz Compositor (shiny but overpriced)";;
+    "Windows")
+        WINDOW_MANAGER="Desktop Window Manager (Windows’ least exciting acronym)";;
+    "WSL")
+        WINDOW_MANAGER="WSL Window Manager (useless)";;
+    "Android")
+        WINDOW_MANAGER="Android Window Manager (Termux ig)";;
+esac
+
+# Window System
 case "$WINDOW_SYSTEM" in
     "Wayland"|"wayland") WINDOW_SYSTEM="Wayland (X11 is old and scary)";;
     "X11"|"x11") WINDOW_SYSTEM="X11 (Wayland is good for toddlers)";;
     *) WINDOW_SYSTEM="${XDG_SESSION_TYPE} (probably broke like you)";;
 esac
 
+case "$OS_NAME" in
+    "macOS")
+        WINDOW_SYSTEM="Quartz or something idk";;
+    "Windows")
+        WINDOW_SYSTEM="Windows is your system";;
+    "WSL")
+        WINDOWS_SYSTEM="I don't know";;
+    "Android")
+        WINDOW_SYSTEM="Maybe wayland, maybe X11";;
+esac
+        
 # Initialize
 ASCII_DISTRO=""
 
