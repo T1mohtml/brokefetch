@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # IMPORTANT NOTE: This script is called "brokefetch_mod.sh" because it is modular which means it uses external sources to work.
 # It is a work in progress.
 # This script will display different ASCII for each OS from an external logos folders.
@@ -8,7 +9,6 @@
 CONFIG_FILE="$HOME/.config/brokefetch/config"
 #i did this so they think twice before thet get flashbanged :> 
 ASCII_DIR="/usr/share/brokefetch/logos/logos"
-OS_LIST_FILE="$(dirname "$0")/os_list.txt"
 
 # Create default config if it doesn't exist
 if [[ ! -f "$CONFIG_FILE" ]]; then
@@ -31,7 +31,7 @@ fi
 declare -a ASCII_ART_LINES
 
 # A flag to check if we should enable colors
-COLOR_MODE=true
+COLOR_MODE=false
 
 # Define color variables conditionally, initialized to empty strings
 GREEN=""
@@ -200,7 +200,7 @@ case "$OS_NAME" in
     "ChaletOS")            OS="ChaletOS (a chalet I can't afford)";;
     "Chapeau")             OS="Chapeau (tipping my hat to my creditors)";;
     "Chimera Linux")       OS="Chimera (a mythological OS, like my financial freedom)";;
-    "ChonkySealOS")        OS="ChonkyOS (chonky debt)";;
+    "ChonkySealOS")        OS="ChonkySealOS (chonky debt)";;
     "Chromium OS")         OS="Chromium OS (less money than Google)";;
     "CleanJaro")           OS="CleanJaro (clean out my bank account)";;
     "Clear Linux OS")      OS="Clear Linux (it's clear I'm broke)";;
@@ -214,49 +214,49 @@ case "$OS_NAME" in
     "Crystal Linux")       OS="Crystal Linux (a clear view of my empty wallet)";;
     "Cucumber OS")         OS="Cucumber OS (cool as a cucumber, but with no money)";;
     "Cuerdos Linux")       OS="Cuerdos (cordially broke)";;
-    "CutefishOS")           OS="CutefishOS (the debt is not cute)";;
-    "CuteOS")               OS="CuteOS (the debt is not cute)";;
-    "CyberOS")              OS="CyberOS (cyber-broke)";;
-    "Cycledream")           OS="Cycledream (cycling through my debt)";;
-    "dahliaOS")             OS="dahliaOS (blooming debt)";;
-    "DarkOS")               OS="DarkOS (a dark financial situation)";;
-    "Debian GNU/Linux")     OS="Plebian 12 (brokeworm)";;
-    "Deepin")               OS="Deepin (deep in debt)";;
-    "DesaOS")               OS="DesaOS (I desa-ved a better bank account)";;
-    "Devuan GNU/Linux")     OS="Devuan (D-Debt, not SystemD)";;
-    "DietPi")               OS="DietPi (on a strict budget)";;
-    "Draco's")              OS="Draco's (dragon hoarding gold, but not for me)";;
-    "DragonFly BSD")        OS="DragonFly (flying straight into debt)";;
-    "Drauger OS")           OS="Drauger (an undead OS)";;
+    "CutefishOS")          OS="CutefishOS (the debt is not cute)";;
+    "CuteOS")              OS="CuteOS (the debt is not cute)";;
+    "CyberOS")             OS="CyberOS (cyber-broke)";;
+    "Cycledream")          OS="Cycledream (cycling through my debt)";;
+    "dahliaOS")            OS="dahliaOS (blooming debt)";;
+    "DarkOS")              OS="DarkOS (a dark financial situation)";;
+    "Debian GNU/Linux")    OS="Plebian 12 (brokeworm)";;
+    "Deepin")              OS="Deepin (deep in debt)";;
+    "DesaOS")              OS="DesaOS (I desa-ved a better bank account)";;
+    "Devuan GNU/Linux")    OS="Devuan (D-Debt, not SystemD)";;
+    "DietPi")              OS="DietPi (on a strict budget)";;
+    "Draco's")             OS="Draco's (dragon hoarding gold, but not for me)";;
+    "DragonFly BSD")       OS="DragonFly (flying straight into debt)";;
+    "Drauger OS")          OS="Drauger (an undead OS)";;
     "Droidian")             OS="Droidian (the droids you are looking for... but I'm looking for money)";;
-    "Elbrus")               OS="Elbrus (I climbed a mountain of debt for this)";;
-    "elementary OS")        OS="elementaryOS (baby's first macbook)";;
-    "Elive")                OS="Elive (barely alive financially)";;
-    "EncryptOS")            OS="EncryptOS (my money is encrypted with debt)";;
-    "EndeavourOS")          OS="EndeavourOS (Arch for fetuses)";;
-    "Endless OS")           OS="Endless (like my debt)";;
-    "Enso")                 OS="Enso (the circle of life... and debt)";;
-    "EshanizedOS")          OS="EshanizedOS (I'm a fan of this, but not my bank account)";;
-    "EuroLinux")            OS="EuroLinux (euro-poverty)";;
-    "EvolutionOS")          OS="EvolutionOS (evolving my debt)";;
-    "EweOS")                OS="EweOS (ewww, my bank account)";;
-    "Exherbo")              OS="Exherbo (too rare for my wallet)";;
-    "Exodia Predator")      OS="Exodia Predator (my wallet's predator)";;
-    "Fastfetch")            OS="Fastfetch (faster than my paycheck)";;
-    "Fedora CoreOS")        OS="Fedora CoreOS (a core of debt)";;
-    "Fedora Kinoite")       OS="Fedora Kinoite (a knight in debt)";;
-    "Fedora Sericea")       OS="Fedora Sericea (seri-ously broke)";;
-    "Fedora Silverblue")    OS="Fedora Silverblue (silver-less and broke)";;
-    "Fedora Linux")         OS="Fedora (tips hat in poverty)";;
-    "FemboyOS")             OS="FemboyOS (fiercely broke)";;
-    "Feren OS")             OS="Feren OS (feren-tly broke)";;
-    "Filotimo")             OS="Filotimo (a love of honor, not money)";;
-    "Finnix")               OS="Finnix (fleeing my debt)";;
-    "Floflis")              OS="Floflis (flow-of-money-is-not-happening)";;
-    "FreeBSD")              OS="FreeBSD (Free software, broke user)";;
-    "FreeMint")             OS="FreeMint (free, but I still can't afford it)";;
-    "Frugalware")           OS="Frugalware (being frugal is my only choice)";;
-    "Funtoo Linux")         OS="Funtoo (fun to use, not to pay for)";;
+    "Elbrus")              OS="Elbrus (I climbed a mountain of debt for this)";;
+    "elementary OS")       OS="elementaryOS (baby's first macbook)";;
+    "Elive")               OS="Elive (barely alive financially)";;
+    "EncryptOS")           OS="EncryptOS (my money is encrypted with debt)";;
+    "EndeavourOS")         OS="EndeavourOS (Arch for fetuses)";;
+    "Endless OS")          OS="Endless (like my debt)";;
+    "Enso")                OS="Enso (the circle of life... and debt)";;
+    "EshanizedOS")         OS="EshanizedOS (I'm a fan of this, but not my bank account)";;
+    "EuroLinux")           OS="EuroLinux (euro-poverty)";;
+    "EvolutionOS")         OS="EvolutionOS (evolving my debt)";;
+    "EweOS")               OS="EweOS (ewww, my bank account)";;
+    "Exherbo")             OS="Exherbo (too rare for my wallet)";;
+    "Exodia Predator")     OS="Exodia Predator (my wallet's predator)";;
+    "Fastfetch")           OS="Fastfetch (faster than my paycheck)";;
+    "Fedora CoreOS")       OS="Fedora CoreOS (a core of debt)";;
+    "Fedora Kinoite")      OS="Fedora Kinoite (a knight in debt)";;
+    "Fedora Sericea")      OS="Fedora Sericea (seri-ously broke)";;
+    "Fedora Silverblue")   OS="Fedora Silverblue (silver-less and broke)";;
+    "Fedora Linux")        OS="Fedora (tips hat in poverty)";;
+    "FemboyOS")            OS="FemboyOS (fiercely broke)";;
+    "Feren OS")            OS="Feren OS (feren-tly broke)";;
+    "Filotimo")            OS="Filotimo (a love of honor, not money)";;
+    "Finnix")              OS="Finnix (fleeing my debt)";;
+    "Floflis")             OS="Floflis (flow-of-money-is-not-happening)";;
+    "FreeBSD")             OS="FreeBSD (Free software, broke user)";;
+    "FreeMint")            OS="FreeMint (free, but I still can't afford it)";;
+    "Frugalware")          OS="Frugalware (being frugal is my only choice)";;
+    "Funtoo Linux")        OS="Funtoo (fun to use, not to pay for)";;
     "Furreto")              OS="Furreto (furiously broke)";;
     "GalliumOS")            OS="GalliumOS (galling)";;
     "Garuda Linux")         OS="Garuda (because RGB broke my wallet)";;
@@ -759,6 +759,7 @@ case "$WINDOW_MANAGER" in
 esac
 
 # Terminal
+
 if [ -n "$TERM" ]; then
     TERMINAL="$TERM"
 else
@@ -781,14 +782,13 @@ esac
 
 # --- COMMAND LINE OPTIONS ---
 # Get options
-while getopts ":hva:li:" option; do
+while getopts ":hva:lc" option; do
    case $option in
       h) # display Help
          echo "Only the therapist can help you at this point."
          echo "Oh and btw the -v option displays the version of brokefetch EDGE."
          echo " -a lets you override ASCII art distro name"
          echo " -l lists all available ASCII arts"
-         echo " -i <file> lets you use a custom ASCII file from anywhere on the system"
          echo " -c enables colors in the output"
          echo ""
          echo -e "The config file is currently located at ${BOLD}~/.config/brokefetch/${RESET}"
@@ -802,22 +802,13 @@ while getopts ":hva:li:" option; do
          DISTRO_TO_DISPLAY=$(get_ascii_filename "$ASCII_OVERRIDE")
          ;;
       l) # List available ASCII arts
-         echo "Available ASCII arts:"
-         ls "$ASCII_DIR"
+         echo "Recognized Operating Systems:"
+         echo "adelie linux -> adelielinux.txt, aeon -> aeon.txt, aeros -> aeros.txt, afterglow -> afterglow.txt, aix -> aix.txt, almalinux -> almalinux.txt, alpine linux -> alpinelinux.txt, alter -> alter.txt, alt linux -> altlinux.txt, amazon linux -> amazonlinux.txt, amazon -> amazon.txt, amogos -> amogos.txt, anarchy linux -> anarchylinux.txt, android -> android.txt, anduinos -> anduinos.txt, antergos -> antergos.txt, antiX -> antix.txt, anushos -> anushos.txt, aosc os/retro -> aoscos/retro.txt, aosc os -> aoscos.txt, aperture os -> apertureos.txt, apricity os -> apricityos.txt, arch linux -> arch.txt, archbox -> archbox.txt, archcraft -> archcraft.txt, archlabs -> archlabs.txt, archlabs.txt, archstrike -> archstrike.txt, arcolinux -> arcolinux.txt, arkane -> arkane.txt, armbian -> armbian.txt, arselinux -> arselinux.txt, artix linux -> artixlinux.txt, arya -> arya.txt, asahi linux -> asahilinux.txt, asteroidos -> asteroidos.txt, aster -> aster.txt, astos -> astos.txt, astra linux -> astralinux.txt, athenaos -> athenaos.txt, aurora -> aurora.txt, axos -> axos.txt, azos -> azos.txt, bedrock linux -> bedrocklinux.txt, biglinux -> biglinux.txt, bitrig -> bitrig.txt, blackarch -> blackarch.txt, black mesa -> blackmesa.txt, black panther os -> blackpantheros.txt, blag -> blag.txt, blankon -> blankon.txt, bluelight os -> bluelightos.txt, bodhi linux -> bodhilinux.txt, bonsai linux -> bonsailinux.txt, bredos -> bredos.txt, bsd -> bsd.txt, bunsenlabs -> bunsenlabs.txt, cachyos -> cachyos.txt, calculate linux -> calculatelinux.txt, calinixos -> calinixos.txt, carbs linux -> carblinux.txt, cbl-mariner -> cbl-mariner.txt, celos -> celos.txt, center os -> centeros.txt, centos linux -> centoslinux.txt, cereus -> cereus.txt, chakra -> chakra.txt, chaletos -> chaletos.txt, chapeau -> chapeau.txt, chimera linux -> chimeralinux.txt, chonkysealos -> chonkysealos.txt, chromium os -> chromiumos.txt, cleanjaro -> cleanjaro.txt, clear linux os -> clearlinuxos.txt, clearos -> clearos.txt, clover -> clover.txt, cobalt -> cobalt.txt, codex -> codex.txt, condres os -> condresos.txt, cosmic os -> cosmos.txt, crux -> crux.txt, crystal linux -> crystallinux.txt, cucumber os -> cucumberos.txt, cuerdos linux -> cuerdoslinux.txt, cutefishos -> cutefishos.txt, cuteos -> cuteos.txt, cyberos -> cyberos.txt, cycledream -> cycledream.txt, dahliaos -> dahliaos.txt, darkos -> darkos.txt, debian gnu/linux -> debian.txt, deepin -> deepin.txt, desa os -> desa os.txt, devuan gnu/linux -> devuan.txt, dietpi -> dietpi.txt, draco's -> draco's.txt, dragonfly bsd -> dragonflybsd.txt, drauger os -> draugeros.txt, droidian -> droidian.txt, elbrus -> elbrus.txt, elementary os -> elementaryos.txt, elive -> elive.txt, encryptos -> encryptos.txt, endeavouros -> endeavouros.txt, endless os -> endlessos.txt, enso -> enso.txt, eshanizedos -> eshanizedos.txt, eurolinux -> eurolinux.txt, evolutionos -> evolutionos.txt, eweos -> eweos.txt, exherbo -> exherbo.txt, exodia predator -> exodiapredator.txt, fastfetch -> fastfetch.txt, fedora coreos -> fedoracoreos.txt, fedora kinoite -> fedorakinoite.txt, fedora sericea -> fedorasericea.txt, fedora silverblue -> fedorasilverblue.txt, fedora linux -> fedora.txt, femboyos -> femboyos.txt, feren os -> ferenos.txt, filotimo -> filotimo.txt, finnix -> finnix.txt, floflis -> floflis.txt, freebsd -> freebsd.txt, freemint -> freemint.txt, frugalware -> frugalware.txt, funtoo linux -> funtoolinux.txt, furreto -> furreto.txt, galliumos -> galliumos.txt, garuda linux -> garudalinux.txt, gentoo -> gentoo.txt, ghostbsd -> ghostbsd.txt, ghostfreak -> ghostfreak.txt, glaucus -> glaucus.txt, gnewsense -> gnewsense.txt, gnome -> gnome.txt, gnu -> gnu.txt, gobolinux -> gobolinux.txt, golden dog linux -> goldendoglinux.txt, grapheneos -> grapheneos.txt, grombyang -> grombyang.txt, gnu guix -> gnuguix.txt, haiku -> haiku.txt, hamonikr -> hamonikr.txt, hardclanz -> hardclanz.txt, harmonyos -> harmonyos.txt, hash -> hash.txt, hce -> hce.txt, heliumos -> heliumos.txt, huayra gnu/linux -> huayragnu/linux.txt, hybrid -> hybrid.txt, hydrapwk -> hydrapwk.txt, hydroos -> hydroos.txt, hyperbola gnu/linux-libre -> hyperbolagnu/linux-libre.txt, hypros -> hypros.txt, iglunix -> iglunix.txt, instantos -> instantos.txt, interix -> interix.txt, irix -> irix.txt, ironclad -> ironclad.txt, itclinux -> itclinux.txt, januslinux -> januslinux.txt, kaisen linux -> kaisenlinux.txt, kali linux -> kalilinux.txt, kalpa desktop -> kalpadesktop.txt, kaos -> kaos.txt, kde linux -> kdelinux.txt, kde neon -> kdeneon.txt, kernelos -> kernelos.txt, kibojoe -> kibojoe.txt, kiss -> kiss.txt, kogaion -> kogaion.txt, korora -> korora.txt, krassos -> krassos.txt, kslinux -> kslinux.txt, kubuntu -> kubuntu.txt, kylin linux -> kylinlinux.txt, lainos -> lainos.txt, langitketujuh -> langitketujuh.txt, laxeros -> laxeros.txt, lede -> lede.txt, lfs -> lfs.txt, libreelec -> libreelec.txt, lilidog -> lilidog.txt, lingmo -> lingmo.txt, linsire -> linsire.txt, linux lite -> linuxlite.txt, linux mint -> linuxmint.txt, linux -> linux.txt, live raizo -> liveraizo.txt, lliurex -> lliurex.txt, lmde -> lmde.txt, locos -> locos.txt, lubuntu -> lubuntu.txt, lunar linux -> lunarlinux.txt, macos -> macos.txt, mageia -> mageia.txt, magix -> magix.txt, magix.txt, magpieos -> magpieos.txt, mainsailos -> mainsailos.txt, mandriva -> mandriva.txt, manjaro linux -> manjarolinux.txt, massos -> massos.txt, matuuos -> matuuos.txt, maui linux -> mauilinux.txt, mauna -> mauna.txt, meowix -> meowix.txt, mer -> mer.txt, midnightbsd -> midnightbsd.txt, midos -> midos.txt, minimal linux -> minimallinux.txt, minix -> minix.txt, miracle linux -> miraclelinux.txt, mos -> mos.txt, msys2 -> msys2.txt, mx linux -> mxlinux.txt, namib -> namib.txt, nekos -> nekos.txt, neptune -> neptune.txt, netbsd -> netbsd.txt, netrunner -> netrunner.txt, nexalinux -> nexalinux.txt, nitrux -> nitrux.txt, nixos -> nixos.txt, nobara linux -> nobaralinux.txt, nomadbsd -> nomadbsd.txt, nu-os -> nu-os.txt, nurunner -> nurunner.txt, nutyx -> nutyx.txt, obarun -> obarun.txt, obrevenge -> obrevenge.txt, omnios -> omnios.txt, opak -> opak.txt, openbsd -> openbsd.txt, openeuler -> openeuler.txt, openindiana -> openindiana.txt, openkylin -> openkylin.txt, openmamba -> openmamba.txt, openmandriva lx -> openmandrivalx.txt, openstage -> openstage.txt, opensuse leap -> opensuseleap.txt, opensuse microos -> opensusemicroos.txt, opensuse slowroll -> opensuseslowroll.txt, opensuse tumbleweed -> opensusetumbleweed.txt, opensuse -> opensuse.txt, openwrt -> openwrt.txt, opnsense -> opnsense.txt, oracle linux -> oraclelinux.txt, orchid -> orchid.txt, oreon -> oreon.txt, os elbrus -> oselbrus.txt, osmc -> osmc.txt, pacbsd -> pacbsd.txt, panwah -> panwah.txt, parabola gnu/linux-libre -> parabolagnu/linux-libre.txt, parch linux -> parchlinux.txt, pardus -> pardus.txt, parrot os -> parrotos.txt, parsix -> parsix.txt, pc-bsd -> pcbsd.txt, pclinuxos -> pclinuxos.txt, pearos -> pearos.txt, pengwin -> pengwin.txt, pentoo -> pentoo.txt, peppermint os -> peppermintos.txt, peropesis -> peropesis.txt, phyos -> phyos.txt, pikaos -> pikaos.txt, pisi linux -> pisilinux.txt, pnm linux -> pnmlinux.txt, pop!_os -> pop!_os.txt, porteus -> porteus.txt, postmarketos -> postmarketos.txt, proxmox virtual environment -> proxmoxvirtualenvironment.txt, puffos -> puffos.txt, puppy linux -> puppylinux.txt, pureos -> pureos.txt, q4os -> q4os.txt, qts -> qts.txt, qubes os -> qubesos.txt, qubyt -> qubyt.txt, quibian -> quibian.txt, quirinux -> quirinux.txt, radix -> radix.txt, raspbian gnu/linux -> raspbiangnu/linux.txt, ravynos -> ravynos.txt, rebornos -> rebornos.txt, redcore linux -> redcorelinux.txt, redos -> redos.txt, red star os -> redstaros.txt, refracted devuan -> refracteddevuan.txt, regata os -> regataos.txt, regolith -> regolith.txt, rhaymos -> rhaymos.txt, red hat enterprise linux -> rhel.txt, rhino -> rhino.txt, rocky linux -> rockylinux.txt, rosa desktop fresh -> rosadesktopfresh.txt, sabayon linux -> sabayonlinux.txt, sabotage linux -> sabotagelinux.txt, sailfish os -> sailfishos.txt, salentos -> salentos.txt, salient os -> salientos.txt, salix os -> salixos.txt, sambabox -> sambabox.txt, sasanqua -> sasanqua.txt, scientific linux -> scientificlinux.txt, semc -> semc.txt, septor -> septor.txt, sereneos -> sereneos.txt, serpent os -> serpentos.txt, sharklinux -> sharklinux.txt, shastraos -> shastraos.txt, shebang -> shebang.txt, siduction -> siduction.txt, skiffos -> skiffos.txt, slackel -> slackel.txt, slackware -> slackware.txt, sleeperos -> sleeperos.txt, slitaz -> slitaz.txt, smartos -> smartos.txt, snigdha os -> snigdhaos.txt, soda -> soda.txt, solaris -> solaris.txt, solus -> solus.txt, source mage -> sourcemage.txt, sparkylinux -> sparkylinux.txt, spoinkos -> spoinkos.txt, starry -> starry.txt, star -> star.txt, steam deck -> steamdeck.txt, steamos -> steamos.txt, stock linux -> stocklinux.txt, sulin -> sulin.txt, summitos -> summitos.txt, suse -> suse.txt, swagarch -> swagarch.txt, t2 -> t2.txt, tails -> tails.txt, tatra -> tatra.txt, tearch -> tearch.txt, tileos -> tileos.txt, torizoncore -> torizoncore.txt, trisquel gnu/linux -> trisquel.txt, truenas scale -> truenasscale.txt, tuxedo os -> tuxedoos.txt, twister os -> twisteros.txt, ublinux -> ublinux.txt, ubuntu budgie -> ubuntubudgie.txt, ubuntu cinnamon -> ubuntucinnamon.txt, ubuntu gnome -> ubuntugnome.txt, ubuntu kylin -> ubuntukylin.txt, ubuntu mate -> ubuntumate.txt, ubuntu studio -> ubuntustudio.txt, ubuntu sway -> ubuntusway.txt, ubuntu touch -> ubuntutouch.txt, ubuntu -> ubuntu.txt, ubuntu unity -> ubuntuunity.txt, ultramarine linux -> ultramarinelinux.txt, unifi -> unifi.txt, univalent -> univalent.txt, univention corporate server -> univentioncorporateserver.txt, unknown -> unknown.txt, uos -> uos.txt, uruk os -> urukos.txt, uwuntu -> uwuntu.txt, valhalla -> valhalla.txt, vanilla os -> vanillaos.txt, venom linux -> venomlinux.txt, vnux -> vnux.txt, void linux -> voidlinux.txt, vzlinux -> vzlinux.txt, wii linux -> wiilinux.txt, windows 2025 -> windows2025.txt, windows 8 -> windows8.txt, windows 8.1 -> windows8.1.txt, windows 95 -> windows95.txt, windows -> windows.txt, wolfos -> wolfos.txt, xcp-ng -> xcp-ng.txt, xenia -> xenia.txt, xeroarch -> xeroarch.txt, xferience -> xferience.txt, xray os -> xrayos.txt, xubuntu -> xubuntu.txt, yiffos -> yiffos.txt, zorin os -> zorinos.txt, zos -> zos.txt"
          exit;;
-      i) # Set ASCII override to a specific file
-         ASCII_OVERRIDE_FILE="$OPTARG"
-         if [[ -f "$ASCII_OVERRIDE_FILE" ]]; then
-             ASCII_FILE_PATH="$ASCII_OVERRIDE_FILE"
-         else
-             echo "Error: The specified ASCII art file could not be found."
-             exit 1
-         fi
-         ;;
-      c) # Enable colors
+     c) # Enable colors
          COLOR_MODE=true
          ;;
-      \?) # Invalid option
+     \?) # Invalid option
          echo "We don't type that here."
          exit;;
    esac
@@ -841,10 +832,7 @@ unset ascii_art_lines
 
 # --- ASCII ART SELECTION ---
 # Determine which ASCII art to display based on override or detected OS
-if [[ -n "$ASCII_FILE_PATH" ]]; then
-    # Use the user-specified file path directly
-    mapfile -t ASCII_ART_LINES < "$ASCII_FILE_PATH"
-elif [[ -n "$ASCII_OVERRIDE" ]]; then
+if [[ -n "$ASCII_OVERRIDE" ]]; then
     DISTRO_TO_DISPLAY=$(get_ascii_filename "$ASCII_OVERRIDE")
     if ! load_ascii "$DISTRO_TO_DISPLAY"; then
         # Fallback to a default if override file not found
@@ -939,3 +927,4 @@ done
 
 echo
 printf "${BOLD}BROKEFETCH 🥀 1.8${RESET}\n"
+
