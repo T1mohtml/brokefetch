@@ -76,9 +76,9 @@ get_ascii_filename() {
         "fedora linux") filename="fedora" ;;
         "void linux") filename="void" ;;
         "windows 11") filename="windows_11" ;;
-        # Add other specific cases here
+        # --- NEW ADDITION ---
+        "aserdev") filename="aserdev" ;;
         *)
-            # Default behavior: remove spaces and convert to lowercase
             filename=$(echo "$os_name_lower" | tr -d ' ')
             ;;
     esac
@@ -131,6 +131,7 @@ fi
 
 
 case "$OS_NAME" in
+	"aserdev")			   OS="aserdev-os(bootleg arch? with non-offical repos.)";;
     "Adelie Linux")        OS="Adelie Linux (Are you a Action Retro?)";;
     "Aeon")                OS="Aeon (Bro wth is that, just use something normal)";;
     "Aeros")               OS="Aeros (air-os, as in, a lot of air in my wallet)";;
