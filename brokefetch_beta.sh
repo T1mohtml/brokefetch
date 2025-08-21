@@ -488,7 +488,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii12="                                   "
         ascii13="                                   "
         ascii14="                                   "
-        ascii15=""
+        ascii15="                                   "
         ascii16="that's it"
         ascii17=""
         ascii18=""
