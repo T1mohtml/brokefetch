@@ -49,6 +49,11 @@ curl -sSL https://raw.githubusercontent.com/Szerwigi1410/brokefetch/refs/heads/m
 yay -S brokefetch-git
 ```
 
+### AUR mod
+```bash
+yay -S brokefetch-mod
+```
+
 ### Homebrew
 ```bash
 brew tap T1mohtml/brokefetch
