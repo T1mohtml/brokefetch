@@ -8,7 +8,7 @@ A broken `neofetch` clone for those of us who have no job, no GPU, no money, and
 
 ![screenshot](screenshots/brokefetch-logo_att4.png)
 
-![Brokefetch_logos](https://i.imgur.com/34Irbse.gif)
+![Brokefetch_logos](screenshots/forthegif/gif_for_readme.gif)
 
 Version 1.0 screenshot
 
