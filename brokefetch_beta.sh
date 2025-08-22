@@ -156,7 +156,7 @@ if [ -r /proc/uptime ]; then
   UPTIME_S=${UPTIME_S%.*}  # drop decimal part
   UPTIME_H=$(( UPTIME_S / 3600 ))
   UPTIME_M=$(( (UPTIME_S % 3600) / 60 ))
-  UPTIME="${UPTIME_H} hours, ${UPTIME_M} minutes, maybe more idk"
+  UPTIME="${UPTIME_H} hours, ${UPTIME_M} minutes, or more idk"
 fi
 
 # Uptime - macOS
