@@ -979,7 +979,16 @@ case "$DISTRO_TO_DISPLAY" in
         ascii07="                          "
         ascii08="                          "
         ascii09="                          "
-        ascii10="keep waisting your time   "
+        ascii10="                          "
+        ascii11="keep waisting your time   "
+        ascii12="                          "
+        ascii13="                          "
+        ascii14="                          "
+        ascii15="                          "
+        ascii16="                          "
+        ascii17="                          "
+        ascii18="                          "
+        ascii19="                          "
         ;;
     "nobara")
         ascii00="⢀⣤⣴⣶⣶⣶⣦⣤⡀⠀⣀⣠⣤⣴⣶⣶⣶⣶⣶⣶⣶⣶⣤⣤⣀⡀"
