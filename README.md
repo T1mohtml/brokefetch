@@ -3,6 +3,7 @@
 ![AUR License](https://img.shields.io/aur/license/brokefetch-git)
 ![GitHub top language](https://img.shields.io/github/languages/top/Szerwigi1410/brokefetch)
 [![AUR package](https://repology.org/badge/version-for-repo/aur/brokefetch.svg)](https://repology.org/project/brokefetch/versions)
+[![AUR package](https://repology.org/badge/version-for-repo/aur/brokefetch-mod.svg)](https://repology.org/project/brokefetch-mod/versions)
 
 A broken `neofetch` clone for those of us who have no job, no GPU, no money, and no hope.
 
