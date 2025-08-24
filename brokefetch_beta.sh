@@ -1343,6 +1343,22 @@ line20="${BOLD}BROKEFETCH 🥀 1.7${RESET}"
 for i in $(seq -w 0 20); do
     varname="line$i"
     line="${!varname}"
-    width="$(tput cols)"
-    echo -e "${line}" | cut -c 1-${width}
+    width="$COLUMNS"
+
+    echo -e "${line}" | awk -v w="$width" '
+    {
+      out = ""; vis = 0;
+      while (length($0) > 0 && vis < w) {
+        if (match($0, /^\x1b\[[0-9;]*[A-Za-z]/)) {
+          out = out substr($0, 1, RLENGTH);
+          $0 = substr($0, RLENGTH+1);
+        } else {
+          ch = substr($0, 1, 1);
+          out = out ch;
+          $0 = substr($0, 2);
+          vis++;
+        }
+      }
+      print out;
+    }'
 done
