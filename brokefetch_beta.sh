@@ -986,10 +986,6 @@ case "$DISTRO_TO_DISPLAY" in
         ascii13="                          "
         ascii14="                          "
         ascii15="                          "
-        ascii16="                          "
-        ascii17="                          "
-        ascii18="                          "
-        ascii19="                          "
         ;;
     "nobara")
         ascii00="⢀⣤⣴⣶⣶⣶⣦⣤⡀⠀⣀⣠⣤⣴⣶⣶⣶⣶⣶⣶⣶⣶⣤⣤⣀⡀"
@@ -1308,6 +1304,18 @@ case "$DISTRO_TO_DISPLAY" in
         ascii19="${YELLOW}                                   "
         ;;
 esac
+
+# === FIXING LOGO IF NEEDED ===
+len=${#ascii00}
+
+for i in $(seq -w 1 15); do
+    var="ascii$i"
+    val="${!var}"
+
+    if [ -z "$val" ]; then
+        printf -v "$var" '%*s' "$len" ""
+    fi
+done
 
 # === OUTPUT ===
 echo -e "${COLOR}${ascii00}${RESET}$(whoami)@brokelaptop"
