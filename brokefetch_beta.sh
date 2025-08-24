@@ -1318,24 +1318,48 @@ for i in $(seq -w 1 15); do
 done
 
 # === OUTPUT ===
-echo -e "${COLOR}${ascii00}${RESET}$(whoami)@brokelaptop"
-echo -e "${COLOR}${ascii01}${RESET}-----------------------"
-echo -e "${COLOR}${ascii02}${BOLD}OS:${RESET} $OS"
-echo -e "${COLOR}${ascii03}${BOLD}Host:${RESET} $HOST"
-echo -e "${COLOR}${ascii04}${BOLD}Kernel:${RESET} $KERNEL"
-echo -e "${COLOR}${ascii05}${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
-echo -e "${COLOR}${ascii06}${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
-echo -e "${COLOR}${ascii07}${BOLD}Shell:${RESET} $SHELLOUT"
-echo -e "${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
-echo -e "${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
-echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} $WINDOW_MANAGER"
-echo -e "${COLOR}${ascii11}${BOLD}Window system:${RESET} $WINDOW_SYSTEM"
-echo -e "${COLOR}${ascii12}${BOLD}Terminal:${RESET} $TERMINAL"
-echo -e "${COLOR}${ascii13}${BOLD}CPU:${RESET} $CPU"
-echo -e "${COLOR}${ascii14}${BOLD}GPU:${RESET} $GPU"
-echo -e "${COLOR}${ascii15}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
-echo -e "${COLOR}${ascii16}"
-echo -e "${COLOR}${ascii17}"
-echo -e "${COLOR}${ascii18}"
-echo -e "${COLOR}${ascii19}"
-echo -e "${BOLD}BROKEFETCH 🥀 1.7${RESET}"
+line00="${COLOR}${ascii00}${RESET}$(whoami)@brokelaptop"
+line01="${COLOR}${ascii01}${RESET}-----------------------"
+line02="${COLOR}${ascii02}${BOLD}OS:${RESET} $OS"
+line03="${COLOR}${ascii03}${BOLD}Host:${RESET} $HOST"
+line04="${COLOR}${ascii04}${BOLD}Kernel:${RESET} $KERNEL"
+line05="${COLOR}${ascii05}${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
+line06="${COLOR}${ascii06}${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
+line07="${COLOR}${ascii07}${BOLD}Shell:${RESET} $SHELLOUT"
+line08="${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
+line09="${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
+line10="${COLOR}${ascii10}${BOLD}WM:${RESET} $WINDOW_MANAGER"
+line11="${COLOR}${ascii11}${BOLD}Window system:${RESET} $WINDOW_SYSTEM"
+line12="${COLOR}${ascii12}${BOLD}Terminal:${RESET} $TERMINAL"
+line13="${COLOR}${ascii13}${BOLD}CPU:${RESET} $CPU"
+line14="${COLOR}${ascii14}${BOLD}GPU:${RESET} $GPU"
+line15="${COLOR}${ascii15}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
+line16="${COLOR}${ascii16}"
+line17="${COLOR}${ascii17}"
+line18="${COLOR}${ascii18}"
+line19="${COLOR}${ascii19}"
+line20="${BOLD}BROKEFETCH 🥀 1.7${RESET}"
+
+for i in $(seq 0 20); do    
+    num=$(printf "%02d" "$i")
+    varname="line$num"
+    line="${!varname:-}"   
+    width="${COLUMNS:-80}" 
+
+    echo -e "$line" | awk -v w="$width" '
+    {
+      out=""; vis=0
+      while (length($0) > 0 && vis < w) {
+        if (match($0,/^\x1b\[[0-9;]*[A-Za-z]/)) {
+          out = out substr($0,1,RLENGTH)
+          $0 = substr($0,RLENGTH+1)
+        } else {
+          ch = substr($0,1,1)
+          out = out ch
+          $0 = substr($0,2)
+          vis++
+        }
+      }
+      print out
+    }'
+done
