@@ -1318,24 +1318,33 @@ for i in $(seq -w 1 15); do
 done
 
 # === OUTPUT ===
-echo -e "${COLOR}${ascii00}${RESET}$(whoami)@brokelaptop"
-echo -e "${COLOR}${ascii01}${RESET}-----------------------"
-echo -e "${COLOR}${ascii02}${BOLD}OS:${RESET} $OS"
-echo -e "${COLOR}${ascii03}${BOLD}Host:${RESET} $HOST"
-echo -e "${COLOR}${ascii04}${BOLD}Kernel:${RESET} $KERNEL"
-echo -e "${COLOR}${ascii05}${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
-echo -e "${COLOR}${ascii06}${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
-echo -e "${COLOR}${ascii07}${BOLD}Shell:${RESET} $SHELLOUT"
-echo -e "${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
-echo -e "${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
-echo -e "${COLOR}${ascii10}${BOLD}WM:${RESET} $WINDOW_MANAGER"
-echo -e "${COLOR}${ascii11}${BOLD}Window system:${RESET} $WINDOW_SYSTEM"
-echo -e "${COLOR}${ascii12}${BOLD}Terminal:${RESET} $TERMINAL"
-echo -e "${COLOR}${ascii13}${BOLD}CPU:${RESET} $CPU"
-echo -e "${COLOR}${ascii14}${BOLD}GPU:${RESET} $GPU"
-echo -e "${COLOR}${ascii15}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
-echo -e "${COLOR}${ascii16}"
-echo -e "${COLOR}${ascii17}"
-echo -e "${COLOR}${ascii18}"
-echo -e "${COLOR}${ascii19}"
-echo -e "${BOLD}BROKEFETCH 🥀 1.7${RESET}"
+width=$(tput cols)
+
+line00="${COLOR}${ascii00}${RESET}$(whoami)@brokelaptop:0:colr"
+line01="${COLOR}${ascii01}${RESET}-----------------------"
+line02="${COLOR}${ascii02}${BOLD}OS:${RESET} $OS"
+line03="${COLOR}${ascii03}${BOLD}Host:${RESET} $HOST"
+line04="${COLOR}${ascii04}${BOLD}Kernel:${RESET} $KERNEL"
+line05="${COLOR}${ascii05}${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
+line06="${COLOR}${ascii06}${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
+line07="${COLOR}${ascii07}${BOLD}Shell:${RESET} $SHELLOUT"
+line08="${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
+line09="${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
+line11="${COLOR}${ascii10}${BOLD}WM:${RESET} $WINDOW_MANAGER"
+line12="${COLOR}${ascii11}${BOLD}Window system:${RESET} $WINDOW_SYSTEM"
+line13="${COLOR}${ascii12}${BOLD}Terminal:${RESET} $TERMINAL"
+line14="${COLOR}${ascii13}${BOLD}CPU:${RESET} $CPU"
+line15="${COLOR}${ascii14}${BOLD}GPU:${RESET} $GPU"
+line16="${COLOR}${ascii15}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
+line17="${COLOR}${ascii16}"
+line18="${COLOR}${ascii17}"
+line19="${COLOR}${ascii18}"
+line20="${COLOR}${ascii19}"
+line21="${BOLD}BROKEFETCH 🥀 1.7${RESET}"
+
+
+for i in $(seq -w 1 21); do
+    varname="line$i"
+    line="${!varname}"
+    echo -e "${line:0:$width}"
+done
