@@ -96,7 +96,7 @@ brew install brokefetch
 
   environment.systemPackages = with pkgs; [
     # rest of the packages
-    inputs.brokefetch.packages.x86_64-linux.brokefetch
+    inputs.brokefetch.packages.x86_64-linux.brokefetch # or replace brokefetch package with brokefetch-beta
   ];
 
   # rest of configuration
