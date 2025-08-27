@@ -679,6 +679,45 @@ case $host_rand in
  	8)HOST="Stolen laptop";;
 esac
 
+#Shell
+if [ -f /etc/os-release ]; then
+    # linux
+    SHELL_NAME="$(echo $SHELL | grep -Ei "/bin" | awk -F "bin/" '{print $2}')"
+elif grep -q Microsoft /proc/version 2>/dev/null; then
+    # windows subsystem for linux
+    SHELL_NAME="WSL"
+elif [[ "$(uname -o)" == "Android" ]]; then
+    # Termux on Android
+    SHELL_NAME="Termux"
+else
+    # Mac, Windows, Fallback (such as freeBSD)
+    case "$(uname -s)" in
+        Darwin)
+            SHELL_NAME="$(echo $SHELL | grep -Ei "/bin" | awk -F "bin/" '{print $2}')"
+            ;;
+        MINGW*|MSYS*|CYGWIN*)
+            SHELL_NAME="pwsh"
+            ;;
+        *)
+            SHELL_NAME="idksh"
+            ;;
+    esac
+fi
+
+case $SHELL_NAME in
+    bash)SHELLOUT="$SHELL_NAME - The standard (for failure)";;
+    zsh)SHELLOUT="$SHELL_NAME - Powerful (Unlike you)";;
+    fish)SHELLOUT="$SHELL_NAME - Can't \"TAB to complete\" your life";;
+#    tcsh)SHELLOUT="";;
+#    csh)SHELLOUT="";;
+    pwsh)SHELLOUT="$SHELL_NAME - Commands for noobs (on Windoze)";;
+    sh)SHELLOUT="$SHELL_NAME - Old is gold (which I need)";;
+    dash)SHELLOUT="$SHELL_NAME - Speeeeed (for debian only)";;
+#    ksh)SHELLOUT="";;
+    idksh)SHELLOUT="idksh - What is this? (YOUR future)";;
+    *)SHELLOUT="Your shell is so niche that we don't care about it. We can't afford more code...";;
+esac
+
 #Desktop Environment
 if [ -z "$DISPLAY" ] && [ -z "$WAYLAND_DISPLAY" ]; then
     DESKTOP_ENV="TTY"
@@ -687,76 +726,93 @@ elif [ -n "$XDG_CURRENT_DESKTOP" ]; then
 else
     DESKTOP_ENV="$(echo "$DESKTOP_SESSION" | tr '[:upper:]' '[:lower:]')"
 fi
-
+ 
+# Convert to lowercase for consistent matching in the next case statement
+DESKTOP_ENV="$(echo "$DESKTOP_ENV" | tr '[:upper:]' '[:lower:]')"
+ 
 #Macos and windows and phone
 case "$OS_NAME" in
     "macOS")
-        DESKTOP_ENV="Aqua";;
+        DESKTOP_ENV="aqua";;
     "Windows")
-        DESKTOP_ENV="Aero";;
+        DESKTOP_ENV="aero";;
     "WSL")
-        DESKTOP_ENV="WSL Desktop (because I can't afford a real Linux)";;
+        DESKTOP_ENV="WSL";;
     "Android")
-        DESKTOP_ENV="Android Desktop (because I can't afford a real phone)";;
-esac        
-
+        DESKTOP_ENV="Android";;
+esac
+ 
 case "$DESKTOP_ENV" in
-    "Aqua") DESKTOP_ENV="Aqua (because I can't afford a real desktop)";;
-    "Aero") DESKTOP_ENV="Aero (but no money for a real DE)";;
-    "Gnome" | "gnome") DESKTOP_ENV="Gnome (but no extensions)";;
-    "kde" | "KDE" | "plasma") DESKTOP_ENV="KDE (but no Plasma)";;
-    "XFCE" | "xfce") DESKTOP_ENV="XFCE (Gnome ugly edition)";;
-    "LXDE" | "lxde") DESKTOP_ENV="LXDE (What's stopping you from LXqt?)";;
-    "LXqt" | "LXQT" | "lxqt") DESKTOP_ENV="LXQt (Lightweight, like your wallet)";;
-    "MATE" | "mate") DESKTOP_ENV="MATE (Gnome classic? What's that?)";;
-    "X-Cinnamon" | "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
-    "Hyprland" | "hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
-    "TTY") DESKTOP_ENV="TTY (go touch grass bro)";;
-    *) DESKTOP_ENV="Unknown DE (probably broke like you)";;
+    "aqua") DESKTOP_ENV="Aqua (because I can't afford a real desktop)";;
+    "aero") DESKTOP_ENV="Aero (but no money for a real DE)";;
+    "Android") DESKTOP_ENV="Android Desktop (because I can't afford a real phone)";;
+    "gnome") DESKTOP_ENV="Gnome (but no extensions)";;
+    "kde" | "plasma") DESKTOP_ENV="KDE (but no Plasma)";;
+    "xfce") DESKTOP_ENV="XFCE (Gnome ugly edition)";;
+    "lxde") DESKTOP_ENV="LXDE (What's stopping you from LXqt?)";;
+    "lxqt") DESKTOP_ENV="LXQt (Lightweight, like your wallet)";;
+    "mate") DESKTOP_ENV="MATE (Gnome classic? What's that?)";;
+    "x-cinnamon" | "cinnamon") DESKTOP_ENV="Cinnamon (but no money for a real desktop)";;
+    "hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
+    "WSL") DESKTOP_ENV="WSL Desktop (because I can't afford a real Linux)";;
+    "tty") DESKTOP_ENV="TTY (go touch grass bro)";;
+    *) DESKTOP_ENV="${XDG_CURRENT_DESKTOP} (No funny name for you)";;
 esac
 
 # Window Managers
-if [ -n "$XDG_CURRENT_WM" ]; then
-    WINDOW_MANAGER="$XDG_CURRENT_WM"
-else
-    WINDOW_MANAGER="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
-fi
 
-#Macos and windows and phone
-case "$OS_NAME" in
-    "macOS")
-        WINDOW_MANAGER="Quartz Compositor";;
-    "Windows")
-        WINDOW_MANAGER="Desktop Window Manager (DWM)";;
-    "WSL")
-        WINDOW_MANAGER="WSL Window Manager";;
-    "Android")
-        WINDOW_MANAGER="Android Window Manager";;
-esac
+WINDOW_SYSTEM="$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')"
 
 # --- Funny WM names ---
-case "$WINDOW_MANAGER" in
-    "Andoir Window Manager") WINDOW_MANAGER="Andoir Window Manager (Termux ig)";;
-    "KWin"|"kwin"|"kwin_wayland") WINDOW_MANAGER="KWin (the KDE janitor)";;
-    "Mutter"|"mutter") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
+case "$DESKTOP_SESSION" in
+    "kde" | "plasma") WINDOW_MANAGER="KWin (the KDE janitor)";;
+    "Mutter"|"mutter" | "gnome") WINDOW_MANAGER="Mutter (the GNOME babysitter)";;
     "Sway"|"sway") WINDOW_MANAGER="Sway (i3 but woke)";;
     "i3") WINDOW_MANAGER="i3 (tiled like my bathroom)";;
     "Openbox"|"openbox") WINDOW_MANAGER="Openbox (because closed boxes cost money)";;
     "Fluxbox"|"fluxbox") WINDOW_MANAGER="Fluxbox (because stability is overrated)";;
-    "XFWM4"|"xfwm4") WINDOW_MANAGER="XFWM4 (four times more broke)";;
+    "XFCE"|"xfce") WINDOW_MANAGER="XFWM4 (four times more broke)";;
     "Metacity"|"metacity") WINDOW_MANAGER="Metacity (meta broke)";;
+    "LXQt"|"lxqt") WINDOW_MANAGER="I don't know leave me alone";;
     "IceWM"|"icewm") WINDOW_MANAGER="IceWM (cold and minimal, like my bank account)";;
     "FVWM"|"fvwm") WINDOW_MANAGER="FVWM (Feels Very Wallet Miserable)";;
     "awesome") WINDOW_MANAGER="awesome (self-proclaimed)";;
     "herbstluftwm") WINDOW_MANAGER="herbstluftwm (gesundheit)";;
     "wayfire") WINDOW_MANAGER="Wayfire (burning your GPU for fun)";;
-    "Hyprland"|"hyprland") WINDOW_MANAGER="Hyprland (hyper broke)";;
+    "hyprland"|"Hyprland") WINDOW_MANAGER="Aquamarine (To drown myself in)";;
     "Quartz Compositor") WINDOW_MANAGER="Quartz Compositor (shiny but overpriced)";;
     "Desktop Window Manager (DWM)") WINDOW_MANAGER="Desktop Window Manager (Windows’ least exciting acronym)";;
     "tty") WINDOW_MANAGER="tty (Idk what to say here tbh)";;
-    "Wayland"|"wayland") WINDOW_MANAGER="Wayland (X11 is old and scary)";;
-    "X11"|"x11") WINDOW_MANAGER="X11 (Wayland is good for toddlers)";;
-    *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like me)";;
+    *) WINDOW_MANAGER="$WINDOW_MANAGER (probably broke like you)";;
+esac
+
+case "$OS_NAME" in
+    "macOS")
+        WINDOW_MANAGER="Quartz Compositor (shiny but overpriced)";;
+    "Windows")
+        WINDOW_MANAGER="Desktop Window Manager (Windows’ least exciting acronym)";;
+    "WSL")
+        WINDOW_MANAGER="WSL Window Manager (useless)";;
+    "Android")
+        WINDOW_MANAGER="Android Window Manager (Termux ig)";;
+esac
+
+# Window System
+case "$WINDOW_SYSTEM" in
+    "Wayland"|"wayland") WINDOW_SYSTEM="Wayland (X11 is old and scary)";;
+    "X11"|"x11") WINDOW_SYSTEM="X11 (Wayland is good for toddlers)";;
+    *) WINDOW_SYSTEM="${XDG_SESSION_TYPE} (probably broke like you)";;
+esac
+
+case "$OS_NAME" in
+    "macOS")
+        WINDOW_SYSTEM="Quartz or something idk";;
+    "Windows")
+        WINDOW_SYSTEM="Windows is your system";;
+    "WSL")
+        WINDOWS_SYSTEM="I don't know";;
+    "Android")
+        WINDOW_SYSTEM="Maybe wayland, maybe X11";;
 esac
 
 # Terminal
@@ -770,6 +826,7 @@ case "$TERM" in
     "xterm") TERMINAL="XTerm (the original terminal, but no money for a newer one)";;
     "xterm-color") TERMINAL="XTerm (but with a color)";;
     "xterm-256color") TERMINAL="XTerm (But with whole 256 colors!)";;
+    "xterm-256colour") TERMINAL="XTerm (But with whole 256 colors and a U!)";;
     "gnome-terminal") TERMINAL="Gnome Terminal (because I dislike gnome console)";;
     "konsole") TERMINAL="Konsole (Can't spell ig)";;
     "terminator") TERMINAL="Terminator (you are NOT Arnold Schwarzenegger)";;
@@ -908,10 +965,11 @@ info=(
     "${COLOR}${BOLD}Kernel:${RESET} ${KERNEL}"
     "${COLOR}${BOLD}Uptime:${RESET} ${UPTIME_OVERRIDE}"
     "${COLOR}${BOLD}Packages:${RESET} ${PKG_COUNT} (none legal)"
-    "${COLOR}${BOLD}Shell:${RESET} brokeBash 0.01"
+    "${COLOR}${BOLD}Shell:${RESET} ${SHELLOUT}"
     "${COLOR}${BOLD}Resolution:${RESET} CRT 640x480"
     "${COLOR}${BOLD}DE:${RESET} ${DESKTOP_ENV}"
     "${COLOR}${BOLD}WM:${RESET} ${WINDOW_MANAGER}"
+    "${COLOR}${BOLD}Window system:${RESET} $WINDOW_SYSTEM"
     "${COLOR}${BOLD}Terminal:${RESET} ${TERMINAL}"
     "${COLOR}${BOLD}CPU:${RESET} ${CPU}"
     "${COLOR}${BOLD}GPU:${RESET} ${GPU}"
