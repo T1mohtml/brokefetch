@@ -986,6 +986,10 @@ case "$DISTRO_TO_DISPLAY" in
         ascii13="                          "
         ascii14="                          "
         ascii15="                          "
+        ascii16="                          "
+        ascii17="                          "
+        ascii18="                          "
+        ascii19="                          "
         ;;
     "nobara")
         ascii00="⢀⣤⣴⣶⣶⣶⣦⣤⡀⠀⣀⣠⣤⣴⣶⣶⣶⣶⣶⣶⣶⣶⣤⣤⣀⡀"
@@ -1340,6 +1344,7 @@ line18="${COLOR}${ascii18}"
 line19="${COLOR}${ascii19}"
 line20="${BOLD}BROKEFETCH 🥀 1.7${RESET}"
 
+# Loop 00-20 safely
 for i in $(seq 0 20); do    
     num=$(printf "%02d" "$i")
     varname="line$num"
