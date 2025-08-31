@@ -40,7 +40,7 @@ CONFIG_FILE="$HOME/.config/brokefetch/config"
 # If there is no config – create a default one.
 if [[ ! -f "$CONFIG_FILE" ]]; then
     mkdir -p "$(dirname "$CONFIG_FILE")"
-    echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE, CYAN, WHITE, YELLOW, PURPLE, BLACK, GRAY" > "$CONFIG_FILE"
+    echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE, CYAN, WHITE, YELLOW, PURPLE, BLACK, GRAY and DISTRO" > "$CONFIG_FILE"
 	echo -e "# Set RAM_MB to your desired memory size in MB" >> "$CONFIG_FILE"
 	echo -e "# Set UPTIME_OVERRIDE to your desired uptime in hours\n" >> "$CONFIG_FILE"
 	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16h\nCOLOR_NAME=CYAN\n" >> "$CONFIG_FILE"
@@ -201,7 +201,52 @@ fi
 MEMORY_MB=$RAM_MB
 
 # Value of the color
-COLOR=${!COLOR_NAME}
+if [ "$COLOR_NAME" = "DISTRO" ]; then
+    case $OS_NAME in
+        "Adelie Linux") COLOR="$CYAN";;
+        "Aeon") COLOR="$GREEN";;
+        "Arch Linux") COLOR="$CYAN";;
+        "Artix Linux") COLOR="$CYAN";;
+        "AlmaLinux") COLOR="$RED";;
+        "Alpine Linux") COLOR="$BLUE";;
+        "Aserdev") COLOR="$CYAN";;
+        "Android") COLOR="$CYAN";;
+        "Amazon Linux") COLOR="$YELLOW";;
+        "CentOS Linux") COLOR="$YELLOW";;
+        "Debian GNU/Linux") COLOR="$RED";;
+        "elementary OS") COLOR="$WHITE";;
+        "EndeavourOS") COLOR="$PURPLE";;
+        "Fedora Linux") COLOR="$BLUE";;
+        "FreeBSD") COLOR="$RED";;
+        "Garuda Linux") COLOR="$RED";;
+        "Gentoo") COLOR="$WHITE";;
+        "Linexin") COLOR="$WHITE";;
+        "Linux Mint") COLOR="$WHITE";;
+        "Linux Lite") COLOR="$YELLOW";;
+        "macOS") COLOR="$GRAY";;
+        "Nobara Linux") COLOR="$WHTE";;
+        "NixOS") COLOR="$CYAN";;
+        "openSUSE Tumbleweed") COLOR="$GREEN";;
+        "openSUSE Leap") COLOR="$GREEN";;
+        "Red Hat Enterprise Linux") COLOR="$RED";;
+        "Rocky Linux") COLOR="$GREEN";;
+        "Slackware") COLOR="$BLUE";;
+        "Void Linux") COLOR="$GREEN";;
+        "Solus") COLOR="$GRAY";;
+        "Ubuntu") COLOR="$RED";;
+        "Kubuntu") COLOR="$BLUE";;
+        "Xubuntu") COLOR="$BLUE";;
+        "Manjaro Linux") COLOR="$GREEN";;
+        "Pop!_OS") COLOR="$RED";;
+        "Kali Linux") COLOR="$BLUE";;
+        "Windows") COLOR="$BLUE";;
+        "WSL") COLOR="$PURPLE";;
+        "Zorin OS") COLOR="$BLUE";;
+        *) COLOR="$BLUE";;
+    esac    
+else
+    COLOR=${!COLOR_NAME}
+fi
 
 # Bold ascii
 BOLD_A=$ASCII_BOLD
@@ -1134,7 +1179,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii18="                                           "
         ascii19="                                           "
         ;;
-    "rockylinux")
+    "rockylinux" | "rocky linux")
         ascii00="       _     _       _         _    _             "
         ascii01="      | |   | |     | |       | |  | |            "
         ascii02="      | | __| | __ _| | __   _| |_ | |__  _   _   "

@@ -209,12 +209,18 @@ if [ "$COLOR_NAME" = "DISTRO" ]; then
         "Aeon") COLOR="$GREEN";;
         "Arch Linux") COLOR="$CYAN";;
         "Artix Linux") COLOR="$CYAN";;
+        "AlmaLinux") COLOR="$RED";;
         "Alpine Linux") COLOR="$BLUE";;
+        "Aserdev") COLOR="$CYAN";;
+        "Android") COLOR="$CYAN";;
         "Amazon Linux") COLOR="$YELLOW";;
+        "CentOS Linux") COLOR="$YELLOW";;
         "Debian GNU/Linux") COLOR="$RED";;
         "elementary OS") COLOR="$WHITE";;
+        "EndeavourOS") COLOR="$PURPLE";;
         "Fedora Linux") COLOR="$BLUE";;
         "FreeBSD") COLOR="$RED";;
+        "Garuda Linux") COLOR="$RED";;
         "Gentoo") COLOR="$WHITE";;
         "Linexin") COLOR="$WHITE";;
         "Linux Mint") COLOR="$WHITE";;
@@ -225,6 +231,7 @@ if [ "$COLOR_NAME" = "DISTRO" ]; then
         "openSUSE Tumbleweed") COLOR="$GREEN";;
         "openSUSE Leap") COLOR="$GREEN";;
         "Red Hat Enterprise Linux") COLOR="$RED";;
+        "Rocky Linux") COLOR="$GREEN";;
         "Slackware") COLOR="$BLUE";;
         "Void Linux") COLOR="$GREEN";;
         "Solus") COLOR="$GRAY";;
@@ -235,14 +242,13 @@ if [ "$COLOR_NAME" = "DISTRO" ]; then
         "Pop!_OS") COLOR="$RED";;
         "Kali Linux") COLOR="$BLUE";;
         "Windows") COLOR="$BLUE";;
-        "Zorin OS") COLOR="$BLUE"
+        "WSL") COLOR="$PURPLE";;
+        "Zorin OS") COLOR="$BLUE";;
         *) COLOR="$BLUE";;
-        # I will fill in more distros later. You can do that too it u want.
     esac
 else
     COLOR=${!COLOR_NAME}
 fi
-
 
 # Bold ascii
 BOLD_A=$ASCII_BOLD
@@ -1175,7 +1181,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii18="                                           "
         ascii19="                                           "
         ;;
-    "rockylinux")
+    "rockylinux" | "rocky linux")
         ascii00="       _     _       _         _    _             "
         ascii01="      | |   | |     | |       | |  | |            "
         ascii02="      | | __| | __ _| | __   _| |_ | |__  _   _   "
