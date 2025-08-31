@@ -15,6 +15,7 @@ BOLD="\033[1m"
 RESET="\033[0m"
 BLACK="\033[30m"
 GRAY="\033[90m"
+#DISTRO=
 
 #PKG_COUNT=$(pacman -Q | wc -l)
 
@@ -41,10 +42,10 @@ CONFIG_FILE="$HOME/.config/brokefetch/config"
 # If there is no config – create a default one.
 if [[ ! -f "$CONFIG_FILE" ]]; then
     mkdir -p "$(dirname "$CONFIG_FILE")"
-    echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE, CYAN, WHITE, YELLOW, PURPLE, BLACK, GRAY" > "$CONFIG_FILE"
+    echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE, CYAN, WHITE, YELLOW, PURPLE, BLACK, GRAY and DISTRO" > "$CONFIG_FILE"
 	echo -e "# Set RAM_MB to your desired memory size in MB" >> "$CONFIG_FILE"
 	echo -e "# Set UPTIME_OVERRIDE to your desired uptime in hours\n" >> "$CONFIG_FILE"
-	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16h\nCOLOR_NAME=CYAN\n" >> "$CONFIG_FILE"
+	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16h\nCOLOR_NAME=DISTRO\n" >> "$CONFIG_FILE"
     echo -e "# Bold ascii logo? (true/fasle)" >> "$CONFIG_FILE"
     echo -e "ASCII_BOLD=false" >> "$CONFIG_FILE"
 fi
@@ -202,8 +203,36 @@ fi
 MEMORY_MB=$RAM_MB
 
 # Value of the color
-COLOR=${!COLOR_NAME}
-#case
+if [ "$COLOR_NAME" = "DISTRO" ]; then
+    case $OS_NAME in
+        "Arch Linux") COLOR="$CYAN";;
+        "Artix Linux") COLOR="$CYAN";;
+        "Alpine Linux") COLOR="$BLUE";;
+        "Amazon Linux") COLOR="$YELLOW";;
+        "Debian GNU/Linux") COLOR="$RED";;
+        "Fedora Linux") COLOR="$BLUE";;
+        "FreeBSD") COLOR="$RED";;
+        "Gentoo") COLOR="$WHITE";;
+        "Linexin") COLOR="$WHITE";;
+        "openSUSE Tumbleweed") COLOR="$GREEN";;
+        "openSUSE Leap") COLOR="$GREEN";;
+        "Red Hat Enterprise Linux") COLOR="$RED";;
+        "Slackware") COLOR="$BLUE";;
+        "Void Linux") COLOR="$GREEN";;
+        "Ubuntu") COLOR="$RED";;
+        "Manjaro Linux") COLOR="$GREEN";;
+        "Pop!_OS") COLOR="$RED";;
+        "elementary OS") COLOR="$WHITE";;
+        "macOS") COLOR="$GRAY";;
+        "Kali Linux") COLOR="$BLUE";;
+        "Windows") COLOR="$BLUE";;
+        *) COLOR="$BLUE";;
+        # I will fill in more distros later. You can do that too it u want.
+    esac
+else
+    COLOR=${!COLOR_NAME}
+fi
+
 
 # Bold ascii
 BOLD_A=$ASCII_BOLD
