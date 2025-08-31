@@ -205,27 +205,37 @@ MEMORY_MB=$RAM_MB
 # Value of the color
 if [ "$COLOR_NAME" = "DISTRO" ]; then
     case $OS_NAME in
+        "Adelie Linux") COLOR="$CYAN";;
+        "Aeon") COLOR="$GREEN";;
         "Arch Linux") COLOR="$CYAN";;
         "Artix Linux") COLOR="$CYAN";;
         "Alpine Linux") COLOR="$BLUE";;
         "Amazon Linux") COLOR="$YELLOW";;
         "Debian GNU/Linux") COLOR="$RED";;
+        "elementary OS") COLOR="$WHITE";;
         "Fedora Linux") COLOR="$BLUE";;
         "FreeBSD") COLOR="$RED";;
         "Gentoo") COLOR="$WHITE";;
         "Linexin") COLOR="$WHITE";;
+        "Linux Mint") COLOR="$WHITE";;
+        "Linux Lite") COLOR="$YELLOW";;
+        "macOS") COLOR="$GRAY";;
+        "Nobara Linux") COLOR="$WHTE";;
+        "NixOS") COLOR="$CYAN";;
         "openSUSE Tumbleweed") COLOR="$GREEN";;
         "openSUSE Leap") COLOR="$GREEN";;
         "Red Hat Enterprise Linux") COLOR="$RED";;
         "Slackware") COLOR="$BLUE";;
         "Void Linux") COLOR="$GREEN";;
+        "Solus") COLOR="$GRAY";;
         "Ubuntu") COLOR="$RED";;
+        "Kubuntu") COLOR="$BLUE";;
+        "Xubuntu") COLOR="$BLUE";;
         "Manjaro Linux") COLOR="$GREEN";;
         "Pop!_OS") COLOR="$RED";;
-        "elementary OS") COLOR="$WHITE";;
-        "macOS") COLOR="$GRAY";;
         "Kali Linux") COLOR="$BLUE";;
         "Windows") COLOR="$BLUE";;
+        "Zorin OS") COLOR="$BLUE"
         *) COLOR="$BLUE";;
         # I will fill in more distros later. You can do that too it u want.
     esac
@@ -967,7 +977,7 @@ case "$DISTRO_TO_DISPLAY" in
         ascii19=""
         ;;
     "linexin")
-        ascii00=" ⢀⣴⠿⠛⠛⠷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡾⠟⠛⠻⣦⡀"
+        ascii00="⢀⣴⠿⠛⠛⠷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡾⠟⠛⠻⣦⡀ "
         ascii01="⣼⠏⠀⠀⠀⠀⠈⠻⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⠟⠁⠀⠀⠀⠀⠘⣧ "
         ascii02="⣿⠀⠀⠀⠀⠀⠀⠀⠈⠙⢷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⠟⠁⠀⠀⠀⠀⠀⠀⠀⣿ "
         ascii03="⣿⠀⠀⢀⡿⠛⠷⣦⡀⠀⠀⠙⢷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡾⠏⠁⠀⠀⣠⠾⠛⢻⡄⠀⠀⣿ "
