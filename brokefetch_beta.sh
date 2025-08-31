@@ -41,14 +41,16 @@ CONFIG_FILE="$HOME/.config/brokefetch/config"
 # If there is no config – create a default one.
 if [[ ! -f "$CONFIG_FILE" ]]; then
     mkdir -p "$(dirname "$CONFIG_FILE")"
-    echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE, CYAN, WHITE" > "$CONFIG_FILE"
+    echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE, CYAN, WHITE, YELLOW, PURPLE, BLACK, GRAY" > "$CONFIG_FILE"
 	echo -e "# Set RAM_MB to your desired memory size in MB" >> "$CONFIG_FILE"
-	echo -e "# Set UPTIME_OVERRIDE to your desired uptime in hours" >> "$CONFIG_FILE"
-	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16h\nCOLOR_NAME=CYAN" >> "$CONFIG_FILE"
+	echo -e "# Set UPTIME_OVERRIDE to your desired uptime in hours\n" >> "$CONFIG_FILE"
+	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16h\nCOLOR_NAME=CYAN\n" >> "$CONFIG_FILE"
+    echo -e "# Bold ascii logo? (true/fasle)" >> "$CONFIG_FILE"
+    echo -e "ASCII_BOLD=false" >> "$CONFIG_FILE"
 fi
 
 # Load values from the config
-source "$CONFIG_FILE"
+source "$CONFIG_FILE" 
 
 # OS
 if [ -f /etc/os-release ]; then
@@ -201,6 +203,16 @@ MEMORY_MB=$RAM_MB
 
 # Value of the color
 COLOR=${!COLOR_NAME}
+#case
+
+# Bold ascii
+BOLD_A=$ASCII_BOLD
+
+if [ "$ASCII_BOLD" = true ]; then
+    BOLD_A="${BOLD}"
+else [ "$ASCII_BOLD" = false ];
+    BOLD_A=""
+fi        
 
 #CPU
 
@@ -1323,26 +1335,26 @@ for i in $(seq -w 1 15); do
 done
 
 # === OUTPUT ===
-line00="${COLOR}${ascii00}${RESET}$(whoami)@brokelaptop"
-line01="${COLOR}${ascii01}${RESET}-----------------------"
-line02="${COLOR}${ascii02}${BOLD}OS:${RESET} $OS"
-line03="${COLOR}${ascii03}${BOLD}Host:${RESET} $HOST"
-line04="${COLOR}${ascii04}${BOLD}Kernel:${RESET} $KERNEL"
-line05="${COLOR}${ascii05}${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
-line06="${COLOR}${ascii06}${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
-line07="${COLOR}${ascii07}${BOLD}Shell:${RESET} $SHELLOUT"
-line08="${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
-line09="${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
-line10="${COLOR}${ascii10}${BOLD}WM:${RESET} $WINDOW_MANAGER"
-line11="${COLOR}${ascii11}${BOLD}Window system:${RESET} $WINDOW_SYSTEM"
-line12="${COLOR}${ascii12}${BOLD}Terminal:${RESET} $TERMINAL"
-line13="${COLOR}${ascii13}${BOLD}CPU:${RESET} $CPU"
-line14="${COLOR}${ascii14}${BOLD}GPU:${RESET} $GPU"
-line15="${COLOR}${ascii15}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
-line16="${COLOR}${ascii16}"
-line17="${COLOR}${ascii17}"
-line18="${COLOR}${ascii18}"
-line19="${COLOR}${ascii19}"
+line00="${BOLD_A}${COLOR}${ascii00}${RESET}$(whoami)@brokelaptop"
+line01="${BOLD_A}${COLOR}${ascii01}${RESET}-----------------------"
+line02="${BOLD_A}${COLOR}${ascii02}${BOLD}OS:${RESET} $OS"
+line03="${BOLD_A}${COLOR}${ascii03}${BOLD}Host:${RESET} $HOST"
+line04="${BOLD_A}${COLOR}${ascii04}${BOLD}Kernel:${RESET} $KERNEL"
+line05="${BOLD_A}${COLOR}${ascii05}${BOLD}Uptime:${RESET} $UPTIME (sleep not included)"
+line06="${BOLD_A}${COLOR}${ascii06}${BOLD}Packages:${RESET} $PKG_COUNT (none legal)"
+line07="${BOLD_A}${COLOR}${ascii07}${BOLD}Shell:${RESET} $SHELLOUT"
+line08="${BOLD_A}${COLOR}${ascii08}${BOLD}Resolution:${RESET} CRT 640x480"
+line09="${BOLD_A}${COLOR}${ascii09}${BOLD}DE:${RESET} $DESKTOP_ENV" #Crying
+line10="${BOLD_A}${COLOR}${ascii10}${BOLD}WM:${RESET} $WINDOW_MANAGER"
+line11="${BOLD_A}${COLOR}${ascii11}${BOLD}Window system:${RESET} $WINDOW_SYSTEM"
+line12="${BOLD_A}${COLOR}${ascii12}${BOLD}Terminal:${RESET} $TERMINAL"
+line13="${BOLD_A}${COLOR}${ascii13}${BOLD}CPU:${RESET} $CPU"
+line14="${BOLD_A}${COLOR}${ascii14}${BOLD}GPU:${RESET} $GPU"
+line15="${BOLD_A}${COLOR}${ascii15}${BOLD}Memory:${RESET} ${MEMORY_MB}MB (user-defined-sadness)"
+line16="${BOLD_A}${COLOR}${ascii16}"
+line17="${BOLD_A}${COLOR}${ascii17}"
+line18="${BOLD_A}${COLOR}${ascii18}"
+line19="${BOLD_A}${COLOR}${ascii19}"
 line20="${BOLD}BROKEFETCH 🥀 1.7${RESET}"
 
 # Loop 00-20 safely
