@@ -1,0 +1,59 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.brokefetch_*.sh.swp
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Shell script specific
+*.sh~
+*.sh.bak
+*.sh.old
+
+tmp/
+# Temporary files
+temp/
+.tmp/
+.temp/
+*.tmp
+*.temp
+
+# Archive files
+*.tar
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Logs
+*.log
+logs/
+log/
+
+# Nix build artifacts
+result
+result-*
+
+# Local configuration
+.env
+.env.local
+
+
+brokefetch_mode.sh.bak
+brokefetch_EDGE.sh.swp
