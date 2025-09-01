@@ -43,7 +43,7 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
     echo -e "# Available COLOR_NAME options: RED, GREEN, BLUE, CYAN, WHITE, YELLOW, PURPLE, BLACK, GRAY and DISTRO" > "$CONFIG_FILE"
 	echo -e "# Set RAM_MB to your desired memory size in MB" >> "$CONFIG_FILE"
 	echo -e "# Set UPTIME_OVERRIDE to your desired uptime in hours\n" >> "$CONFIG_FILE"
-	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16h\nCOLOR_NAME=CYAN\n" >> "$CONFIG_FILE"
+	echo -e "RAM_MB=128\nUPTIME_OVERRIDE=16h\nCOLOR_NAME=DISTRO\n" >> "$CONFIG_FILE"
     echo -e "# Bold ascii logo? (true/fasle)" >> "$CONFIG_FILE"
     echo -e "ASCII_BOLD=false" >> "$CONFIG_FILE"
 fi
