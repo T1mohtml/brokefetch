@@ -416,6 +416,8 @@ case "$DESKTOP_ENV" in
     "hyprland") DESKTOP_ENV="Hyprland (Yeah Hyprland is a DE lil bro)";;
     "WSL") DESKTOP_ENV="WSL Desktop (because I can't afford a real Linux)";;
     "tty") DESKTOP_ENV="TTY (go touch grass bro)";;
+    "niri") DESKTOP_ENV="Niri (bro linux is not tiktok)";;
+    "Budgie") DESKTOP_ENV="Budgie (but no budget)";;
     *) DESKTOP_ENV="${XDG_CURRENT_DESKTOP} (No funny name for you)";;
 esac
 
