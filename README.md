@@ -2,7 +2,7 @@
 
 ![AUR License](https://img.shields.io/aur/license/brokefetch-git)
 ![GitHub top language](https://img.shields.io/github/languages/top/Szerwigi1410/brokefetch)
-![Static Badge](https://img.shields.io/badge/made_with-vscode%2C_nano%2C_Xcode-blue)
+![Static Badge](https://img.shields.io/badge/made_with-vscode%2C_nano%2C_Xcode%2C_helix-blue)
 [![AUR package](https://repology.org/badge/version-for-repo/aur/brokefetch.svg)](https://repology.org/project/brokefetch/versions)
 [![AUR package](https://repology.org/badge/version-for-repo/aur/brokefetch-mod.svg)](https://repology.org/project/brokefetch-mod/versions)
 
